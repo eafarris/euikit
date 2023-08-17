@@ -24,7 +24,7 @@ $color_classes = 'border-slate-300 focus:border-indigo-500 focus:ring-indigo-500
 $error_classes = 'border-red-500 text-red-900';
 @endphp
 
-<div class="field" id="{{ $field }}">
+<div {{ $attributes->merge(['class' => 'field']) }} id="{{ $field }}">
     <label for="{{ $field }}" class="block text-sm font-medium text-gray-700 bg-transparent">
     {{ $label ?: ucfirst($field) }}
     </label>
