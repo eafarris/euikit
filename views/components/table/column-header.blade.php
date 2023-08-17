@@ -12,7 +12,7 @@ $chevron_up_down = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" 
     @if ($lwsort) 
     wire:click="sort('{{ $lwsort }}')"
     @endif
-><!-- InsideUIKit Table Column Header -->
+>
     <div class="min-w-full">
     {{ $slot }}
     @if ($lwsort)
@@ -27,4 +27,4 @@ $chevron_up_down = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" 
         @endif
     @endif
     </div>
-</th><!-- InsideUIKit Table Column Header -->
+</th><!-- EUIKit Table Column Header -->
