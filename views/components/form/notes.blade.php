@@ -1,5 +1,5 @@
 @props(['model' => ''])
-<div class="field">
+<div {{ $attributes->merge(['class' => 'field']) }}>
     <label for="notes" class="block text-sm font-medium text-gray-700 bg-transparent">
         Notes
     </label>

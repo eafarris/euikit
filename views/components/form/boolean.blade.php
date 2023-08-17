@@ -1,6 +1,6 @@
 @props(['field', 'label' => '', 'value' => ''])
 
-<div class="field">
+<div {{ $attributes->merge(['class' => 'field']) }}>
     <label for="{{ $field }}" class="block text-sm font-medium text-gray-700 bg-transparent">{{ $label == '' ? ucfirst($field) : $label }}</label>
     <div class="flex mt-1">
         <div class="flex items-center mb-4 mr-3">

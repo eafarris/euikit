@@ -1,4 +1,4 @@
-@props(['label' => '', 'field', 'value' => '', 'min' => '', 'max' => '', 'required' => FALSE])
+@props(['label' => '', 'field', 'value' => '', 'min' => '', 'max' => '', 'required' => false, 'nolabel' => false])
 
 @php
 $color_classes = 'border-slate-300 focus:border-indigo-500 focus:ring-indigo-500';
@@ -11,10 +11,12 @@ if (!empty($value)) {
 @endphp
 
 
-<div {{ $attributes->merge(['class' => 'field']) }} id="{{ $field }}">
+<div {{ $attributes->merge(['class' => 'field']) }} id="{{ $field }}"><!-- InsideUIKit Date input -->
+    @unless($nolabel)
     <label for="{{ $field }}" class="block text-sm font-medium text-gray-700 bg-transparent">{{ $label ?: ucfirst($field) }}</label>
+    @endunless
     <div class="control mt-1">
-        <input type="date"
+        <input type="datetime-local"
             id="{{ $field }}"
             name="{{ $field }}"
             value="{{ @old($field, $value) }}"
@@ -23,9 +25,9 @@ if (!empty($value)) {
             @if ($min) min="{{ $min }}" @endif
             @if ($max) max="{{ $max }}" @endif
         />
-    </div>
+    </div><!-- .control -->
 
     @error($field)
         <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
     @enderror
-</div><!-- EUIKit Date input -->
+</div><!-- InsideUIKit Date input -->

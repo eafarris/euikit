@@ -1,4 +1,4 @@
-<div class="field">
+<div {{ $attributes->merge(['class' => 'field']) }}>
     <label for="{{ $name }}" class="block text-sm font-medium text-gray-700 bg-transparent">{{ $label }}</label>
     <div class="control mt-1">
         <div class="select">
