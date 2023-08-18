@@ -1,7 +1,7 @@
 @php
-$classes = 'p-2 pr-0 text-slate-500 hover:bg-slate-200';
+$classes = 'p-2 pr-0 text-slate-500 hover:bg-slate-200 hover:rounded-tl-lg hover:rounded-bl-lg';
 if ($route == url()->current()) {
-    $classes = 'p-2 pr-0 text-slate-500 bg-slate-200 text-slate-700';
+    $classes = 'p-2 pr-0 text-slate-500 bg-white text-slate-500 rounded-tl-lg rounded-bl-lg';
 }
 @endphp
 
