@@ -7,7 +7,7 @@ class euikitServiceProvider extends ServiceProvider {
 
     public function boot() { // 
         $this->loadViewsFrom(__DIR__ . '/../views', 'euikit');
-        $this->loadViewsFrom(__DIR__ . '../views', 'e');
+        $this->loadViewsFrom(__DIR__ . '/../views', 'e');
 
         if ($this->app->runningInConsole()) {
             $this->bootForConsole();
