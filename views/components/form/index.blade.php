@@ -6,7 +6,7 @@
 @endunless
 
 @if ($errors->any())
-<x-euikit.alert type="error">Your changes were not submitted due to errors in the form. Please correct the appropriate fields below.</x-euikit.alert>
+<x-euikit::alert type="error">Your changes were not submitted due to errors in the form. Please correct the appropriate fields below.</x-euikit::alert>
 @endif
 
 
