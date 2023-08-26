@@ -15,7 +15,7 @@
 <body class="font-sans antialiased flex flex-col min-h-screen justify-between">
 
 @if (isset($header))
-<header class="h-16 bg-slate-100 border-b-2 border-slate-200">
+<header class="h-16 bg-slate-100 border-b-2 border-slate-200 dark:bg-slate-700 dark:border-slate-900 dark:text-slate-200">
 {{ $header }}
 </header><!-- .h-32 bg-slate-200 -->
 @endif
