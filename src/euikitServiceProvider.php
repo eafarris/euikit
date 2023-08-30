@@ -9,6 +9,11 @@ class euikitServiceProvider extends ServiceProvider {
         $this->loadViewsFrom(__DIR__ . '/../views', 'euikit');
         $this->loadViewsFrom(__DIR__ . '/../views', 'e');
 
+        // Blade View Components
+        Blade::componentNamespace('eafarris\euikit\\Components', 'euikit');
+
+        // Livewire components
+
         if ($this->app->runningInConsole()) {
             $this->bootForConsole();
         }
