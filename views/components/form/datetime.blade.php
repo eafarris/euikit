@@ -13,7 +13,7 @@ if (!empty($value)) {
 
 <div {{ $attributes->merge(['class' => 'field']) }} id="{{ $field }}"><!-- InsideUIKit Date input -->
     @unless($nolabel)
-    <label for="{{ $field }}" class="block text-sm font-medium text-gray-700 bg-transparent">{{ $label ?: ucfirst($field) }}</label>
+    <label for="{{ $field }}" class="block text-sm font-medium text-slate-500 bg-transparent">{{ $label ?: ucfirst($field) }}</label>
     @endunless
     <div class="control mt-1">
         <input type="datetime-local"

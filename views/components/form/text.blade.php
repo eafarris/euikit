@@ -25,7 +25,7 @@ $error_classes = 'border-red-500 text-red-900';
 @endphp
 
 <div {{ $attributes->merge(['class' => 'field']) }} id="{{ $field }}">
-    <label for="{{ $field }}" class="block text-sm font-medium text-gray-700 bg-transparent">
+    <label for="{{ $field }}" class="block text-sm font-medium text-slate-500 bg-transparent">
     {{ $label ?: ucfirst($field) }}
     </label>
     <div class="mt-1">

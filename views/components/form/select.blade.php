@@ -1,6 +1,6 @@
 @props(['field', 'label' => ''])
 <div {{ $attributes->merge(['class' => 'field']) }}>
-    <label for="{{ $field }}" class="block text-sm font-medium text-gray-700 bg-transparent">{{ $label ?: ucfirst($field) }}</label>
+    <label for="{{ $field }}" class="block text-sm font-medium text-slate-500 bg-transparent">{{ $label ?: ucfirst($field) }}</label>
     <div class="control mt-1">
         <div class="select">
             <select 
