@@ -52,7 +52,7 @@ if ($type) {
   <button {{ $attributes->merge(['class' => $button . ' '  . $coloring]) }} >
   @endif
     @if ($icon)
-      @svg($icon, ['class' => 'icon'])
+      @svg($icon, 'w-6 h-6')
     @endif
     {{ $value }}
   @if ($route)
