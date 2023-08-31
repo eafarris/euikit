@@ -4,7 +4,7 @@
         <div class="select">
             <select
               name="{{ $name }}"
-              class="appearance-none block text-slate-700 border border-slate-200 rounded leading-tight focus:outline-none focus:bg-white focus:border-slate-500"
+              class="w-full appearance-none block text-slate-700 border border-slate-200 rounded leading-tight focus:outline-none focus:bg-white focus:border-slate-500"
             >
             <option value="">Select {{ $label }}</option>
             @foreach ($models as $model)
