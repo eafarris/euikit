@@ -1,7 +1,7 @@
 @props(['model' => ''])
 <div {{ $attributes->merge(['class' => 'field']) }}>
     <label for="notes" class="block text-sm font-medium text-slate-500 bg-transparent">
-        Notes
+        Notes (<a href="https://www.markdownguide.org/cheat-sheet/" class="underline-offset-2 underline">Markdown</a> supported)
     </label>
     <div class="mt-1">
         <textarea 
