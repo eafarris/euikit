@@ -1,0 +1,1 @@
+<input {{ $attributes->merge(['class' => 'border-slate-200 bg-slate-100 border']) }} type="text" disabled />
