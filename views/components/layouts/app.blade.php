@@ -15,7 +15,7 @@
 <body class="font-sans antialiased flex flex-col min-h-screen justify-between">
 
 @if (isset($header))
-<header class="h-16 text-2xl bg-gradient-to-r from-slate-100 from-50% border-b-2 border-slate-200 dark:bg-slate-700 dark:border-slate-900 dark:text-slate-200">
+<header class="h-16 text-2xl bg-gradient-to-r from-slate-100 from-50% to-slate-50 border-b-2 border-slate-200 dark:from-slate-700 dark:border-slate-900 dark:to-slate-600 dark:text-slate-200">
 {{ $header }}
 </header>
 @endif
@@ -25,7 +25,7 @@
 <div class="col-span-1 bg-slate-100 dark:bg-slate-600 min-h-screen">
     {{ $left }}
 </div><!-- .col-span-1 -->
-<div class="col-span-5 bg-gradient-to-br from-slate-50 via-slate-100 from-40% to-white dark:bg-slate-800 min-h-screen min-w-fit">
+<div class="col-span-5 bg-gradient-to-br from-slate-50 via-slate-100 from-40% to-white dark:from-slate-800 dark:to-slate-700 min-h-screen min-w-fit">
     {{ $slot }}
 </div>
 @else
