@@ -17,20 +17,20 @@ if ($type) {
       $coloring = 'border-transparent bg-transparent hover:border-slate-100 text-blue-600 hover:bg-blue-200 hover:text-slate-800';
       break;
     case 'info':
-      $coloring = 'bg-blue-400 text-slate-100 hover:bg-blue-600 hover:text-white';
+      $coloring = 'bg-blue-300 text-blue-800 hover:bg-blue-600 hover:text-white';
       break;
     case 'success':
-      $coloring = 'bg-green-400 text-white hover:bg-green-600 hover:text-white';
+      $coloring = 'bg-green-400 text-green-800 hover:bg-green-600 hover:text-white';
       break;
     case 'warning':
-      $coloring = 'bg-yellow-300 text-slate-800 hover:bg-yellow-500 hover:text-slate-100';
+      $coloring = 'bg-yellow-300 text-yellow-800 hover:bg-yellow-500 hover:text-slate-100';
       break;
     case 'danger':
     case 'delete':
-      $coloring = 'bg-red-500 text-white hover:bg-red-800 hover:text-slate-100';
+      $coloring = 'bg-red-300 text-red-800 hover:bg-red-800 hover:text-slate-100';
       break;
     case 'primary':
-      $coloring = 'bg-blue-200 text-slate-800 hover:bg-blue-400 hover:text-gray-200';
+      $coloring = 'bg-blue-300 text-blue-800 hover:bg-blue-400 hover:text-gray-200';
       break;
     case 'ghost':
       $coloring = 'bg-transparent hover:bg-slate-100';
@@ -52,7 +52,7 @@ if ($type) {
   <button {{ $attributes->merge(['class' => $button . ' '  . $coloring]) }} >
   @endif
     @if ($icon)
-      @svg($icon, 'w-6 h-6')
+      @svg($icon, 'w-6 h-6 inline')
     @endif
     {{ $value }}
   @if ($route)
