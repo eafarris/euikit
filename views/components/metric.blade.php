@@ -1,4 +1,4 @@
-@props(['label' => '', 'value' => ''])
+@props(['label' => ''])
 <div {{ $attributes->merge(['class' => 'bg-transparent'])}}><!-- EUIKit metric component -->
     <div class="bg-slate-100 p-4 rounded-t-xl border-slate-300 border">
         <p class="text-sm font-medium text-slate-500">
