@@ -1,26 +1,21 @@
-@props(['type' => 'info', 'icon' => ''])
+@props(['type' => 'info'])
 
 @php
 switch ($type) {
     case 'warning':
         $color = 'yellow';
-        $icon = $icon == 'none' ? '' : 'heroicon-o-exclamation-circle';
         break;
     case 'success':
         $color = 'green';
-        $icon = $icon == 'none' ? '' : 'heroicon-o-check-circle';
         break;
     case 'error':
         $color = 'red';
-        $icon = $icon == 'none' ? '' : 'heroicon-o-exclamation-circle';
         break;
     case 'primary':
         $color = 'blue';
-        $icon = $icon == 'none' ? '' : $icon;
         break;
     default:
         $color = 'slate';
-        $icon = $icon == 'none' ? '' : $icon;
         break;
     }
 
@@ -30,13 +25,13 @@ $border = "border-$color-200";
 $text = "text-$color-700";
 @endphp
 
-<div class="flex gap-4 items-center m-8 rounded-md shadow p-4 border {{ $border }} border-t-4 {{ $accent }} {{ $background }}">
-    <div class="shrink-1 {{ $text }}">
-      @if ($icon)
-        @svg($icon, 'w-8 h-8')
-      @endif
+<div class="m-8 rounded-md shadow p-4 border {{ $border }} border-t-4 {{ $accent }} {{ $background }}">
+    <div class="flex-shrink-0">
+        <!-- icon will go here -->
     </div>
-    <p class="text-sm {{ $text }} ">
+    <div class="ml-3 flex-1 md:flex md:justify-between">
+    <p class="text-sm {{ $text }}">
         {{ $slot }}
     </p>
+  </div>
 </div><!-- EUIKit Alert Component -->
