@@ -10,8 +10,9 @@
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <!-- AlpineJS -->
+    <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/mask@3.x.x/dist/cdn.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    livewireStyles
+    @livewireStyles
     @if (isset($head)) {{ $head }} @endif
 </head>
 <body class="font-sans antialiased flex flex-col min-h-screen justify-between">
