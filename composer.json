@@ -1,0 +1,25 @@
+{
+    "name": "eafarris/euikit",
+    "description": "Laravel Blade and Livewire components for app scaffolding",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Eafarris\\Euikit\\": "src/"
+        }
+    },
+    "extra": {
+      "laravel": {
+        "providers": [
+          "eafarris\\euikit\\euikitServiceProvider"
+        ]
+      }
+    },
+    "authors": [
+        {
+            "name": "Eric Farris",
+            "email": "eric@eafarris.com"
+        }
+    ],
+    "require": {}
+}

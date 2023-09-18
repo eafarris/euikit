@@ -5,7 +5,7 @@ use Illuminate\Support\ServiceProvider;
 
 class euikitServiceProvider extends ServiceProvider {
 
-    public function boot() { // 
+    public function boot() : void { // 
         $this->loadViewsFrom(__DIR__ . '/../views', 'euikit');
         $this->loadViewsFrom(__DIR__ . '/../views', 'e');
 
@@ -19,11 +19,11 @@ class euikitServiceProvider extends ServiceProvider {
         }
     } // endfunction boot
 
-public function provides() { // 
+public function provides() : array { // 
     return ['euikit'];
 } // endfunction provides
 
-    public function register() { // 
+    public function register() : void { // 
         $this->mergeConfigFrom(__DIR__ . '/../config/euikit.php', 'euikit');
 
         $this->app->singleton('euikit', function ($app) {
@@ -31,7 +31,7 @@ public function provides() { //
         });
     } // endfunction register()
 
-    public function bootForConsole() { // 
+    public function bootForConsole() : void { // 
         $this->publishes([
             __DIR__ . '/../config/euikit.php' => config_path('euikit.php'),
         ], 'euikit.config');
