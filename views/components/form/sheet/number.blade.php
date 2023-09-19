@@ -1,1 +1,1 @@
-<input {{ $attributes->merge(['class' => 'border border-slate-200 dark:bg-slate-400 dark:text-slate-700 ']) }} type="number" />
+<input {{ $attributes->merge(['class' => 'tabular-nums border border-slate-200 dark:bg-slate-400 dark:text-slate-700 ']) }} type="number" />
