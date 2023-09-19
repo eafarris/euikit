@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}"><!-- InsideUIKit Layout -->
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -18,8 +18,10 @@
 <body class="font-sans antialiased flex flex-col min-h-screen justify-between">
 
 @if (isset($header))
-<header class="h-16 text-2xl bg-gradient-to-r from-slate-100 from-50% to-slate-50 border-b-2 border-slate-200 dark:from-slate-700 dark:border-slate-900 dark:to-slate-600 dark:text-slate-200">
-{{ $header }}
+<header class="h-16 text-3xl bg-gradient-to-r from-slate-100 from-50% to-slate-50 border-b-2 border-slate-200 dark:from-slate-700 dark:border-slate-900 dark:to-slate-600 dark:text-slate-200">
+    <div class="flex items-center justify-between px-4 py-4 text-slate-500">
+        {{ $header }}
+    </div><!-- .flex items-center justify-between px-4 py-4 text-slate-500 -->
 </header>
 @endif
 
@@ -47,4 +49,4 @@
 @livewireScripts
 
 </body>
-</html>
+</html><!-- EUIKit app layout -->
