@@ -36,6 +36,7 @@ $error_classes = 'border-red-500 text-red-900';
             placeholder="{{ $placeholder ?: $label ?: ucfirst($field) }}"
             class="block w-full rounded-md shadow-sm sm:text-sm {{ $errors->has($field) ? $error_classes : $color_classes }} "
             @if ($required) required @endif 
+            {{ $attributes->merge(['list' => '']) }}
         />
         @if ($icon)
             @svg($icon, ['class' => 'icon is-left', 'style' => 'top: inherit; padding: 5px'])
