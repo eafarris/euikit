@@ -11,6 +11,7 @@ class Lookup extends Component {
     public $models; // internal
     public $value; // current value
     public $label;  // text for <label>
+    public $optionvalue; // values for form submit
     public $optionfield; // field to hydrate <option>
     public $filterfield; // only show option if true
     public $sortby; // field on model for sorting options
@@ -23,7 +24,7 @@ class Lookup extends Component {
      *
      * @return void
      */
-    public function __construct($model, $field = '', $value = '', $label = '', $filterfield = '', $sortby = '', $sortdirection = 'asc', $optionfield = '', $name = '') {
+    public function __construct($model, $field = '', $value = '', $label = '', $filterfield = '', $sortby = '', $sortdirection = 'asc', $optionvalue = '', $optionfield = '', $name = '') {
         $this->label = $label ?: ucfirst($model);
         $this->model = $model;
         $this->value = $value;
@@ -31,6 +32,7 @@ class Lookup extends Component {
         $this->filterfield = $filterfield;
         $this->sortby = $sortby;
         $this->sortdirection = $sortdirection;
+        $this->optionvalue = $optionvalue ?: $model . '_id';
         $this->optionfield = $optionfield ?: $this->field;
         $this->name = $name ?: $field ?: $model . '_id';
     }
