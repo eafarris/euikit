@@ -2,7 +2,7 @@
 
 @php
 
-$button = 'border-transparent inline-block align-middle text-center select-none border font-normal whitespace-no-wrap rounded py-1 px-3 leading-normal no-underline';
+$button = 'border-transparent inline-block select-none border font-normal whitespace-no-wrap rounded py-1 px-3 leading-normal no-underline';
 $coloring = '';
 if ($type) {
   switch ($type) {
@@ -52,9 +52,13 @@ if ($type) {
   <button {{ $attributes->merge(['class' => $button . ' '  . $coloring]) }} >
   @endif
     @if ($icon)
-      @svg($icon, 'w-6 h-6 inline')
+      <span>
+        @svg($icon, 'w-6 h-6 inline')
+      </span>
     @endif
-    {{ $value }}
+    <span class="align-text-top">
+      {{ $value }}
+    </span>
   @if ($route)
   </a>
   @else

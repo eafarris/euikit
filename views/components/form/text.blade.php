@@ -1,4 +1,4 @@
-@props(['type' => '', 'label' => '', 'field', 'value' => '', 'placeholder' => '', 'icon' => '', 'required' => false])
+@props(['type' => '', 'label' => '', 'field', 'value' => '', 'placeholder' => '', 'icon' => '', 'required' => FALSE, 'inline' => FALSE])
 
 @php
 switch ($field) {
@@ -25,9 +25,11 @@ $error_classes = 'border-red-500 text-red-900';
 @endphp
 
 <div {{ $attributes->merge(['class' => 'field']) }} id="{{ $field }}">
+@if (!$inline)
     <label for="{{ $field }}" class="block text-sm font-medium text-slate-500 dark:text-slate-300 bg-transparent">
     {{ $label ?: ucfirst($field) }}
     </label>
+@endif
     <div class="mt-1">
         <input type="{{ $type }}" 
             id="{{ $field }}"   
