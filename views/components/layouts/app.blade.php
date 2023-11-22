@@ -24,12 +24,12 @@
 
 <main class="container grid grid-cols-1 sm:grid-cols-6 m-auto min-w-full">
 @if (isset($left))
-<div class="col-span-1 bg-slate-100 dark:bg-slate-600 min-h-screen">
+<div class="col-span-1 bg-slate-100 dark:bg-slate-600 h-[calc(100vh-64px)] flex flex-col justify-between">
     {{ $left }}
-</div><!-- .col-span-1 -->
-<div class="col-span-5 bg-gradient-to-br from-slate-50 via-slate-100 from-40% to-white dark:from-slate-800 dark:to-slate-700 min-h-screen min-w-fit">
+</div><!-- left -->
+<div class="col-span-5 bg-gradient-to-br from-slate-50 via-slate-100 from-20% to-white dark:from-slate-800 dark:to-slate-700 h-[calc(100vh-64px)] min-w-fit">
     {{ $slot }}
-</div>
+</div><!-- right -->
 @else
 <div class="mx-auto col-span-6">
     {{ $slot }}
