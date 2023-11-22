@@ -44,7 +44,7 @@ if ($type) {
     }
 }
 @endphp
-<div {{ $attributes->merge(['class' => 'bg-transparent'])}}>
+<div {{ $attributes->merge(['class' => 'bg-transparent '])}}>
 @if ($title)
     <div class="p-4 rounded-t-xl border {{ $topcoloring }}">
         <p class="{{ $textcoloring }} font-bold tracking-wide">
