@@ -88,9 +88,8 @@ if ($type) {
 </div>
 </div>
 @else
-<div class="flex px-8">
   @if ($route)
-  <a {{ $attributes->merge(['class' => $button . ' ' . $coloring]) }} href="{{ $route }}">
+  <a {{ $attributes->merge(['class' => $button . ' pt-2.5 ' . $coloring]) }} href="{{ $route }}">
   @else
   <button {{ $attributes->merge(['class' => $button . ' '  . $coloring]) }} >
   @endif
@@ -99,7 +98,7 @@ if ($type) {
         @svg($icon, 'w-6 h-6 inline')
       </span>
     @endif
-    <span>
+    <span class="">
       {{ $value }}
     </span>
   @if ($route)
@@ -107,5 +106,4 @@ if ($type) {
   @else
   </button> 
   @endif
-</div>
 @endif
