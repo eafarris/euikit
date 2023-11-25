@@ -1,4 +1,5 @@
-@props(['type' => '', 'label' => '', 'field', 'value' => '', 'placeholder' => '', 'icon' => '', 'required' => FALSE, 'inline' => FALSE])
+@props(['type' => '', 'label' => '', 'field', 'value' => '',
+    'placeholder' => '', 'icon' => '', 'required' => FALSE, 'inline' => FALSE])
 
 @php
 switch ($field) {

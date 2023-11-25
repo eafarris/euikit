@@ -5,7 +5,7 @@ EUIKit ~~is~~ will be a set of components designed to rapidly scaffold a Laravel
 
 EUIKit includes some powerful form building components. In addition to the standard field types, it includes a "lookup" component that can magically hydrate a select field from another Laravel model. There is a "textlist" component that presents a way for users to add arbitrary text entries to a list, which is treated as a Laravel Collection on the back end.
 
-The table componets in EUIKit are ready to do Livewire on-the-fly filtering and sorting.
+The table components in EUIKit are ready to do Livewire on-the-fly filtering and sorting.
 
 There are interactive alert, messages, and rollup components to keep users informed while also keeping your app uncluttered and attractive.
 
