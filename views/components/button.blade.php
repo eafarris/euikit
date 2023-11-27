@@ -1,4 +1,4 @@
-@props(['type' => '', 'route' => '', 'value' => 'Submit', 'icon' => ''])
+@props(['type' => '', 'route' => '', 'value' => 'Submit', 'icon' => '', 'title' => ''])
 
 @php
 
@@ -89,7 +89,7 @@ if ($type) {
 </div>
 @else
   @if ($route)
-  <a {{ $attributes->merge(['class' => $button . ' pt-2.5 ' . $coloring]) }} href="{{ $route }}">
+  <a {{ $attributes->merge(['class' => $button . ' pt-2.5 ' . $coloring]) }} wire:navigate href="{{ $route }}">
   @else
   <button {{ $attributes->merge(['class' => $button . ' '  . $coloring]) }} >
   @endif
