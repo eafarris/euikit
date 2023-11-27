@@ -3,6 +3,7 @@
 @php
 switch ($type) {
     case 'warning':
+    case 'danger':
     case 'error':
         $icon = $icon == 'none' ? '' : 'heroicon-o-exclamation-circle';
         break;
@@ -26,6 +27,7 @@ if ($type) {
             $coloring = 'bg-green-50 border-green-200 border-t-green-400 text-green-700';
             $iconcolor = 'text-green-500';
             break;
+        case 'danger':
         case 'error':
             $coloring = 'bg-red-50 border-red-200 border-t-red-400 text-red-700';
             $iconcolor = 'text-red-500';
