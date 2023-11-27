@@ -37,7 +37,7 @@ $error_classes = 'border-red-500 text-red-900';
             name="{{ $field }}"
             value="{{ @old($field, $value) }}"
             placeholder="{{ $placeholder ?: $label ?: ucfirst($field) }}"
-            class="block w-full rounded-md shadow-sm sm:text-sm {{ $errors->has($field) ? $error_classes : $color_classes }} "
+            class="block w-full rounded-md shadow-sm sm:text-sm placeholder:italic placeholder:text-slate-400 {{ $errors->has($field) ? $error_classes : $color_classes }} "
             @if ($required) required @endif 
             {{ $attributes->merge(['list' => '']) }}
         />
