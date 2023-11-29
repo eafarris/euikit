@@ -9,7 +9,6 @@
 
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-    @livewireStyles
     @if (isset($head)) {{ $head }} @endif
 </head>
 <body class="font-sans antialiased flex flex-col min-h-screen justify-between">
@@ -42,8 +41,6 @@
 {{ $footer }}
 </footer>
 @endif
-
-@livewireScripts
 
 </body>
 </html><!-- EUIKit app layout -->

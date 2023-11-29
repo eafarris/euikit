@@ -3,6 +3,9 @@
     "description": "Laravel Blade and Livewire components for app scaffolding",
     "type": "library",
     "license": "MIT",
+    "require": {
+      "laravel/livewire": "^3.0"
+    },
     "autoload": {
         "psr-4": {
             "eafarris\\euikit\\": "src"
