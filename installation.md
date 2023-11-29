@@ -1,28 +1,21 @@
 ## Installation
 
-1. Make a "packages/eafarris" directory hierarchy in your Laravel project
-2. Change into the new eafarris directory
-3. Bring in the EUIKit package from GitHub: `git clone https://github.com/eafarris/euikit.git`
-4. Add the package to your project's `composer.json`:
-    1. Within the "autoload":{"psr-4"} section, add `"eafarris\\euikit\\": "packages/eafarris/euikit/src"`
-5. Add the package to your project's `config/app.php`:
-    1. Within the "'providers' array, add `eafarris\euikit\euikitServiceProvider::class,`
-6. From the top of your Laravel project, run `composer install`.
+1. Bring in EUIKit via composer: `composer require eafarris/euikit`
+2. From the top of your Laravel project, run `composer install`.
 
 ### Livewire
 
-EUIKit depends on Laravel Livewire. Bring it in by running `composer require livewire/livewire`.
+EUIKit depends on Laravel Livewire. It will be automatically installed as a dependency.
 
 ### Tailwind and AlpineJS
 
-EUIKit depends on TailwindCSS TailwindCSS Forms, and AlpineJS. To install them:
+EUIKit depends on TailwindCSS and TailwindCSS Forms. To install them:
 
 1. Add the following lines to the "devDependencies" section of your project's package.json:
 
 ```
 "tailwindcss": "~3",
 "autoprefixer": "^10.4.14",
-"alpinejs": "3.4.2",
 "@tailwindcss/forms": "^0.5.4"
 ```
 
