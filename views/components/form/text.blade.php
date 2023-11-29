@@ -25,7 +25,7 @@ $color_classes = 'border-slate-300 dark:bg-slate-400 dark:text-slate-700 focus:b
 $error_classes = 'border-red-500 text-red-900';
 @endphp
 
-<div {{ $attributes->merge(['class' => 'field']) }} id="{{ $field }}">
+<div {{ $attributes->whereDoesntStartWith('wire')->merge(['class' => 'field']) }} id="{{ $field }}">
 @if (!$inline)
     <label for="{{ $field }}" class="block text-sm font-medium text-slate-500 dark:text-slate-300 bg-transparent">
     {{ $label ?: ucfirst($field) }}
@@ -39,6 +39,7 @@ $error_classes = 'border-red-500 text-red-900';
             placeholder="{{ $placeholder ?: $label ?: ucfirst($field) }}"
             class="block w-full rounded-md shadow-sm sm:text-sm placeholder:italic placeholder:text-slate-400 {{ $errors->has($field) ? $error_classes : $color_classes }} "
             @if ($required) required @endif 
+            {{ $attributes->whereStartsWith('wire') }}
             {{ $attributes->merge(['list' => '']) }}
         />
         @if ($icon)
