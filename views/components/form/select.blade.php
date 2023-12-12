@@ -1,4 +1,4 @@
-@props(['field', 'label' => '', 'multi' => false])
+@props(['field', 'label' => '', 'placeholder' => '', 'multi' => false])
 @php
     $color_classes = 'text-slate-700 border-slate-200';
     $error_classes = 'border-red-500 text-red-900';
@@ -14,7 +14,7 @@
               class="appearance-none block border rounded leading-tight focus:outline-none focus:bg-white focus:border-slate-500 w-full {{ $errors->has($field) ? $error_classes : $color_classes }}"
             >
             @unless ($multi)
-            <option value="">Select {{ $label ?: ucfirst($field) }}</option>
+            <option value="">@if ($placeholder) {{ $placeholder }} @else Select {{ $label ?: ucfirst($field) }} @endif
             @endunless
                 {{ $slot }}
             </select>
