@@ -41,7 +41,7 @@ if ($type) {
 
 @if ($type == 'delete')
 {{-- idea taken from https://rappasoft.com/blog/snippet-5-creating-a-simple-but-cool-delete-button-with-alpinejs-and-tailwindcss --}}
-<div x-data="{ initial: true, deleting: false }" class="flex px-8">
+<div x-data="{ initial: true, deleting: false }" class="flex">
   <button 
     x-on:click.prevent="deleting = true; initial = false"
     x-show="initial"
