@@ -1,7 +1,11 @@
-@props(['model' => ''])
+@props(['model' => '', 'label' => ''])
 <div {{ $attributes->whereDoesntStartWith('wire')->merge(['class' => 'field']) }}>
     <label for="notes" class="block text-sm font-medium text-slate-500 dark:text-slate-300 bg-transparent">
+        @empty($label)
         Notes <span class="italic">(<a href="https://www.markdownguide.org/cheat-sheet/" class="underline-offset-2 underline">Markdown</a> supported)</span>
+        @else
+            {{ $label }}
+        @endempty
     </label>
     <div class="mt-1">
 <textarea 
