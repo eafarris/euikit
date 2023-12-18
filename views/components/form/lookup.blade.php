@@ -1,5 +1,7 @@
 <div {{ $attributes->merge(['class' => 'field']) }}>
-    <label for="{{ $name }}" class="block text-sm font-medium text-slate-500 dark:text-slate-300 bg-transparent">{{ $label }}</label>
+    @if (!$inline)
+        <label for="{{ $name }}" class="block text-sm font-medium text-slate-500 dark:text-slate-300 bg-transparent">{{ $label }}</label>
+    @endif
     <div class="control mt-1">
         <div class="select">
             <select

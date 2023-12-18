@@ -11,21 +11,22 @@ class Lookup extends Component {
     public $models; // internal
     public $value; // current value
     public $label;  // text for <label>
+    public $inline = FALSE; // true to hide <label>
     public $optionvalue; // values for form submit
     public $optionfield; // field to hydrate <option>
     public $filterfield; // only show option if true
     public $sortby; // field on model for sorting options
     public $sortdirection; // can pass 'desc' for reverse sort
 
-    public $nolabel = false; // hide the label?
 
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($model, $field = '', $value = '', $label = '', $filterfield = '', $sortby = '', $sortdirection = 'asc', $optionvalue = '', $optionfield = '', $name = '') {
+    public function __construct($model, $field = '', $value = '', $label = '', $inline = FALSE, $filterfield = '', $sortby = '', $sortdirection = 'asc', $optionvalue = '', $optionfield = '', $name = '') {
         $this->label = $label ?: ucfirst($model);
+        $this->inline = $inline;
         $this->model = $model;
         $this->value = $value;
         $this->field = $field ?: $model;
