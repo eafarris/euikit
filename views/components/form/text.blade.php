@@ -1,5 +1,5 @@
 @props(['type' => '', 'label' => '', 'field', 'value' => '',
-    'placeholder' => '', 'icon' => '', 'required' => FALSE, 'inline' => FALSE])
+    'placeholder' => '', 'preicon' => '', 'posticon' => '', 'required' => FALSE, 'inline' => FALSE])
 
 @php
 switch ($field) {
@@ -31,19 +31,31 @@ $error_classes = 'border-red-500 text-red-900';
     {{ $label ?: ucfirst($field) }}
     </label>
 @endif
-    <div class="mt-1">
+    <div class="relative mt-1">
+        @if ($preicon)
+            <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+                @svg($preicon, 'w-5 h-5 text-slate-400')
+            </div>
+        @endif
         <input type="{{ $type }}" 
             id="{{ $field }}"   
             name="{{ $field }}"
             value="{{ @old($field, $value) }}"
             placeholder="{{ $placeholder ?: $label ?: ucfirst($field) }}"
-            class="block w-full rounded-md shadow-sm sm:text-sm placeholder:italic placeholder:text-slate-400 {{ $errors->has($field) ? $error_classes : $color_classes }} "
+            @class(["block w-full rounded-md shadow-sm sm:text-sm",
+                "placeholder:italic placeholder:text-slate-400",
+                $errors->has($field) ? $error_classes : $color_classes,
+                "pl-10" => $preicon,
+                "pr-10" => $posticon,
+            ])
             @if ($required) required @endif 
             {{ $attributes->whereStartsWith('wire') }}
             {{ $attributes->merge(['list' => '']) }}
         />
-        @if ($icon)
-            @svg($icon, ['class' => 'icon is-left', 'style' => 'top: inherit; padding: 5px'])
+        @if ($posticon)
+            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3">
+                @svg($posticon, 'w-5 h-5 text-slate-400')
+            </div>
         @endif
     </div>
 
