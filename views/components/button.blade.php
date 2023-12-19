@@ -1,4 +1,4 @@
-@props(['type' => '', 'route' => '', 'value' => 'Submit', 'icon' => '', 'title' => ''])
+@props(['type' => 'info', 'route' => '', 'value' => 'Submit', 'icon' => '', 'title' => ''])
 
 @php
 
@@ -17,7 +17,7 @@ if ($type) {
       $coloring = 'border-transparent bg-transparent hover:border-slate-100 text-blue-600 hover:bg-blue-200 hover:text-slate-800';
       break;
     case 'info':
-      $coloring = 'bg-blue-300 text-blue-800 hover:bg-blue-600 hover:text-white disabled:opacity-50';
+      $coloring = 'bg-slate-300 text-slate-800 hover:bg-slate-600 hover:text-white disabled:opacity-50';
       break;
     case 'success':
       $coloring = 'bg-green-400 text-green-800 hover:bg-green-600 hover:text-white disabled:opacity-50';
