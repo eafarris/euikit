@@ -15,4 +15,7 @@
 >
 {{ $model == '' ? '' : $model->notes }}</textarea>
     </div>
+    @error('notes')
+        <p class="mt-2 text-sm text-red-600">{{ $message }}</p><!-- .mt-2 text-sm text-red-600 -->
+    @enderror
 </div><!-- EUIKit Notes field -->
