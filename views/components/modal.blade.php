@@ -25,7 +25,7 @@
                 {{ $slot }}
             </div>
             @if ($footer)
-                <footer class="mt-8 py-3 px-6 border-2 border-slate-300 bg-transparent text-slate-500 rounded-lg"
+                <footer class="mt-8 py-3 px-6 border-2 border-slate-300 bg-transparent text-slate-500 rounded-lg">
                     {{ $footer }}
                 </footer>
             @endif
