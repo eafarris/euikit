@@ -1,5 +1,6 @@
-@props(['type' => '', 'label' => '', 'field', 'value' => '',
-    'placeholder' => '', 'preicon' => '', 'posticon' => '', 'required' => FALSE, 'inline' => FALSE])
+@props(['type' => '', 'label' => '', 'field', 'value' => '', 'placeholder' => '',
+    'lefticon' => '', 'righticon' => '',
+    'required' => FALSE, 'nolabel' => FALSE, 'noplaceholder' => FALSE])
 
 @php
 switch ($field) {
@@ -26,35 +27,37 @@ $error_classes = 'border-red-500 text-red-900';
 @endphp
 
 <div {{ $attributes->whereDoesntStartWith('wire')->merge(['class' => 'field']) }} id="{{ $field }}">
-@if (!$inline)
+@unless ($nolabel)
     <label for="{{ $field }}" class="block text-sm font-medium text-slate-500 dark:text-slate-300 bg-transparent">
     {{ $label ?: ucfirst($field) }}
     </label>
-@endif
+@endunless
     <div class="relative mt-1">
-        @if ($preicon)
+        @if ($lefticon)
             <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
-                @svg($preicon, 'w-5 h-5 text-slate-400')
+                @svg($lefticon, 'w-5 h-5 text-slate-400')
             </div>
         @endif
         <input type="{{ $type }}" 
             id="{{ $field }}"   
             name="{{ $field }}"
             value="{{ @old($field, $value) }}"
+            @unless ($noplaceholder)
             placeholder="{{ $placeholder ?: $label ?: ucfirst($field) }}"
+            @endunless
             @class(["block w-full rounded-md shadow-sm sm:text-sm",
                 "placeholder:italic placeholder:text-slate-400",
                 $errors->has($field) ? $error_classes : $color_classes,
-                "pl-10" => $preicon,
-                "pr-10" => $posticon,
+                "pl-10" => $lefticon,
+                "pr-10" => $righticon,
             ])
             @if ($required) required @endif 
             {{ $attributes->whereStartsWith('wire') }}
             {{ $attributes->merge(['list' => '']) }}
         />
-        @if ($posticon)
+        @if ($righticon)
             <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3">
-                @svg($posticon, 'w-5 h-5 text-slate-400')
+                @svg($righticon, 'w-5 h-5 text-slate-400')
             </div>
         @endif
     </div>
