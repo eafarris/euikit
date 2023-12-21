@@ -89,9 +89,9 @@ if ($type) {
 </div>
 @else
   @if ($route)
-  <a {{ $attributes->merge(['class' => $button . ' pt-2.5 ' . $coloring]) }} wire:navigate href="{{ $route }}">
+  <a {{ $attributes->merge(['class' => $button . ' pt-2.5 ' . $coloring]) }} wire:navigate href="{{ $route }}" title="{{ $title }}">
   @else
-  <button {{ $attributes->merge(['class' => $button . ' '  . $coloring]) }} >
+  <button {{ $attributes->merge(['class' => $button . ' '  . $coloring]) }} title="{{ $title }}">
   @endif
     @if ($icon)
       <span>
