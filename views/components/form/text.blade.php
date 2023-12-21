@@ -11,6 +11,9 @@ switch ($field) {
     case 'email':
         $autotype = 'email';
         break;
+    case 'url':
+        $autotype = 'url';
+        break;
     case 'phone':
     case 'telephone':
     case 'tel':
