@@ -22,5 +22,5 @@
     }
 @endphp
 <button title="{{ $title }}" {{ $attributes->merge(['class' => $button . ' ' . $hovercoloring]) }}>
-    @svg($icon, 'w-6 h-6')
+    @svg($icon, 'w-4 h-4')
 </button>
