@@ -10,6 +10,10 @@ There's nothing too fancy about the `<x-euikit::modal>` component itself. It has
 
 A small script is part of the `<x-euikit::layouts.app>` component to show modals. A button must call `onclick="$modals.show('')` and pass in the name of the modal as the only argument to the `show()` method. 
 
+## Closing the modal
+
+The modal code is designed to close the modal when the backdrop is clicked, or when ESC is pressed. To dismiss the modal from code (for example, a "Cancel" button), call "show = false" from a @click handler.
+
 ## What happens inside the modal
 
 Well, that's up to you. Could be anything, from a simple cancel button to a whole form. The modal could include a Livewire component itself.
