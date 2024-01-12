@@ -1,6 +1,6 @@
-@props(['type' => 'info', 'title' => '', 'icon' => ''])
+@props(['route' => '', 'type' => 'info', 'title' => '', 'icon' => ''])
 @php
-    $button = 'p-2 bg-slate-300 text-slate-500';
+    $button = 'p-2 bg-slate-300 text-slate-500 transition scale-y-110';
     switch($type) {
         case 'success':
         case 'green':
@@ -21,6 +21,14 @@
             break;
     }
 @endphp
-<button title="{{ $title }}" {{ $attributes->merge(['class' => $button . ' ' . $hovercoloring]) }}>
+@if ($route)
+    <a {{ $attributes->merge(['class' => $button . ' inline-block ' . $hovercoloring]) }} href="{{ $route }}" title="{{ $title }}">
+@else
+    <button title="{{ $title }}" {{ $attributes->merge(['class' => $button . ' ' . $hovercoloring]) }}>
+@endif
     @svg($icon, 'w-4 h-4')
-</button>
+@if ($route)
+    </a>
+@else
+    </button>
+@endif
