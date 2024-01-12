@@ -1,6 +1,6 @@
 @props(['type' => 'info', 'title' => '', 'icon' => ''])
 @php
-    $button = 'p-2 first:rounded-l-md last:rounded-r-md relative inline-flex items-center bg-slate-300 text-slate-500 hover:scale-y-110';
+    $button = 'p-2 first:rounded-l-md last:rounded-r-md relative inline-flex items-center bg-slate-300 text-slate-500 transition hover:scale-y-110';
     switch($type) {
         case 'success':
         case 'green':
