@@ -40,7 +40,7 @@ if ($type) {
 @endphp
 
 @if ($type == 'delete')
-{{-- idea taken from https://rappasoft.com/blog/snippet-5-creating-a-simple-but-cool-delete-button-with-alpinejs-and-tailwindcss --}}
+{{-- modified from https://rappasoft.com/blog/snippet-5-creating-a-simple-but-cool-delete-button-with-alpinejs-and-tailwindcss --}}
 <div x-data="{ initial: true, deleting: false }" class="flex">
   <button 
     x-on:click.prevent="deleting = true; initial = false"
@@ -89,7 +89,7 @@ if ($type) {
 </div>
 @else
   @if ($route)
-  <a {{ $attributes->merge(['class' => $button . ' pt-2.5 ' . $coloring]) }} wire:navigate href="{{ $route }}" title="{{ $title }}">
+  <a {{ $attributes->merge(['class' => $button . ' pt-2.5 ' . $coloring]) }} href="{{ $route }}" title="{{ $title }}">
   @else
   <button {{ $attributes->merge(['class' => $button . ' '  . $coloring]) }} title="{{ $title }}">
   @endif
