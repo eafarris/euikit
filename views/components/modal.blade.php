@@ -1,6 +1,5 @@
 @props(['name'])
 <div id="{{ $name }}"
-    style="display:none"
     x-data="{ show: false, name: '{{ $name }}' }"
     x-show="show" 
     @keydown.escape.window="show=false"
