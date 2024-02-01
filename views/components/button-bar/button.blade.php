@@ -1,4 +1,4 @@
-@props(['type' => 'info', 'title' => '', 'icon' => ''])
+@props(['type' => 'info', 'title' => '', 'icon' => '', 'route' => ''])
 @php
     $button = 'p-2 first:rounded-l-md last:rounded-r-md relative inline-flex items-center bg-slate-300 text-slate-500 transition hover:scale-y-110';
     switch($type) {
@@ -21,6 +21,14 @@
             break;
     }
 @endphp
+@if ($route)
+<a {{ $attributes->merge(['class' => $button . $hovercoloring]) }} href="{{ $route }}" title="{{ $title }}">
+@else
 <button title="{{ $title }}" {{ $attributes->merge(['class' => $button . ' ' . $hovercoloring]) }}>
+@endif
     @svg($icon, 'w-4 h-4')
+@if ($route)
+</a>
+@else
 </button>
+@endif
