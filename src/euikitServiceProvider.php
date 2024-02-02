@@ -1,5 +1,6 @@
 <?php namespace eafarris\euikit;
 use Livewire\Livewire;
+use eafarris\euikit\Livewire\ModelTag;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
 
@@ -13,6 +14,7 @@ class euikitServiceProvider extends ServiceProvider {
         Blade::componentNamespace('eafarris\euikit\\Components', 'euikit');
 
         // Livewire components
+        Livewire::component('euikit-modeltag', ModelTag::class);
 
         if ($this->app->runningInConsole()) {
             $this->bootForConsole();
