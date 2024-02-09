@@ -10,17 +10,16 @@
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @if (isset($head)) {{ $head }} @endif
+    @livewireStyles()
 </head>
-<body class="font-sans antialiased"
+<body class="font-sans subpixel-antialiased"
     x-data="sidebar()"
     @resize.window="handleResize()"
 >
 
 @if (isset($header))
-<header class="h-16 text-3xl bg-gradient-to-r from-slate-100 from-50% to-slate-50 border-b-2 border-slate-200 dark:from-slate-700 dark:border-slate-900 dark:to-slate-600 dark:text-slate-200">
-    <div class="flex items-center justify-between text-slate-500">
-        {{ $header }}
-    </div>
+<header class="h-16 flex flex-row items-center justify-between text-3xl text-slate-500 px-4 bg-gradient-to-r from-slate-100 from-50% to-slate-50 border-b-2 border-slate-200 dark:from-slate-700 dark:border-slate-900 dark:to-slate-600 dark:text-slate-200">
+    {{ $header }}
 </header>
 @endif
 
@@ -63,6 +62,8 @@
         }
     }
 </script>
+
+@stack('modals')
 
 {{-- AlpineJS-based sidebar show/hide adapted from https://github.com/zaxwebs/tailwind-alpine/blob/main/sidebar-2.html --}}
 <script type="text/javascript">
@@ -108,5 +109,6 @@
         }
     }
 </script>
+@livewireScripts()
 </body>
 </html><!-- EUIKit app layout -->
