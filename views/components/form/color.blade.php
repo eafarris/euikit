@@ -11,6 +11,7 @@
             @if ($required) required @endif
             @if ($min) min="{{ $min }}" @endif
             @if ($max) max="{{ $max }}" @endif
+            {{ $attributes->merge(['list' => '']) }}
         />
     </div>
 
