@@ -2,7 +2,7 @@
 
 @php
 
-$button = 'border-transparent inline-block select-none border font-normal text-base whitespace-no-wrap rounded py-1 px-3 leading-normal no-underline h-12 flex-none justify-center items-center transition hover:scale-110';
+$button = 'border-transparent inline-block select-none border font-normal text-base whitespace-no-wrap rounded py-1 px-3 leading-normal no-underline h-12 flex-none justify-center items-center transition duration-150 hover:scale-105';
 $coloring = '';
 if ($type) {
   switch ($type) {
