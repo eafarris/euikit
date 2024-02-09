@@ -1,4 +1,5 @@
 <?php namespace eafarris\euikit;
+use eafarris\euikit\Livewire\SheetImport;
 use Livewire\Livewire;
 use eafarris\euikit\Livewire\ModelTag;
 use Illuminate\Support\Facades\Blade;
@@ -15,6 +16,7 @@ class euikitServiceProvider extends ServiceProvider {
 
         // Livewire components
         Livewire::component('euikit-modeltag', ModelTag::class);
+        Livewire::component('euikit-sheetimport', SheetImport::class);
 
         if ($this->app->runningInConsole()) {
             $this->bootForConsole();
