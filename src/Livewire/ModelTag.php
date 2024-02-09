@@ -1,5 +1,4 @@
 <?php namespace eafarris\euikit\Livewire;
-use App\Models\User;
 use Livewire\Component;
 use Str;
 
