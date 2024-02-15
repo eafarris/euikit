@@ -11,7 +11,7 @@
             
             @foreach ($tags as $tag)
             <div class="inline-block text-sm rounded-full bg-slate-200 px-3 py-1">
-                {{ $tag['name'] }}
+                {{ $tag[$valuefield] }}
                 <span wire:click="remove({{ $loop->index }})">
                     @svg('heroicon-c-x-mark', 'inline-block align-text-top pl-1 w-5 h-5')
                 </span>
@@ -20,9 +20,9 @@
             
             <datalist id="candidates">
                 @foreach($candidates as $candidate)
-                <option wire:key="{{ $candidate->id }}"
-                    data-value="{{ $candidate->id }}"
-                    value="{{ $candidate->name }}">
+                <option wire:key="{{ $candidate->$valuefield }}"
+                    data-value="{{ $candidate->$valuefield }}"
+                    value="{{ $candidate->$searchfield }}">
                 </option>
                 @endforeach
             </datalist>

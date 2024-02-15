@@ -25,7 +25,7 @@ class ModelTag extends Component {
     }
 
     public function updatedFind($find) {
-        $this->candidates = $this->model::where($this->searchfield, 'like', '%'.$find.'%')->get(['id', 'name']);
+        $this->candidates = $this->model::where($this->searchfield, 'like', '%'.$find.'%')->get([$this->valuefield, $this->searchfield]);
     }
 
     public function addtag() {
@@ -37,6 +37,6 @@ class ModelTag extends Component {
     }
 
     public function remove($index) {
-        $this->tags = $this->tags->except($index);
+        unset($this->tags[$index]);
     }
 }
