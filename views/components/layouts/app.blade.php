@@ -9,7 +9,9 @@
 
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-    @if (isset($head)) {{ $head }} @endif
+    @isset($head)
+        {{ $head }}
+    @endisset
     @livewireStyles()
 </head>
 <body class="font-sans subpixel-antialiased"
@@ -17,27 +19,27 @@
     @resize.window="handleResize()"
 >
 
-@if (isset($header))
+@isset($header)
 <header class="h-16 flex flex-row items-center justify-between text-3xl text-slate-500 px-4 bg-gradient-to-r from-slate-100 from-50% to-slate-50 border-b-2 border-slate-200 dark:from-slate-700 dark:border-slate-900 dark:to-slate-600 dark:text-slate-200">
     {{ $header }}
 </header>
-@endif
+@endisset
 
 <main class="container grid grid-cols-1 auto-rows-fr sm:grid-cols-6 grow min-h-screen min-w-full overflow-auto">
-@if (isset($left))
+@isset($left)
 <div class="col-span-1 bg-slate-100 dark:bg-slate-600"
     x-show="isOpen()"
 >
-    <div @click.away="handleAway()">
-        <a @click.prevent="handleClose()" href="#">@svg('heroicon-o-arrow-left', 'w-6 h-6')</a>
+    <div @click.away="handleAway()" class="relative">
+        <a @click.prevent="handleClose()" href="#" class="absolute inset-0 text-slate-500" title="Hide sidebar">@svg('heroicon-o-chevron-left', 'w-6 h-6')</a>
     </div>
     {{ $left }}
 </div><!-- left -->
 <div class="bg-gradient-to-br from-slate-50 via-slate-100 from-20% to-white dark:from-slate-800 dark:to-slate-700 min-w-fit"
     :class="isOpen() ? 'col-span-5' : 'col-span-6'"
 >
-    <div x-show="!isOpen()">
-        <a x-show="!isOpen()" @click.prevent="handleOpen()" href="#">@svg('heroicon-o-arrow-right', 'w-6 h-6')</a>
+    <div x-show="!isOpen()" class="relative">
+        <a x-show="!isOpen()" @click.prevent="handleOpen()" href="#" class="absolute inset-0 text-slate-400" title="Show sidebar">@svg('heroicon-o-chevron-right', 'w-6 h-6')</a>
     </div>
     {{ $slot }}
 </div><!-- right -->
@@ -45,14 +47,14 @@
 <div class="mx-auto col-span-6">
     {{ $slot }}
 </div>
-@endif
+@endisset
 </main>
 
-@if (isset($footer))
+@isset($footer)
 <footer class="h-16 bg-slate-100 border-t-2 border-slate-300 dark:bg-slate-700 dark:border-slate-900">
 {{ $footer }}
 </footer>
-@endif
+@endisset
 
 {{-- Modal component adapted from https://laracasts.com/series/modals-with-the-tall-stack --}}
 <script type="text/javascript">
@@ -62,8 +64,6 @@
         }
     }
 </script>
-
-@stack('modals')
 
 {{-- AlpineJS-based sidebar show/hide adapted from https://github.com/zaxwebs/tailwind-alpine/blob/main/sidebar-2.html --}}
 <script type="text/javascript">
