@@ -12,12 +12,17 @@ class SheetImport extends Component {
     public $headerrow = TRUE;
     public $importfield;
     public $importfile;
+    public $iteration = 0;
     public $type;
 
     public function mount($fields = [], $type = 'button') {
         $this->type = $type;
         $this->fields = $fields;
-        $this->importfield = Str::wrap(implode('","', $fields), '"') . "\n";
+        $this->setImportfield();
+    }
+
+    public function setImportfield() {
+        $this->importfield = Str::wrap(implode('","', $this->fields), '"') . "\n";
     }
 
     public function render() {
@@ -37,6 +42,9 @@ class SheetImport extends Component {
             $lines = Arr::except($lines, 0);
         } // endif header row ()
         $items = $this->parse($lines);
+        $this->importfile = NULL;
+        $this->iteration++; // see https://talltips.novate.co.uk/livewire/livewire-file-uploads-using-s3#removing-filename-from-input-field-after-upload
+        $this->setImportfield();
         $this->dispatch('imported', importedItems: $items);
     }
 
