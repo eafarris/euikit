@@ -11,7 +11,7 @@ if (!empty($value)) {
 @endphp
 
 
-<div {{ $attributes->merge(['class' => 'field']) }} id="{{ $field }}">
+<div {{ $attributes->whereDoesntStartWith('wire')->merge(['class' => 'field']) }} id="{{ $field }}">
     <label for="{{ $field }}" class="block text-sm font-medium text-slate-500 bg-transparent">{{ $label ?: ucfirst($field) }}</label>
     <div class="control mt-1">
         <input type="date"
@@ -19,6 +19,7 @@ if (!empty($value)) {
             name="{{ $field }}"
             value="{{ @old($field, $value) }}"
             class="block w-full rounded-md shadow-sm sm:text-sm {{ $errors->has($field) ? $error_classes : $color_classes }} "
+            {{ $attributes->whereStartsWith('wire') }}
             @if ($required) required @endif
             @if ($min) min="{{ $min }}" @endif
             @if ($max) max="{{ $max }}" @endif
