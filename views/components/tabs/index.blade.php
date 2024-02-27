@@ -1,4 +1,5 @@
-<div x-data="{ tab: window.location.hash ? window.location.hash.substring(1) : '' }">
+@props(['default'])
+<div x-data="{ tab: window.location.hash ? window.location.hash.substring(1) : '{{ $default }}' }">
     <div class="sm:hidden">
         <label for="tabs" class="sr-only">Select a tab</label>
         <select name="tabs" id="tabs"
