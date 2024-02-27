@@ -1,4 +1,4 @@
-@props(['name', 'lefticon', 'righticon', 'badge_type' => 'info', 'badge_value' => 0])
+@props(['name', 'lefticon', 'righticon', 'badge_type' => 'info', 'badge'])
 @php
     $slug = Str::slug($name);
 @endphp
@@ -16,9 +16,9 @@
     @isset($righticon)
         @svg($righticon, 'inline w-6 h-6 pl-1')
     @endisset
-    @if($badge_value > 0)
-        <x-e::tag type="{{ $badge_type }}">{{ $badge_value }}</x-e::tag>
-    @endif
+    @isset($badge)
+        <x-e::tag type="{{ $badge_type }}">{{ $badge }}</x-e::tag>
+    @endisset
 </a>
 
 <template x-teleport="select#tabs">
