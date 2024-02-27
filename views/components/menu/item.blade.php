@@ -1,4 +1,4 @@
-@props(['icon' => '', 'route' => ''])
+@props(['icon', 'route', 'badge'])
 @php
 $classes = 'shrink-1 flex items-center p-2 pr-0 text-slate-500 dark:text-slate-200 hover:bg-slate-200 dark:hover:bg-slate-700 hover:rounded-tl-lg hover:rounded-bl-lg';
 if ($route == url()->current()) {
@@ -7,8 +7,11 @@ if ($route == url()->current()) {
 @endphp
 
 <a href="{{ $route }}" {{ $attributes->merge(['class' => $classes]) }}>
-    @if($icon)
+    @isset($icon)
         @svg($icon, 'w-6 h-6 pr-1 inline')
-    @endif
+    @endisset
 {{ $slot }}
+    @isset($badge)
+    <x-e::tag type="{{ $badge_style}}">{{ $badge }}</x-e::tag>
+    @endisset
 </a>
