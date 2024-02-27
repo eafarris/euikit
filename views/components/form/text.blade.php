@@ -3,6 +3,10 @@
     'required' => FALSE, 'nolabel' => FALSE, 'noplaceholder' => FALSE])
 
 @php
+    
+    if ($attributes->whereStartsWith('wire:model') && !isset($field)) {
+        $field = $attributes->whereStartsWith('wire:model')->first();
+    }
 switch ($field) {
     case 'pass':
     case 'password':
@@ -13,6 +17,9 @@ switch ($field) {
         break;
     case 'url':
         $autotype = 'url';
+        break;
+    case 'search':
+        $autotype = 'search';
         break;
     case 'phone':
     case 'telephone':
@@ -25,8 +32,8 @@ switch ($field) {
 }
 $type = $type ?: $autotype;
 
-if ($type == 'search') {
-$lefticon = 'heroicon-o-magnifying-glass';
+if ($type == 'search' && $lefticon == '') {
+    $lefticon = 'heroicon-o-magnifying-glass';
 }
 
 $color_classes = 'border-slate-300 dark:bg-slate-400 dark:text-slate-700 focus:border-indigo-500 focus:ring-indigo-500';
