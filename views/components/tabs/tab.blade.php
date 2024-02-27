@@ -1,15 +1,24 @@
-@props(['name'])
+@props(['name', 'lefticon', 'righticon', 'badge_type' => 'info', 'badge_value' => 0])
 @php
     $slug = Str::slug($name);
 @endphp
 
 <a href="#" @click.prevent="tab = '{{ $slug }}'; window.location.hash = tab"
-  class="border-transparent group inline-flex items-center py-4 px-1 text-sm font-medium"
+  class="group inline-flex items-center py-4 px-1 text-sm font-medium"
   :class="tab === '{{ $slug }}'
     ? 'text-slate-600 border-b-2 border-slate-600'
-    : 'text-slate-400 hover:text-slate-500 hover:border-b-2 hover:border-slate-500'
+    : 'text-slate-400 hover:text-slate-500 border-b-2 border-transparent hover:border-slate-400'
 ">
+    @isset($lefticon)
+        @svg($lefticon, 'inline w-6 h-6 pr-1')
+    @endisset
     <span>{{ $name }}</span>
+    @isset($righticon)
+        @svg($righticon, 'inline w-6 h-6 pl-1')
+    @endisset
+    @if($badge_value > 0)
+        <x-e::tag type="{{ $badge_type }}">{{ $badge_value }}</x-e::tag>
+    @endif
 </a>
 
 <template x-teleport="select#tabs">
