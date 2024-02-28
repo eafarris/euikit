@@ -1,7 +1,7 @@
 # euikit
 Eric's UIKit (euikit) — Laravel Blade and Livewire components for UI scaffolding
 
-EUIKit ~~is~~ will be a set of components designed to rapidly scaffold a Laravel application with a consistent and attractive look-and-feel. Using a combination of Blade components and Livewire components, euikit is designed to get the easy stuff out of the way, so the hard stuff is possible.
+EUIKit is a set of components designed to rapidly scaffold a Laravel application with a consistent and attractive look-and-feel. Using a combination of Blade components and Livewire components, euikit is designed to get the easy stuff out of the way, so the hard stuff is possible.
 
 EUIKit includes some powerful form building components. In addition to the standard field types, it includes a "lookup" component that can magically hydrate a select field from another Laravel model. There is a "textlist" component that presents a way for users to add arbitrary text entries to a list, which is treated as a Laravel Collection on the back end.
 
