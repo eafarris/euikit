@@ -11,7 +11,7 @@ if ($route == url()->current()) {
         @svg($icon, 'w-6 h-6 pr-1 inline')
     @endisset
 {{ $slot }}
-    @if($badge != 0)
+    @isset($badge)
     <x-e::tag type="{{ $badge_style }}">{{ $badge }}</x-e::tag>
-    @endif
+    @endisset
 </a>
