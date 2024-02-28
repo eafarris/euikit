@@ -13,7 +13,8 @@
     cols="60" rows="10" name="notes" id="notes"
     {{ $attributes->whereStartsWith('wire') }}
 >
-{{ $model == '' ? '' : $model->notes }}</textarea>
+{{ $model == '' ? '' : $model->notes }}
+</textarea>
     </div>
     @error('notes')
         <p class="mt-2 text-sm text-red-600">{{ $message }}</p><!-- .mt-2 text-sm text-red-600 -->
