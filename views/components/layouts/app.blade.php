@@ -25,7 +25,7 @@
 </header>
 @endisset
 
-<main class="container grid grid-cols-1 auto-rows-fr sm:grid-cols-6 grow min-h-screen min-w-full overflow-auto">
+<main class="container grid grid-cols-1 auto-rows-fr sm:grid-cols-6 grow min-h-screen min-w-full">
 @isset($left)
 <div class="col-span-1 bg-slate-100 dark:bg-slate-600"
     x-show="isOpen()"
