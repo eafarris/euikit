@@ -23,7 +23,7 @@
                 {{ $slot }}
             </div>
             @isset ($footer)
-                <footer class="mt-8 py-3 px-6 border-2 border-slate-300 bg-transparent text-slate-500 rounded-lg">
+                <footer class="flex justify-between mt-8 py-3 px-6 border-2 border-slate-300 bg-transparent text-slate-500 rounded-lg">
                     {{ $footer }}
                 </footer>
             @endisset
