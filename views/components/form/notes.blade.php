@@ -13,7 +13,9 @@
     cols="60" rows="10" name="notes" id="notes"
     {{ $attributes->whereStartsWith('wire') }}
 >
+@if (!$attributes->whereStartsWith('wire'))
 {{ $model == '' ? '' : $model->notes }}
+@endif
 </textarea>
     </div>
     @error('notes')
