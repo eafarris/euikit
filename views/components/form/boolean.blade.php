@@ -1,5 +1,11 @@
 @props(['field', 'label' => '', 'value' => '', 'type' => 'radio'])
 
+@php // "field" is optional if wire:model exists
+if ($attributes->whereStartsWith('wire:model') && !isset($field)) {
+    $field = $attributes->whereStartsWith('wire:model')->first();
+}
+@endphp
+
 <div @class(['field']) {{ $attributes->whereDoesntStartWith('wire') }}>
     @if ($type == 'radio')
         <label for="{{ $field }}" class="block text-sm font-medium text-slate-500 bg-transparent">{{ $label == '' ? ucfirst($field) : $label }}</label>
