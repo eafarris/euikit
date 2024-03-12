@@ -3,6 +3,11 @@
 @php
     $color_classes = 'border-slate-300 dark:bg-slate-400 dark:text-slate-700 focus:border-indigo-500 focus:ring-indigo-500';
     $error_classes = 'border-red-500 text-red-900';
+
+    // support for wire:model instead of field
+    if ($attributes->whereStartsWith('wire:model') && !isset($field)) {
+        $field = $attributes->whereStartswith('wire:model')->first();
+    }
 @endphp
 
 <div {{ $attributes->whereDoesntStartWith('wire')->merge(['class' => 'field']) }} id="{{ $field }}">

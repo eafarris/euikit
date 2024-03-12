@@ -1,6 +1,10 @@
 @props(['label' => '', 'field', 'value' => '', 'min' => '', 'max' => '', 'required' => FALSE])
 
 @php
+if ($attributes->whereStartsWith('wire:model') && !isset($field)) {
+    $field = $attributes->whereStartsWith('wire:model')->first();
+}
+
 $color_classes = 'border-slate-300 focus:border-indigo-500 focus:ring-indigo-500';
 $error_classes = 'border-red-500 text-red-500';
 

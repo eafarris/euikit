@@ -14,7 +14,7 @@
     {{ $attributes->whereStartsWith('wire') }}
 >
 @if (!$attributes->whereStartsWith('wire'))
-{{ $model == '' ? '' : $model->notes }}
+{{ $model == '' ?: $model->notes }}
 @endif
 </textarea>
     </div>
