@@ -17,6 +17,8 @@ class Lookup extends Component {
     public $filterfield; // only show option if true
     public $sortby; // field on model for sorting options
     public $sortdirection; // can pass 'desc' for reverse sort
+    public $any = FALSE; // Allow for an "any" choice
+    public $none = FALSE; // Allow for a "none" choice
 
 
     /**
@@ -24,7 +26,7 @@ class Lookup extends Component {
      *
      * @return void
      */
-    public function __construct($model, $field = '', $value = '', $label = '', $inline = FALSE, $filterfield = '', $sortby = '', $sortdirection = 'asc', $optionvalue = '', $optionfield = '', $name = '') {
+    public function __construct($model, $field = '', $value = '', $label = '', $inline = FALSE, $filterfield = '', $sortby = '', $sortdirection = 'asc', $optionvalue = '', $optionfield = '', $name = '', $any = FALSE, $none = FALSE) {
         $this->label = $label ?: ucfirst($model);
         $this->inline = $inline;
         $this->model = $model;
@@ -36,6 +38,8 @@ class Lookup extends Component {
         $this->optionvalue = $optionvalue ?: $model . '_id';
         $this->optionfield = $optionfield ?: $this->field;
         $this->name = $name ?: $field ?: $model . '_id';
+        $this->any = $any;
+        $this->none = $none;
     }
 
     public function getModel() { // 
