@@ -20,16 +20,20 @@ if ($type) {
       $coloring = 'bg-slate-300 text-slate-800 hover:bg-slate-600 hover:text-white disabled:opacity-50';
       break;
     case 'success':
+    case 'green':
       $coloring = 'bg-green-400 text-green-800 hover:bg-green-600 hover:text-white disabled:opacity-50';
       break;
     case 'warning':
+    case 'yellow':
       $coloring = 'bg-yellow-300 text-yellow-800 hover:bg-yellow-500 hover:text-slate-100 disabled:opacity-50';
       break;
     case 'danger':
     case 'delete':
+    case 'red':
       $coloring = 'bg-red-300 text-red-800 hover:bg-red-500 hover:text-slate-100 disabled:opacity-50';
       break;
     case 'primary':
+    case 'blue':
       $coloring = 'bg-blue-300 text-blue-800 hover:bg-blue-400 hover:text-gray-200 disabled:opacity-50';
       break;
     case 'ghost':
