@@ -1,4 +1,5 @@
 @props(['name'])
+<template x-teleport="body">
 <div id="{{ $name }}" 
     x-data="{ show: false, name: '{{ $name }}' }"
     x-show="show" 
@@ -30,3 +31,4 @@
         </div>
     </div>
 </div>
+</template>
