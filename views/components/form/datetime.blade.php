@@ -1,7 +1,7 @@
 @props(['label' => '', 'field', 'value' => '', 'min' => '', 'max' => '', 'required' => false, 'nolabel' => false])
 
 @php
-$color_classes = 'border-slate-300 focus:border-indigo-500 focus:ring-indigo-500';
+$color_classes = 'border-slate-300 focus:border-sky-300 focus:ring-sky-300';
 $error_classes = 'border-red-500 text-red-500';
 
 if (!empty($value)) {

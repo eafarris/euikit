@@ -4,7 +4,7 @@
         <label for="tabs" class="sr-only">Select a tab</label>
         <select name="tabs" id="tabs"
             x-model="tab"
-            class="block w-full rounded-md border-slate-300 focus:border-indigo-500 focus:ring-indigo-500">
+            class="block w-full rounded-md border-slate-300 focus:border-sky-300 focus:ring-sky-300">
         </select>
     </div>
     <div class="hidden sm:block">

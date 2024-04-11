@@ -36,7 +36,7 @@ if ($type == 'search' && $lefticon == '') {
     $lefticon = 'heroicon-o-magnifying-glass';
 }
 
-$color_classes = 'border-slate-300 dark:bg-slate-400 dark:text-slate-700 focus:border-indigo-500 focus:ring-indigo-500';
+$color_classes = 'border-slate-300 dark:bg-slate-400 dark:text-slate-700 focus:border-sky-300 focus:ring-sky-300';
 $error_classes = 'border-red-500 text-red-900';
 @endphp
 
