@@ -1,7 +1,13 @@
-@props(['label' => '', 'field', 'value' => '', 'min' => '', 'max' => '', 'required' => false, 'nolabel' => false])
+@props(['field', 'label' => '', 'value' => '', 'min' => '', 'max' => '', 'required' => FALSE, 'nolabel' => FALSE, 'help' => ''])
 
 @php
-$color_classes = 'border-slate-300 focus:border-sky-300 focus:ring-sky-300';
+
+if ($attributes->whereStartsWith('wire:model') && !isset($field)) {
+    $field = $attributes->whereStartsWith('wire:model')->first();
+}
+
+$common_classes = 'block w-1/6 min-w-[200px] rounded-md shadow-sm sm:text-sm border leading-tight appearance-none placeholder:italic';
+$color_classes = 'border-slate-300 dark:bg-slate-400 dark:text-slate-700 focus:border-sky-300 focus:ring-sky-300 placeholder:text-slate-400 text-slate-500';
 $error_classes = 'border-red-500 text-red-500';
 
 if (!empty($value)) {
@@ -11,20 +17,28 @@ if (!empty($value)) {
 @endphp
 
 
-<div {{ $attributes->merge(['class' => 'field']) }} id="{{ $field }}"><!-- InsideUIKit Date input -->
+<div {{ $attributes->whereDoesntStartWith('wire')->merge(['class' => 'field']) }} id="{{ $field }}">
     @unless($nolabel)
-    <label for="{{ $field }}" class="block text-sm font-medium text-slate-500 bg-transparent">{{ $label ?: ucfirst($field) }}</label>
+        <label for="{{ $field }}" class="block text-sm font-medium text-slate-500 dark:text-slate-300 bg-transparent">
+            {{ $label ?: ucfirst($field) }}
+        </label>
     @endunless
-    <div class="control mt-1">
+    <div class="relative">
         <input type="datetime-local"
             id="{{ $field }}"
             name="{{ $field }}"
             value="{{ @old($field, $value) }}"
-            class="block w-full rounded-md shadow-sm sm:text-sm {{ $errors->has($field) ? $error_classes : $color_classes }} "
+            @class([$common_classes,
+                $color_classes => ! $errors->has($field),
+                $error_classes => $errors->has($field),
+            ])
             @if ($required) required @endif
             @if ($min) min="{{ $min }}" @endif
             @if ($max) max="{{ $max }}" @endif
         />
+        @isset($help)
+            <x-e::help>{{ $help }}</x-e::help>
+        @endisset
     </div><!-- .control -->
 
     @error($field)

@@ -1,13 +1,14 @@
 <?php namespace eafarris\euikit;
-use eafarris\euikit\Livewire\SheetImport;
 use Livewire\Livewire;
-use eafarris\euikit\Livewire\ModelTag;
 use Illuminate\Support\Facades\Blade;
+use eafarris\euikit\Livewire\Textlist;
+use eafarris\euikit\Livewire\ModelTag;
+use eafarris\euikit\Livewire\SheetImport;
 use Illuminate\Support\ServiceProvider;
 
 class euikitServiceProvider extends ServiceProvider {
 
-    public function boot() : void { // 
+    public function boot() : void { //
         $this->loadViewsFrom(__DIR__ . '/../views', 'euikit');
         $this->loadViewsFrom(__DIR__ . '/../views', 'e');
 
@@ -15,6 +16,7 @@ class euikitServiceProvider extends ServiceProvider {
         Blade::componentNamespace('eafarris\euikit\\Components', 'euikit');
 
         // Livewire components
+        Livewire::component('euikit-textlist', Textlist::class);
         Livewire::component('euikit-modeltag', ModelTag::class);
         Livewire::component('euikit-sheetimport', SheetImport::class);
 
@@ -23,11 +25,11 @@ class euikitServiceProvider extends ServiceProvider {
         }
     } // endfunction boot
 
-public function provides() : array { // 
+public function provides() : array { //
     return ['euikit'];
 } // endfunction provides
 
-    public function register() : void { // 
+    public function register() : void { //
         $this->mergeConfigFrom(__DIR__ . '/../config/euikit.php', 'euikit');
 
         $this->app->singleton('euikit', function ($app) {
@@ -35,7 +37,7 @@ public function provides() : array { //
         });
     } // endfunction register()
 
-    public function bootForConsole() : void { // 
+    public function bootForConsole() : void { //
         $this->publishes([
             __DIR__ . '/../config/euikit.php' => config_path('euikit.php'),
         ], 'euikit.config');

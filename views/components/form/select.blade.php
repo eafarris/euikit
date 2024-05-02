@@ -1,24 +1,42 @@
-@props(['field', 'label' => '', 'placeholder' => '', 'multi' => false])
+@props(['field', 'label' => '', 'nolabel' => FALSE, 'value' => '', 'any' => FALSE, 'none' => FALSE, 'placeholder' => '', 'multi' => FALSE, 'help' => ''])
 @php
-    $color_classes = 'text-slate-700 border-slate-200';
+    $common_classes = 'block w-1/6 min-w-[200px] rounded shadow-sm sm:text-sm border leading-tight appearance-none';
+    $color_classes = 'bg-white text-slate-500 dark:text-slate-700 dark:bg-slate-400 border-slate-200 dark:border-slate-700 focus:ring-sky-300 focus:border-sky-300 focus:border-sky-300 focus:outline-none';
     $error_classes = 'border-red-500 text-red-900';
 @endphp
+
 <div {{ $attributes->whereDoesntStartWith('wire')->merge(['class' => 'field']) }}>
-    <label for="{{ $field }}" class="block text-sm font-medium text-slate-500 bg-transparent">{{ $label ?: ucfirst($field) }}</label>
-    <div class="control mt-1">
+    @unless($nolabel)
+        <label for="{{ $field }}" class="block text-sm font-medium text-slate-500 dark:text-slate-300 bg-transparent">
+            {{ $label ?: ucfirst($field) }}
+        </label>
+    @endunless
+    <div class="relative mt-1">
         <div class="select">
-            <select 
+            <select
                 {{ $attributes->whereStartsWith('wire') }}
                 @if ($multi) multiple @endif
               name="{{ $field }}"
-              class="appearance-none block border rounded leading-tight focus:outline-none focus:bg-white focus:border-slate-500 w-full {{ $errors->has($field) ? $error_classes : $color_classes }}"
+              @class([$common_classes,
+                $color_classes => ! $errors->has($field),
+                $error_classes => $errors->has($field),
+              ])
             >
-            @unless ($multi)
-            <option value="">@if ($placeholder) {{ $placeholder }} @else Select {{ $label ?: ucfirst($field) }} @endif
-            @endunless
+                @unless ($multi)
+                    <option value="">@if ($placeholder) {{ $placeholder }} @else Select {{ $label ?: ucfirst($field) }} @endif
+                @endunless
+                @if($any)
+                    <option value="any">Any</option>
+                @endif
+                @if($none)
+                    <option value="none">None</option>
+                @endif
                 {{ $slot }}
             </select>
         </div>
+        @isset($help)
+            <x-e::help>{{ $help }}</x-e::help>
+        @endisset
     </div>
     @error($field)
         <p class="mt-2 text-sm text-red-600">

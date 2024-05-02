@@ -8,23 +8,25 @@ class Textlist extends Component {
     public $label = '';
     public $placeholder = '';
     public $required = FALSE;
+    public $lefticon = '';
+    public $righticon = '';
     public $field = '';
+    public $help = '';
     public $items = [];
     public $index = 0;
     public $newitem = '';
 
-    public function mount($field) { // 
+    public function mount($field) { //
       $this->field = $field;
     } // endfunction mount
 
-    public function add($newitem) {
-        $this->items[$this->index] = $newitem;
-        $this->index++;
+    public function add() {
+        $this->items[] = $this->newitem;
         $this->newitem = '';
     } // endfunction add
 
-    public function remove() {
-        array_pop($this->items);
+    public function remove($index) {
+        array_splice($this->items, $index, 1);
     }
 
     public function render() {

@@ -1,16 +1,28 @@
-@props(['label', 'field', 'value'])
+@props(['field', 'label' => '', 'value' => '', 'help' => ''])
 
 @php
     if ($attributes->whereStartsWith('wire:model') && !isset($field)) {
         $field = $attributes->whereStartsWith('wire:model')->first();
     }
+
+    $common_classes = 'h-4 w-4';
+    $color_classes = 'text-slate-600 focus:ring-sky-300';
+    $error_classes = 'text-red-500';
 @endphp
 
 <div {{ $attributes->whereDoesntStartWith('wire:model')->merge(['class' => 'field flex items-center p-2 rounded-lg bg-transparent']) }}">
-    <input id="{{ $value }}" name="{{ $field }}" type="radio" value="{{ $value }}"
-        {{ $attributes->whereStartsWith('wire') }}
-        class="h-4 w-4 border-slate-300 text-slate-600 focus:ring-indigo-600"
-    >
+    <div class="flex items-center gap-4">
+        <input id="{{ $value }}" name="{{ $field }}" type="radio" value="{{ $value }}"
+            {{ $attributes->whereStartsWith('wire') }}
+            @class([$common_classes,
+                $color_classes => ! $errors->has($field),
+                $error_classes => $errors->has($field),
+            ])
+        >
 
-    <label for="{{ $value }}" class="ml-3 block text-slate-600">{{ $label }}</label>
+        <label for="{{ $value }}" class="block text-sm mb-2 font-medium text-slate-500 bg-transparent">{{ $label ?: ucfirst($field) }}</label>
+        @isset($help)
+            <x-e::help>{{ $help }}</x-e::help>
+        @endisset
+    </div>
 </div>

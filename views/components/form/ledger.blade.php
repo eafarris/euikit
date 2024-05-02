@@ -1,3 +1,4 @@
+@props(['colspan', 'lastcol', 'array' => [], 'help' => ''])
 <div>
     <div class="grid grid-cols-12 divide-x divide-y divide-slate-400">
         @foreach ($array as $index => $item)
@@ -19,4 +20,8 @@
         ]) />
         @endforeach
     </div><!-- .grid-cols-12 -->
-</div><!-- EUIKit Ledger Component
+
+    @isset($help)
+        <x-e::help>{{ $help }}</x-e::help>
+    @endisset
+</div><!-- EUIKit Ledger Component -->

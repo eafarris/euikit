@@ -1,18 +1,34 @@
-@props(['label' => '', 'field', 'value' => '', 'min' => '', 'max' => '', 'required' => FALSE])
+@props(['field', 'label' => '', 'value' => '', 'min' => '', 'max' => '', 'required' => FALSE, 'nolabel' => FALSE, 'help' => '',])
 
-<div {{ $attributes->merge(['class' => 'field']) }} id="{{ $field }}">
-    <label for="{{ $field }}" class="block text-sm font-medium text-slate-500 bg-transparent">{{ $label ?: ucfirst($field) }}</label>
-    <div class="control mt-1">
+@php
+    if ($attributes->whereStartsWith('wire:model') && !isset($field)) {
+        $field = $attributes->whereStartsWith('wire:model')->first();
+    }
+
+    $common_classes = 'block w-1/6 min-w-[200px] rounded shadow-sm sm:text-sm border leading-tight appearance-none placeholder:italic';
+@endphp
+
+<div {{ $attributes->whereDoesntStartWith('wire')->merge(['class' => 'field']) }} id="{{ $field }}">
+@unless($nolabel)
+    <label for="{{ $field }}" class="block text-sm font-medium text-slate-500 dark:text-slate-300 bg-transparent">
+        {{ $label ?: ucfirst($field) }}
+    </label>
+@endunless
+    <div class="relative">
         <input type="color"
             id="{{ $field }}"
             name="{{ $field }}"
             value="{{ @old($field, $value) }}"
-            class="block w-full rounded-md shadow-sm sm:text-sm"
+            @class([$common_classes,
+            ])
             @if ($required) required @endif
             @if ($min) min="{{ $min }}" @endif
             @if ($max) max="{{ $max }}" @endif
             {{ $attributes->merge(['list' => '']) }}
         />
+        @isset($help)
+            <x-e::help>{{ $help }}</x-e::help>
+        @endisset
     </div>
 
     @error($field)

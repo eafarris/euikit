@@ -15,7 +15,7 @@
     @livewireStyles()
 </head>
 <body class="font-sans subpixel-antialiased"
-    x-data="sidebar()"
+    x-data="euikit"
     @resize.window="handleResize()"
 >
 
@@ -25,7 +25,8 @@
 </header>
 @endisset
 
-<main class="container grid grid-cols-1 auto-rows-fr sm:grid-cols-6 grow min-h-screen min-w-full">
+<main class="container grid grid-cols-1 auto-rows-fr sm:grid-cols-6 grow min-h-screen min-w-full"
+>
 @isset($left)
 <div class="col-span-1 bg-slate-100 dark:bg-slate-600"
     x-show="isOpen()"
@@ -67,9 +68,10 @@
 
 {{-- AlpineJS-based sidebar show/hide adapted from https://github.com/zaxwebs/tailwind-alpine/blob/main/sidebar-2.html --}}
 <script type="text/javascript">
-    function sidebar() {
+    function euikit() {
         const breakpoint=1280
         return {
+            euikit_help_show: false,
             open: {
                 above: true,
                 below: false,
@@ -107,7 +109,7 @@
                 }
             }
         }
-    }
+    };
 </script>
 @livewireScripts()
 </body>

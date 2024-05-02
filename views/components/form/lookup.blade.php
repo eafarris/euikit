@@ -1,25 +1,40 @@
+@props(['field', 'label' => '', 'nolabel' => FALSE, 'value' => '', 'any' => FALSE, 'none' => FALSE, 'models', 'optionvalue' => '', 'optionfield' => '', 'help' => ''])
+
+@php
+    $common_classes = 'block w-1/6 min-w-[200px] rounded shadow-sm sm:text-sm border leading-tight appearance-none';
+    $color_classes = 'bg-white text-slate-500 dark:text-slate-700 dark:bg-slate-400 border-slate-200 dark:border-slate-700 focus:ring-sky-300 focus:border-sky-300 focus:outline-none';
+    $error_classes = 'border-red-500 text-red-500;'
+@endphp
 <div {{ $attributes->merge(['class' => 'field']) }}>
-    @empty($inline)
-        <label for="{{ $name }}" class="block text-sm font-medium text-slate-500 dark:text-slate-300 bg-transparent">{{ $label }}</label>
-    @endempty
-    <div class="control mt-1">
+    @unless($nolabel)
+        <label for="{{ $field }}" class="block text-sm font-medium text-slate-500 dark:text-slate-300 bg-transparent">
+            {{ $label ?: ucfirst($field) }}
+        </label>
+    @endunless
+    <div class="relative mt-1">
         <div class="select">
             <select
-              name="{{ $name }}"
+              name="{{ $field }}"
               {{ \Arr::except($attributes, 'class') }}
-              class="w-full appearance-none block text-slate-500 dark:text-slate-700 dark:bg-slate-400 border border-slate-200 rounded leading-tight focus:outline-none focus:bg-white focus:border-slate-500"
+              @class([$common_classes,
+                $color_classes => ! $errors->has($field),
+                $error_classes => $errors->has($field),
+              ])
             >
-            <option disabled value="">Select {{ $label }}</option>
+            <option disabled value="">Select {{ $label ?: ucfirst($field) }}</option>
             @if($any)
-            <option value="any">Any</option>
+                <option value="any">Any</option>
             @endif
             @if($none)
-            <option value="none">None</option>
+                <option value="none">None</option>
             @endif
             @foreach ($models as $model)
-                <option value="{{ $model->$optionvalue }}" {{ $value == $model->id ? "selected" : "" }}>{{ $model->$optionfield }}</option>
+                <option value="{{ $model->$optionvalue }}" {{ $value == $model->$optionvalue ? "selected" : "" }}>{{ $model->$optionfield }}</option>
             @endforeach
             </select>
         </div>
+        @isset($help)
+            <x-e::help>{{ $help }}</x-e::help>
+        @endisset
     </div>
 </div><!-- EUIKit Form Lookup component -->
