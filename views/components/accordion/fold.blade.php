@@ -25,7 +25,7 @@
     @endisset
 </a>
 
-<div id="{{ $slug }}" x-show="fold ==='{{ $slug }}'" x-cloak
+<div id="{{ $slug }}" x-show="fold ==='{{ $slug }}'" x-cloak x-transition.duration.250ms.scale.0.origin.top.left
     class="p-2 m-2 ml-8 border-l-2 border-slate-400"
 >
     {{ $slot }}
