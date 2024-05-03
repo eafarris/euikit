@@ -1,4 +1,6 @@
-@props(['field', 'label' => '', 'nolabel' => FALSE, 'value' => '', 'any' => FALSE, 'none' => FALSE, 'placeholder' => '', 'multi' => FALSE, 'help' => ''])
+@props(['field', 'label' => '', 'nolabel' => FALSE, 'value' => '', 'any' => FALSE, 'none' => FALSE, 'placeholder' => '', 'multi' => FALSE,
+    'help' => '', 'helptype' => 'ghost',
+])
 @php
     $common_classes = 'block w-1/6 min-w-[200px] rounded shadow-sm sm:text-sm border leading-tight appearance-none';
     $color_classes = 'bg-white text-slate-500 dark:text-slate-700 dark:bg-slate-400 border-slate-200 dark:border-slate-700 focus:ring-sky-300 focus:border-sky-300 focus:border-sky-300 focus:outline-none';

@@ -1,4 +1,6 @@
-@props(['colspan', 'lastcol', 'array' => [], 'help' => ''])
+@props(['colspan', 'lastcol', 'array' => [],
+    'help' => '', 'helptype' => 'ghost',
+])
 <div>
     <div class="grid grid-cols-12 divide-x divide-y divide-slate-400">
         @foreach ($array as $index => $item)

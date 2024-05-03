@@ -1,4 +1,6 @@
-@props(['field', 'label' => '', 'value' => '', 'help' => ''])
+@props(['field', 'label' => '', 'value' => '',
+    'help' => '', 'helptype' => 'ghost',
+])
 
 @php
     if ($attributes->whereStartsWith('wire:model') && !isset($field)) {

@@ -1,3 +1,6 @@
+@props(['nolabel' => FALSE, 'lefticon' => '', 'righticon' => '',
+    'help' => '', 'helptype' => 'ghost',
+])
 @php
     $common_classes = 'rounded shadow-sm sm:text-sm border leading-tight appearance-none placeholder:italic';
     $color_classes = 'border-slate-300 dark:bg-slate-400 dark:text-slate-700 focus:border-sky-300 focus:ring-sky-300 placeholder:text-slate-400';
@@ -50,6 +53,6 @@
         </button>
     </div><!-- field -->
     @isset($help)
-        <x-e::help>{{ $help }}</x-e::help>
+        <x-e::help type="{{ $helptype }}">{{ $help }}</x-e::help>
     @endisset
 </div><!-- EUIKit Textlist component -->

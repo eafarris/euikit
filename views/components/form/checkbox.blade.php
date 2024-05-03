@@ -1,4 +1,6 @@
-@props(['field', 'label' => '', 'help' => '',])
+@props(['field', 'label' => '',
+    'help' => '', 'helptype' => 'ghost',
+])
 @php
 if ($attributes->whereStartsWith('wire:model') && !isset($field)) {
     $field = $attributes->whereStartsWith('wire:model')->first();
@@ -12,7 +14,7 @@ if ($attributes->whereStartsWith('wire:model') && !isset($field)) {
         >
         {{ $label ?: ucfirst($field)}}
         @isset($help)
-            <x-e::help>{{ $help }}</x-e::help>
+            <x-e::help type="{{ $helptype }}">{{ $help }}</x-e::help>
         @endisset
     </label>
 </div>

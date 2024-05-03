@@ -1,4 +1,6 @@
-@props(['model' => '', 'label' => '', 'help' => ''])
+@props(['model' => '', 'label' => '',
+    'help' => '', 'helptype' => 'ghost',
+])
 
 @php
     $common_classes = 'resize-none appearance-none block border rounded py-3 px-4 mb-3 leading-tight';
@@ -38,7 +40,7 @@
 @endif
     </div>
     @isset($help)
-        <x-e::help>{{ $help }}</x-e::help>
+        <x-e::help type="{{ $helptype }}">{{ $help }}</x-e::help>
     @endisset
     @error('notes')
         <p class="mt-2 text-sm text-red-600">{{ $message }}</p><!-- .mt-2 text-sm text-red-600 -->

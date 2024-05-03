@@ -1,4 +1,6 @@
-@props(['field', 'label' => '', 'value' => '', 'min' => '', 'max' => '', 'required' => FALSE, 'nolabel' => FALSE, 'help' => ''])
+@props(['field', 'label' => '', 'value' => '', 'min' => '', 'max' => '', 'required' => FALSE, 'nolabel' => FALSE,
+    'help' => '', 'helptype' => 'ghost',
+])
 
 @php
 
@@ -37,7 +39,7 @@ if (!empty($value)) {
             @if ($max) max="{{ $max }}" @endif
         />
         @isset($help)
-            <x-e::help>{{ $help }}</x-e::help>
+            <x-e::help type="{{ $helptype }}">{{ $help }}</x-e::help>
         @endisset
     </div><!-- .control -->
 

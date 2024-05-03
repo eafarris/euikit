@@ -1,4 +1,6 @@
-@props(['field', 'help' => ''])
+@props(['field',
+    'help' => '', 'helptype' => 'ghost',
+])
 <!-- Based on https://codepen.io/jjjrmy/pen/gOPvmdv?editors=1010 -->
 <div class="flex flex-col flex-grow mb-3 w-64 h-64 p-4 ">
     <div {{ $attributes->whereDoesntStartWith('wire')->merge(['class' => 'field w-60 h-60']) }}

@@ -1,4 +1,6 @@
-@props(['field', 'label' => '', 'value' => '', 'required' => FALSE, 'nolabel' => FALSE, 'help' => ''])
+@props(['field', 'label' => '', 'value' => '', 'required' => FALSE, 'nolabel' => FALSE,
+    'help' => '', 'helptype' => 'ghost',
+])
 
 @php
     $common_classes = 'resize-none appearance-none block border rounded py-3 p-4 mb-3 leading-tight';

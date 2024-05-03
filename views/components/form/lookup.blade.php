@@ -1,4 +1,6 @@
-@props(['field', 'label' => '', 'nolabel' => FALSE, 'value' => '', 'any' => FALSE, 'none' => FALSE, 'models', 'optionvalue' => '', 'optionfield' => '', 'help' => ''])
+@props(['field', 'label' => '', 'nolabel' => FALSE, 'value' => '', 'any' => FALSE, 'none' => FALSE, 'models', 'optionvalue' => '', 'optionfield' => '',
+    'help' => '', 'helptype' => 'ghost',
+])
 
 @php
     $common_classes = 'block w-1/6 min-w-[200px] rounded shadow-sm sm:text-sm border leading-tight appearance-none';

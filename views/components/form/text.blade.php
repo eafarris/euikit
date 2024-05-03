@@ -1,7 +1,7 @@
 @props(['field', 'type' => '', 'label' => '', 'value' => '', 'placeholder' => '',
     'lefticon' => '', 'righticon' => '',
     'required' => FALSE, 'nolabel' => FALSE, 'noplaceholder' => FALSE,
-    'help' => '',
+    'help' => '', 'helptype' => 'ghost',
 ])
 
 @php
@@ -80,7 +80,7 @@ $error_classes = 'border-red-500 text-red-500';
     </div>
 
     @isset($help)
-        <x-e::help>{{ $help }}</x-e::help>
+        <x-e::help type="{{ $helptype }}">{{ $help }}</x-e::help>
     @endisset
 
     @error($field)

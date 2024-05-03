@@ -1,4 +1,6 @@
-@props(['field', 'label' => '', 'value' => '', 'type' => 'radio', 'help' => ''])
+@props(['field', 'label' => '', 'value' => '', 'type' => 'radio',
+    'help' => '', 'helptype' => 'ghost',
+])
 
 @php // "field" is optional if wire:model exists
 if ($attributes->whereStartsWith('wire:model') && !isset($field)) {
@@ -28,6 +30,6 @@ if ($attributes->whereStartsWith('wire:model') && !isset($field)) {
         </div>
     @endif
     @isset($help)
-        <x-e::help>{{ $help }}</x-e::help>
+        <x-e::help type="{{ $helptype }}">{{ $help }}</x-e::help>
     @endisset
 </div><!-- EUIKit Boolean field -->

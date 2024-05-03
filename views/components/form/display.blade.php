@@ -1,6 +1,6 @@
 @props(['field', 'type' => 'text', 'label' => '', 'value' => '', 'placeholder' => '',
     'lefticon' => '', 'righticon' => '', 'required' => FALSE, 'nolabel' => FALSE,
-    'help' => ''
+    'help' => '', 'helptype' => 'ghost',
 ])
 @php
 
@@ -93,6 +93,6 @@
     </div>
 
     @isset($help)
-        <x-e::help>{{ $help }}</x-e::help>
+        <x-e::help type="{{ $helptype }}">{{ $help }}</x-e::help>
     @endisset
 </div><!-- EUIKit Display Field component-->
