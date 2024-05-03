@@ -29,6 +29,7 @@ if ($type) {
       break;
     case 'danger':
     case 'delete':
+    case 'error':
     case 'red':
       $coloring = 'bg-red-300 text-red-800 hover:bg-red-500 hover:text-slate-100 disabled:opacity-50';
       break;
@@ -46,7 +47,7 @@ if ($type) {
 @if ($type == 'delete')
 {{-- modified from https://rappasoft.com/blog/snippet-5-creating-a-simple-but-cool-delete-button-with-alpinejs-and-tailwindcss --}}
 <div x-data="{ initial: true, deleting: false }" class="flex">
-  <button 
+  <button
     x-on:click.prevent="deleting = true; initial = false"
     x-show="initial"
     x-on:deleting.window="$el.disabled=true"
@@ -76,7 +77,7 @@ if ($type) {
       <button
         x-on:click="$el.form.submit()"
         x-on:deleting.window="$el.disabled = true"
-        type="submit" 
+        type="submit"
         class="border-transparent inline-block select-none border font-normal text-normal whitespace-no-wrap rounded py-1 px-3 leading-normal no-underline h-12 justify-center items-center bg-red-300 text-red-800 hover:bg-red-500 hover:text-slate-50 disabled:opacity-50"
       >
       Yes
@@ -108,6 +109,6 @@ if ($type) {
   @if ($route)
   </a>
   @else
-  </button> 
+  </button>
   @endif
 @endif
