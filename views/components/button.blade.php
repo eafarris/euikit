@@ -13,7 +13,7 @@ if ($type) {
       $coloring = 'bg-slate-500 text-slate-100 hover:bg-slate-800 hover:text-slate-200 disabled:opacity-50';
       break;
     case 'link':
-      $button = 'inline-block align-middle text-center select-none font-normal whitespace-no-wrap py-1 px-3 leading-normal no-underline border hover:rounded';
+      $button = 'inline-block align-middle text-center select-none font-normal whitespace-no-wrap py-1 px-3 leading-normal underline underline-offset-2 border hover:rounded';
       $coloring = 'border-transparent bg-transparent hover:border-slate-100 text-blue-600 hover:bg-blue-200 hover:text-slate-800';
       break;
     case 'info':
