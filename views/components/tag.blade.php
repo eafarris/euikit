@@ -10,7 +10,7 @@
     'bg-red-300 text-red-900' => $type == 'error' || $type == 'danger' || $type == 'delete' || $type == 'red',
     'bg-blue-300 text-blue-900' => $type == 'primary' || $type == 'blue',
     'bg-transparent text-slate-400' => $type == 'ghost',
-    'inline-flex gap-1 grow-0 shrink items-center justify-items-center items-center text-xs uppercase font-semibold px-2 py-1 rounded-md mx-1'
+    'inline-flex gap-1 grow-0 shrink items-center justify-items-center text-xs uppercase font-semibold px-2 py-1 rounded-md mx-1'
 ])>
     @if ($lefticon)
         @svg($lefticon, 'w-3 h-3 mr-1')
