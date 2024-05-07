@@ -44,9 +44,15 @@ switch ($type) {
 <span @class([
     'inline-flex' => $inline,
     'flex' => !$inline,
-    'gap-1 grow-0 shrink w-fit px-1 py-1 text-sm rounded',
+    'gap-1 grow-0 shrink w-fit items-center px-1 py-1 text-sm rounded',
     'border-rounded-sm border-2' => $border,
     $coloring,
 ])>
+    @if ($lefticon)
+        @svg($lefticon, 'w-4 h-4')
+    @endif
     {{ $slot }}
+    @if ($righticon)
+        @svg($righticon, 'w-4 h-4')
+    @endif
 </span>
