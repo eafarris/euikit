@@ -50,7 +50,7 @@ $coloring = '';
       $iconcolor = 'text-slate-200';
       break;
     default:
-        $lefticon = $lefticon == 'none' ? '' : $icon;
+        $lefticon = $lefticon == 'none' ? '' : $lefticon;
         break;
   }
 
