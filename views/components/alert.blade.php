@@ -47,7 +47,7 @@ $coloring = '';
       break;
     case 'ghost':
       $coloring = 'bg-transparent text-slate-400 border-none shadow-none';
-      $iconcolor = 'text-slate-200';
+      $iconcolor = 'text-slate-400';
       break;
     default:
         $lefticon = $lefticon == 'none' ? '' : $lefticon;
