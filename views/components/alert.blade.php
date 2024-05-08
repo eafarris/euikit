@@ -67,7 +67,7 @@ $coloring = '';
     </p>
     <div class="w-fit flex grow justify-end">
         @if($righticon)
-            @svg($righticon, 'w-8 h-8 inline' . $iconcolor)
+            @svg($righticon, 'w-8 h-8 inline ' . $iconcolor)
         @endif
     </div>
 </div><!-- EUIKit Alert Component -->
