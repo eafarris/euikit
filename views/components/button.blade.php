@@ -1,8 +1,9 @@
-@props(['type' => 'info', 'route' => '', 'value' => 'Submit', 'icon' => '', 'title' => ''])
+@props(['type' => 'info', 'route' => '', 'value' => 'Submit', 'title' => '',
+    'lefticon' => '', 'righticon' => '',
+])
 
 @php
-
-$button = 'border-transparent inline-block select-none border font-normal text-base whitespace-no-wrap rounded py-1 px-3 leading-normal no-underline h-12 flex-none justify-center items-center transition duration-150 hover:scale-105';
+$button = 'flex border-transparent inline-block select-none border font-normal text-base whitespace-no-wrap rounded py-1 px-3 leading-normal no-underline h-12 flex-none justify-center items-center transition duration-150 hover:scale-105';
 $coloring = '';
 if ($type) {
   switch ($type) {
@@ -69,7 +70,7 @@ if ($type) {
     class="flex flex-1 justify-center items-center space-x-8"
     >
     <p class="dark:text-white">Are you sure?</p>
-    <form x-on:submit="$dispatch('deleting')" action="{{ $route }}" method="POST"
+    <form x-on:submit="$dispatch('deleting')" method="POST"
       class="flex space-x-3"
     >
       @csrf
@@ -98,14 +99,19 @@ if ($type) {
   @else
   <button {{ $attributes->merge(['class' => $button . ' '  . $coloring]) }} title="{{ $title }}">
   @endif
-    @if ($icon)
-      <span>
-        @svg($icon, 'w-6 h-6 inline')
-      </span>
+    @if ($lefticon)
+      <div class="">
+        @svg($lefticon, 'w-6 h-6 mr-2 inline')
+      </div>
     @endif
     <span class="">
       {{ $value }}
     </span>
+    @if($righticon)
+        <div class="w-fit flex grow justify-end">
+            @svg($righticon, 'w-6 h-6 ml-2 inline')
+        </div>
+    @endif
   @if ($route)
   </a>
   @else
