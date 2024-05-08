@@ -3,7 +3,7 @@
     $slug = Str::slug($title);
 @endphp
 <a href="#" @click.prevent="fold = fold === '{{ $slug }}' ? '' : '{{ $slug }}'"
-  class="block p-4 text-slate-600"
+  class="block pt-4 text-slate-600"
 
 >
     <div x-show="fold === '{{ $slug }}'" class="inline-block">
@@ -24,9 +24,11 @@
         <x-e::tag type="{{ $badge_type }}">{{ $badge }}</x-e::tag>
     @endisset
 </a>
-
-<div id="{{ $slug }}" x-show="fold ==='{{ $slug }}'" x-cloak x-transition.duration.250ms.scale.0.origin.top.left
-    class="p-2 m-2 ml-8 border-l-2 border-slate-400"
+{{-- rollup code based on https://hussein-alhammad.com/blog/2023/03/alpine-slide-up-down-animation/ --}}
+<div id="{{ $slug }}"
+    class="h-0 pb-2 border-l-2 border-slate-400 opacity-0 transition-all duration-300 overflow-hidden"
+    :class="fold === '{{ $slug }}' && 'opacity-100 pointer-events-none p-2 m-2 ml-8'"
+    :style="fold === '{{ $slug }}' && {height: $el.scrollHeight+`px`}"
 >
     {{ $slot }}
 </div>
