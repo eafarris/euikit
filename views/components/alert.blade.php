@@ -24,13 +24,13 @@ $coloring = '';
     case 'green':
       $coloring = 'bg-green-50 border-green-200 border-t-green-400 text-green-700';
       $iconcolor = 'text-green-500';
-      $lefticon = $lefticon == 'none' ? '' : 'heroicon-o-check-circle';
+      $lefticon = $lefticon == 'none' ? '' : ($lefticon ?: 'heroicon-o-check-circle');
       break;
     case 'warning':
     case 'yellow':
       $coloring = 'bg-yellow-50 border-yellow-200 border-t-yellow-400 text-yellow-700';
       $iconcolor = 'text-yellow-500';
-      $lefticon = $lefticon == 'none' ? '' : 'heroicon-o-exclamation-triangle';
+      $lefticon = $lefticon == 'none' ? '' : ($lefticon ?: 'heroicon-o-exclamation-triangle');
       break;
     case 'danger':
     case 'delete':
@@ -38,7 +38,7 @@ $coloring = '';
     case 'red':
       $coloring = 'bg-red-50 border-red-200 border-t-red-400 text-red-700';
       $iconcolor = 'text-red-500';
-      $lefticon = $lefticon == 'none' ? '' : 'heroicon-o-exclamation-circle';
+      $lefticon = $lefticon == 'none' ? '' : ($lefticon ?: 'heroicon-o-exclamation-circle');
       break;
     case 'primary':
     case 'blue':
