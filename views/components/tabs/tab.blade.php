@@ -26,7 +26,14 @@
 </template>
 
 <template x-teleport="div#tabs-content">
-<div x-show="tab === '{{ $slug }}'">
+<div x-show="tab === '{{ $slug }}'"
+    x-transition:enter="transition-opacity ease-out"
+    x-transition:enter-start="opacity-0 h-0"
+    x-transition:enter-end="opacity-100 scale-100"
+    x-transition:leave="transition-opacity ease-in"
+    x-transition:leave-start="opacity-100 scale-100"
+    x-transition:leave-end="opacity-0 h-0"
+>
     {{ $slot }}
 </div>
 </template>
