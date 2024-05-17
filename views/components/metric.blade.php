@@ -1,5 +1,19 @@
-@props(['type' => 'info', 'label' => ''])
+@props(['type' => 'info', 'label' => '',
+    'value' => 0, 'stoplight' => FALSE, 'slgreen' => 75, 'slblue' => 50, 'slyellow' => 25
+])
 @php
+if ($stoplight) {
+    $slot = $value;
+    if ($value > $slgreen) {
+        $type="green";
+    } elseif ($value > $slblue) {
+        $type="blue";
+    } elseif ($value > $slyellow) {
+        $type="yellow";
+    } else {
+        $type="red";
+    }
+}
 switch ($type) {
     case 'light':
         $labelcoloring = 'bg-slate-100 border-slate-300';
@@ -13,7 +27,7 @@ switch ($type) {
         $metriccoloring = 'bg-slate-200 border-slate-400';
         $metrictextcoloring = 'text-slate-600';
         break;
-        case 'link':
+    case 'link':
         $labelcoloring = 'bg-blue-100 border-blue-300';
         $labeltextcoloring = 'text-blue-500';
         $metriccoloring = 'bg-blue-50 border-blue-300';
