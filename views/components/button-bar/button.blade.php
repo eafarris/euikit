@@ -38,7 +38,7 @@
     }
 @endphp
 @if ($route)
-<a {{ $attributes->merge(['class' => $button . $hovercoloring]) }} href="{{ $route }}" title="{{ $title }}">
+<a {{ $attributes->merge(['class' => $button . ' ' . $hovercoloring]) }} href="{{ $route }}" title="{{ $title }}">
 @else
 <button title="{{ $title }}" {{ $attributes->merge(['class' => $button . ' ' . $hovercoloring]) }}>
 @endif
