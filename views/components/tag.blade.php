@@ -3,7 +3,7 @@
 <span @class([
     'bg-slate-100 text-slate-500'=> $type == 'light',
     'bg-slate-500 text-slate-100' => $type == 'dark',
-    'bg-transparent text-blue-600' => $type == 'link',
+    'bg-transparent text-blue-600 underline underline-offset-2' => $type == 'link',
     'bg-slate-300 text-slate-900' => $type == 'info',
     'bg-yellow-300 text-yellow-900' => $type == 'warning' || $type == 'yellow',
     'bg-green-300 text-green-900' => $type == 'success' || $type == 'green',

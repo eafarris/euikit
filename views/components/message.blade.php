@@ -10,7 +10,7 @@ switch ($type) {
       $coloring = 'bg-slate-500 text-slate-100 border-slate-600';
       break;
     case 'link':
-      $coloring = 'bg-transparent text-blue-600 border-blue-400';
+      $coloring = 'bg-transparent text-blue-600 border-blue-400 underline underline-offset-2';
       break;
     case 'info':
       $coloring = 'bg-slate-100 text-slate-700 border-slate-400';
@@ -37,7 +37,7 @@ switch ($type) {
       $coloring = 'bg-transparent text-slate-400 border-slate-200';
       break;
     default:
-        $lefticon = $lefticon == 'none' ? '' : $icon;
+        $lefticon = $lefticon == 'none' ? '' : $lefticon;
         break;
   }
 @endphp
