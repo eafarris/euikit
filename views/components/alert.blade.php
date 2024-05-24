@@ -57,12 +57,12 @@ $coloring = '';
 @endphp
 
 <div {{ $attributes->merge(['class' => $alert . ' ' . $coloring]) }}>
-    <div class="">
+    <div class="flex flex-none">
         @if ($lefticon)
             @svg($lefticon, 'w-8 h-8 inline ' . $iconcolor)
         @endif
     </div>
-    <p class="text-sm">
+    <p class="">
         {{ $slot }}
     </p>
     <div class="w-fit flex grow justify-end">
