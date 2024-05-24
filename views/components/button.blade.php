@@ -39,7 +39,7 @@ if ($type) {
       $coloring = 'bg-blue-300 text-blue-800 hover:bg-blue-400 hover:text-gray-200 disabled:opacity-50';
       break;
     case 'ghost':
-      $coloring = 'bg-transparent hover:bg-slate-100 disabled:opacity-50';
+      $coloring = 'bg-transparent hover:bg-slate-200 disabled:opacity-50';
       break;
   }
 }
