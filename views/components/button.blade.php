@@ -3,7 +3,7 @@
 ])
 
 @php
-$button = 'flex border-transparent inline-block select-none border font-normal text-base whitespace-no-wrap rounded py-1 px-3 leading-normal no-underline h-12 flex-none place-content-center transition duration-150 hover:scale-105';
+$button = 'flex place-items-center border-transparent inline-block select-none border font-normal text-base whitespace-no-wrap rounded py-1 px-3 leading-normal no-underline h-12 flex-none place-content-center transition duration-150 hover:scale-105';
 $coloring = '';
 if ($type) {
   switch ($type) {
@@ -47,17 +47,16 @@ if ($type) {
 
 @if ($type == 'delete')
 {{-- modified from https://rappasoft.com/blog/snippet-5-creating-a-simple-but-cool-delete-button-with-alpinejs-and-tailwindcss --}}
-<div x-data="{ initial: true, deleting: false }" class="flex">
+<div x-data="{ initial: true, deleting: false }"
+  class="flex flex-none "
+ >
   <button
     x-on:click.prevent="deleting = true; initial = false"
     x-show="initial"
     x-on:deleting.window="$el.disabled=true"
-    x-transition:enter="transition ease-out duration-150"
-    x-transition:enter-start="opacity-0 transform scale-90"
-    x-transition:enter-end="opacity-100 transform scale-100"
-    {{ $attributes->merge(['class' => $button . ' ' . $coloring])}}
-    >
-    {{ $value }}
+    {{ $attributes->merge(['class' => $button  . ' ' . $coloring ]) }}
+  >
+        {{$value }}
 </button>
 <div
     x-show="deleting"
@@ -75,21 +74,16 @@ if ($type) {
     >
       @csrf
       @method('DELETE')
-      <button
-        x-on:click="$el.form.submit()"
+
+      <x-e::button type="danger" value="Yes"
+        x-on:click="$el.form.submit"
         x-on:deleting.window="$el.disabled = true"
-        type="submit"
-        class="border-transparent inline-block select-none border font-normal text-normal whitespace-no-wrap rounded py-1 px-3 leading-normal no-underline h-12 justify-center items-center bg-red-300 text-red-800 hover:bg-red-500 hover:text-slate-50 disabled:opacity-50"
-      >
-      Yes
-    </button>
-    <button
-      x-on:click.prevent="deleting = false; setTimeout(() => { initial = true }, 150)"
-      x-on:deleting.window="$el.disabled = true"
-      class="border-transparent inline-block select-none border font-normal text-normal whitespace-no-wrap rounded py-1 px-3 leading-normal no-underline h-12 justify-center items-center bg-slate-500 text-slate-50 hover:bg-slate-800 hover:text-slate-200 disabled:opacity-50"
-      >
-      No
-  </button>
+      />
+      <x-e::button type="dark" value="No"
+        x-on:click.prevent="deleting = false; setTimeout(() => { initial = true }, 150)"
+        x-on:deleting.window="$el.disabled = true"
+      />
+
   </form>
 </div>
 </div>
@@ -104,9 +98,7 @@ if ($type) {
         @svg($lefticon, 'w-6 h-6 mr-2 inline')
       </div>
     @endif
-    <span class="">
       {{ $value }}
-    </span>
     @if($righticon)
         <div class="w-fit flex grow justify-end">
             @svg($righticon, 'w-6 h-6 ml-2 inline')
