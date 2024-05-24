@@ -17,10 +17,8 @@
             type="file" name="importfile" wire:model="importfile" id="upload[{{ $iteration }}]" />
         <x-e::form.textarea class="py-4" field="importfield" wire:model="importfield" label="Paste text" />
         <x-slot:footer>
-            <div class="flex justify-between">
-                <x-e::button type="danger" @click="show = false" value="Close" />
-                <x-e::button type="success" @click="show = false" wire:click="import" value="Import" />
-            </div>
+            <x-e::button type="danger" @click="show = false" value="Close" />
+            <x-e::button type="success" @click="show = false" wire:click="import" value="Import" />
         </x-slot:footer>
     </x-e::modal>
 @endteleport
