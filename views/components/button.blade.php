@@ -3,7 +3,7 @@
 ])
 
 @php
-$button = 'flex place-items-center border-transparent inline-block select-none border font-normal text-base whitespace-no-wrap rounded py-1 px-3 leading-normal no-underline h-12 flex-none place-content-center transition duration-150 hover:scale-105';
+$button   = 'flex w-fit place-items-center font-normal text-base whitespace-no-wrap rounded py-1 px-3 no-underline h-12 transition duration-150 hover:scale-105';
 $coloring = '';
 if ($type) {
   switch ($type) {
@@ -89,7 +89,7 @@ if ($type) {
 </div>
 @else
   @if ($route)
-  <a {{ $attributes->merge(['class' => $button . ' pt-2.5 ' . $coloring]) }} href="{{ $route }}" title="{{ $title }}">
+  <a {{ $attributes->merge(['class' => $button . ' ' . $coloring ]) }} href="{{ $route }}" title="{{ $title }}">
   @else
   <button {{ $attributes->merge(['class' => $button . ' '  . $coloring]) }} title="{{ $title }}">
   @endif
