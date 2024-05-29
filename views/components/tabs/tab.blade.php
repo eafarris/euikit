@@ -1,4 +1,4 @@
-@props(['name', 'lefticon', 'righticon', 'badge_type' => 'info', 'badge'])
+@props(['name', 'lefticon', 'righticon', 'badgeType' => 'info', 'badge'])
 @php
     $slug = Str::slug($name);
 @endphp
@@ -17,7 +17,7 @@
         @svg($righticon, 'inline w-6 h-6 pl-1')
     @endisset
     @isset($badge)
-        <x-e::tag type="{{ $badge_type }}">{{ $badge }}</x-e::tag>
+        <x-e::tag type="{{ $badgeType }}">{{ $badge }}</x-e::tag>
     @endisset
 </a>
 
