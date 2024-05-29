@@ -1,4 +1,6 @@
-@props(['type' => 'info', 'inline' => FALSE, 'lefticon' => '', 'righticon' => '', 'border' => FALSE,
+@props(['type' => 'info', 'inline' => FALSE, 'border' => FALSE,
+    'route' => '',
+    'lefticon' => '', 'righticon' => '',
 ])
 @php
 $coloring = '';
@@ -41,6 +43,17 @@ switch ($type) {
         break;
   }
 @endphp
+@if ($route)
+<a @class([
+    'inline-flex' => $inline,
+    'flex' => !$inline,
+    'gap-1 grow-0 shrink w-fit items-center px-1 py-1 text-sm rounded',
+    'border-rounded-sm border-2' => $border,
+    $coloring,
+])
+href="{{ $route }}"
+>
+@else
 <span @class([
     'inline-flex' => $inline,
     'flex' => !$inline,
@@ -48,6 +61,7 @@ switch ($type) {
     'border-rounded-sm border-2' => $border,
     $coloring,
 ])>
+@endif
     @if ($lefticon)
         @svg($lefticon, 'w-4 h-4')
     @endif
@@ -55,4 +69,8 @@ switch ($type) {
     @if ($righticon)
         @svg($righticon, 'w-4 h-4')
     @endif
+@if ($route)
+</a>
+@else
 </span>
+@endif
