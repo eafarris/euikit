@@ -49,7 +49,7 @@ $error_classes = 'border-red-500 text-red-500';
         {{ $label ?: ucfirst($field) }}
     </label>
 @endunless
-    <div class="relative block w-1/6 min-w-[200px]">
+    <div class="relative block">
         @if ($lefticon)
             <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
                 @svg($lefticon, 'w-5 h-5 text-slate-400')
