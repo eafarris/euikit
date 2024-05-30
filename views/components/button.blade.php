@@ -86,7 +86,7 @@ if ($type) {
 
   </form>
 </div>
-</div>
+</div> {{-- end of delete button --}}
 @else
   @if ($route)
   <a {{ $attributes->merge(['class' => $button . ' ' . $coloring ]) }} href="{{ $route }}" title="{{ $title }}">
