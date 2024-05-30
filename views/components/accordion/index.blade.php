@@ -14,4 +14,4 @@
                 {{ $slot}}
             </nav>
         </div>
-</div><!-- EUIKit Accordion Component -->
+</div>
