@@ -21,6 +21,7 @@ switch ($field) {
         $autotype = 'url';
         break;
     case 'search':
+    case 'q':
         $autotype = 'search';
         break;
     case 'phone':
@@ -34,8 +35,11 @@ switch ($field) {
 }
 $type = $type ?: $autotype;
 
-if ($type == 'search' && $lefticon == '') {
-    $lefticon = 'heroicon-o-magnifying-glass';
+if ($type == 'search') {
+    $lefticon = $lefticon ?: 'heroicon-o-magnifying-glass' ;
+    if ($lefticon == 'none') {
+        $lefticon ='';
+    }
 }
 
 $common_classes = 'w-full rounded shadow-sm sm:text-sm border leading-tight appearance-none placeholder:italic';
@@ -84,6 +88,6 @@ $error_classes = 'border-red-500 text-red-500';
     @endisset
 
     @error($field)
-        <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
+        <x-e::message type="error">{{ $message }}</x-e::message>
     @enderror
 </div><!-- EUIKit text input-->
