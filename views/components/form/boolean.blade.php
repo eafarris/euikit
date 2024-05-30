@@ -26,6 +26,7 @@ if ($attributes->whereStartsWith('wire:model') && !isset($field)) {
         <input type="checkbox" name="{{ $field }}"
             {{ $attributes->whereStartsWith('wire') }}
             class="h-6 w-6 rounded border-slate-300 text-slate-500 focus:ring-sky-300 mr-2"
+            @if ($value) checked @endif
         /> {{ $label == '' ? ucfirst($field) : $label }}
         </div>
     @endif
