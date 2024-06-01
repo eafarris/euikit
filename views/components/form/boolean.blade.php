@@ -8,7 +8,7 @@ if ($attributes->whereStartsWith('wire:model') && !isset($field)) {
 }
 @endphp
 
-<div @class(['field', 'p-4', 'flex items-center gap-4']) {{ $attributes->whereDoesntStartWith('wire') }}>
+<div {{ $attributes->merge(['class' => 'field', 'p-4', 'flex items-center gap-4']) }} {{ $attributes->whereDoesntStartWith('wire') }}>
     @if ($type == 'radio')
         <label for="{{ $field }}" class="block text-sm mb-2 font-medium text-slate-500 bg-transparent">{{ $label == '' ? ucfirst($field) : $label }}</label>
         <div class="flex items-center gap-4">
