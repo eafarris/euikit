@@ -2,6 +2,11 @@
     'help' => '', 'helptype' => 'ghost',
 ])
 @php
+    // "field" is optional if wire:model exists
+    if ($attributes->whereStartsWith('wire:model') && !isset($field)) {
+        $field = $attributes->whereStartsWith('wire:model')->first();
+    }
+
     $common_classes = 'block w-1/6 min-w-[200px] rounded shadow-sm sm:text-sm border leading-tight appearance-none';
     $color_classes = 'bg-white text-slate-500 dark:text-slate-700 dark:bg-slate-400 border-slate-200 dark:border-slate-700 focus:ring-sky-300 focus:border-sky-300 focus:border-sky-300 focus:outline-none';
     $error_classes = 'border-red-500 text-red-900';
