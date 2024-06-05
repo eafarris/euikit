@@ -17,7 +17,7 @@ $coloring = '';
       $iconcolor = 'text-blue-400';
       break;
     case 'info':
-      $coloring = 'bg-slate-50 border-slate-200 border-t-slate-400 text-slate-700';
+      $coloring = 'bg-slate-50 border-slate-200 border-t-slate-400 text-slate-500';
       $iconcolor = 'text-slate-500';
       break;
     case 'success':
