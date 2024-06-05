@@ -5,10 +5,21 @@
         url()->current() === url($route);
 @endphp
 <a href="{{ $route }}"
-    @class([
-        'shrink-1 flex items-center p-2 pr-0 text-slate-500 dark:text-slate-200 hover:bg-slate-200 dark:hover:bg-slate-700 hover:rounded-tl-lg hover:rounded-bl-lg',
-        'dark:text-slate-200 hover:bg-slate-200 dark:hover:bg-slate-700 hover:rounded-tl-lg hover:roundedl-bl-lg' => !$part_of_url,
-        'bg-slate-50 dark:text-slate-300 dark:bg-slate-800' => $part_of_url,
+    @class(['border-l-2 border-r-0 border-t-2 border-b-2
+        rounded-l-lg
+        shrink-1 flex items-center p-1 pr-0 pl-2
+        text-slate-500 dark:text-slate-200
+        hover:bg-slate-200 dark:hover:bg-slate-700 hover:rounded-tl-lg hover:rounded-bl-lg',
+
+        'dark:text-slate-200
+        border-transparent
+        hover:bg-slate-200 dark:hover:bg-slate-700
+         hover:rounded-tl-lg hover:roundedl-bl-lg' => !$part_of_url,
+
+        'border-l-2 border-r-0 border-t-2 border-b-2
+        border-slate-100
+        bg-gradient-to-r from-white to-slate-50 to-90%
+        dark:text-slate-300 dark:bg-slate-800' => $part_of_url,
     ])
 >
     @if($icon)
