@@ -13,7 +13,13 @@
         @click="show = false"
     >
     </div><!-- backdrop -->
-    <div {{ $attributes->merge(['class' => "z-50 bg-slate-50/70 shadow-2xl p-4 m-auto w-1/2 h-fit fixed inset-0 border-slate-300 bg-gradient-to-br from-transparent via-slate-200 to-80% to-slate-100/50 dark:border-slate-900 dark:from-slate-600 dark:to-slate-700 border-2 rounded-2xl"]) }} >
+    <div {{ $attributes->merge(['class' =>
+        'z-50 fixed inset-0 shadow-2xl p-4 m-auto w-1/2 h-fit rounded-2xl
+        border-slate-300 border-2
+        bg-gradient-to-br to-80%
+        from-slate-50/60 via-slate-200 to-slate-100/60
+        dark:border-slate-900 dark:from-slate-600 dark:to-slate-700
+        ']) }} >
         <div class="flex flex-col size-fit justify-between w-full">
             @isset ($header)
                 <x-e::header>
