@@ -21,19 +21,37 @@
         dark:border-slate-900 dark:from-slate-600 dark:to-slate-700
         ']) }} >
         <div class="flex flex-col size-fit justify-between w-full">
-            @isset ($header)
-                <x-e::header>
+            @if($header)
+                @unless(is_string($header))
+                <x-e::header
+                    {{ $attributes->merge([
+                        'lefticon' => $header->attributes['lefticon'],
+                        'righticon' => $header->attributes['righticon']
+                    ]) }}
+                >
                     {{ $header }}
                 </x-e::header>
-            @endisset
+                @else
+                    <x-e::header>{{ $header }}</x-e::header>
+                @endunless
+            @endif
             <div class="py-8">
                 {{ $slot }}
             </div>
-            @isset ($footer)
-                <x-e::footer>
-                    {{ $footer }}
-                </x-e::footer>
-            @endisset
+            @if($footer)
+                @unless(is_string($footer))
+                    <x-e::footer
+                        {{ $attributes->merge([
+                            'lefticon' => $footer->attributes['lefticon'],
+                            'righticon' => $footer->attributes['righticon']
+                        ]) }}
+                    >
+                        {{ $footer }}
+                    </x-e::footer>
+                @else
+                    <x-e::footer>{{ $footer }}</x-e::footer>
+                @endunless
+            @endif
         </div>
     </div>
 </div>
