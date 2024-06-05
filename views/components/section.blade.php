@@ -37,4 +37,4 @@
         {{ $footer }}
     </x-e::footer>
 @endif
-</section><!-- EUIKit Section component -->
+</section>
