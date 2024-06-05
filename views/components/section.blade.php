@@ -28,13 +28,17 @@
 </div>
 
 @if($footer)
-    <x-e::footer
-        {{ $attributes->merge([
-            'lefticon' => $footer->attributes['lefticon'],
-            'righticon' => $footer->attributes['righticon']
-        ]) }}
-    >
-        {{ $footer }}
-    </x-e::footer>
+    @unless(is_string($footer))
+        <x-e::footer
+            {{ $attributes->merge([
+                'lefticon' => $footer->attributes['lefticon'],
+                'righticon' => $footer->attributes['righticon']
+            ]) }}
+        >
+            {{ $footer }}
+        </x-e::footer>
+    @else
+        <x-e::footer>{{ $footer }}</x-e::footer>
+    @endunless
 @endif
 </section>
