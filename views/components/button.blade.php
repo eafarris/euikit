@@ -76,7 +76,7 @@ if ($type) {
       @method('DELETE')
 
       <x-e::button type="danger" value="Yes"
-        x-on:click="$el.form.submit"
+        x-on:click.prevent="$el.form.submit"
         x-on:deleting.window="$el.disabled = true"
       />
       <x-e::button type="dark" value="No"
