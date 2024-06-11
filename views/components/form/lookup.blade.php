@@ -9,7 +9,7 @@
 @endphp
 <div {{ $attributes->merge(['class' => 'field']) }}>
     @unless($nolabel)
-        <label for="{{ $field }}" class="block text-sm font-medium text-slate-500 dark:text-slate-300 bg-transparent">
+        <label for="{{ $field }}" class="block text-sm mb-2 font-medium text-slate-500 dark:text-slate-300 bg-transparent">
             {{ $label ?: ucfirst($field) }}
         </label>
     @endunless

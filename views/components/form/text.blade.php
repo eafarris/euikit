@@ -49,7 +49,7 @@ $error_classes = 'border-red-500 text-red-500';
 
 <div {{ $attributes->whereDoesntStartWith('wire')->merge(['class' => 'field']) }} id="{{ $field }}">
 @unless ($nolabel)
-    <label for="{{ $field }}" class="block text-sm font-medium text-slate-500 dark:text-slate-300 bg-transparent">
+    <label for="{{ $field }}" class="block mb-2 text-sm font-medium text-slate-500 dark:text-slate-300 bg-transparent">
         {{ $label ?: ucfirst($field) }}
     </label>
 @endunless
