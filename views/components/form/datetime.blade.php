@@ -14,7 +14,7 @@ $error_classes = 'border-red-500 text-red-500';
 
 if (!empty($value)) {
   $date = new \Carbon\Carbon($value); // convert retrieved db string to Carbon
-  $value = $date->toDateString(); // back to the format HTML form date wants
+  $value = $date->toDateTimeLocalString(); // back to the format HTML form datetime-local wants
 }
 @endphp
 
