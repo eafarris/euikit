@@ -1,4 +1,4 @@
-@props(['route', 'icon' => '', 'badge' => '', 'badgeType' => ''])
+@props(['route' => '#', 'icon' => '', 'badge' => '', 'badgeType' => ''])
 @php
     // Laravel's URL() function never takes hashes into account
     $part_of_url = \Str::before(url()->current(), '#') == \Str::before($route, '#') ||
