@@ -1,4 +1,5 @@
-@props(['field', 'label' => '', 'nolabel' => FALSE, 'value' => '', 'any' => FALSE, 'none' => FALSE, 'models', 'optionvalue' => '', 'optionfield' => '',
+@props(['field', 'label' => '', 'nolabel' => FALSE, 'value' => '',
+    'any' => FALSE, 'none' => FALSE, 'models', 'optionvalue' => 'id', 'optionfield' => '',
     'help' => '', 'helptype' => 'ghost',
 ])
 

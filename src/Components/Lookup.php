@@ -12,7 +12,7 @@ class Lookup extends Component {
     public $value; // current value
     public $label;  // text for <label>
     public $inline = FALSE; // true to hide <label>
-    public $optionvalue; // values for form submit
+    public $optionvalue = 'id'; // values for form submit
     public $optionfield; // field to hydrate <option>
     public $filterfield; // only show option if true
     public $sortby; // field on model for sorting options
@@ -26,7 +26,10 @@ class Lookup extends Component {
      *
      * @return void
      */
-    public function __construct($model, $field = '', $value = '', $label = '', $inline = FALSE, $filterfield = '', $sortby = '', $sortdirection = 'asc', $optionvalue = '', $optionfield = '', $name = '', $any = FALSE, $none = FALSE) {
+    public function __construct($model, $field = '', $value = '', $label = '', $inline = FALSE,
+        $filterfield = '', $sortby = '', $sortdirection = 'asc', $optionvalue = 'id',
+        $optionfield = '', $name = '', $any = FALSE, $none = FALSE) {
+
         $this->label = $label ?: ucfirst($model);
         $this->inline = $inline;
         $this->model = $model;
