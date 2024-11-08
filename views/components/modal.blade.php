@@ -1,4 +1,4 @@
-@props(['name'])
+@props(['name', 'header'])
 <template x-teleport="body">
 <div id="{{ $name }}"
     x-data="{ show: false, name: '{{ $name }}' }"
@@ -21,7 +21,7 @@
         dark:border-slate-900 dark:from-slate-600 dark:to-slate-700
         ']) }} >
         <div class="flex flex-col size-fit justify-between w-full">
-            @if($header)
+            @unless(empty($header))
                 @unless(is_string($header))
                 <x-e::header
                     {{ $attributes->merge([
@@ -34,11 +34,11 @@
                 @else
                     <x-e::header>{{ $header }}</x-e::header>
                 @endunless
-            @endif
+            @endunless
             <div class="py-8">
                 {{ $slot }}
             </div>
-            @if($footer)
+            @unless(empty($footer))
                 @unless(is_string($footer))
                     <x-e::footer
                         {{ $attributes->merge([
@@ -51,7 +51,7 @@
                 @else
                     <x-e::footer>{{ $footer }}</x-e::footer>
                 @endunless
-            @endif
+            @endunless
         </div>
     </div>
 </div>
