@@ -4,42 +4,50 @@
 
 @php
 $button   = 'flex w-fit place-items-center font-normal text-base whitespace-no-wrap rounded py-1 px-3 no-underline h-12 transition duration-150 hover:scale-105 disabled:hover:scale-100';
-$coloring = '';
 if ($type) {
   switch ($type) {
     case 'light':
-      $coloring = 'bg-slate-100 text-slate-500 hover:bg-slate-200 hover:text-slate-600 disabled:opacity-50 disabled:hover:bg-slate-100 disabled:hover:text-slate-500';
+      $coloring = 'bg-slate-100 text-slate-500 hover:bg-slate-200 hover:text-slate-600 disabled:opacity-50 disabled:hover:bg-slate-100 disabled:hover:text-slate-500 ';
+      $coloring .= 'dark:bg-slate-300 dark:text-slate-600 dark:hover:bg-slate-400';
       break;
     case 'dark':
-      $coloring = 'bg-slate-500 text-slate-100 hover:bg-slate-800 hover:text-slate-200 disabled:opacity-50 disabled:hover:bg-slate-500 disabled:hover:text-slate-100';
+      $coloring = 'bg-slate-500 text-slate-100 hover:bg-slate-800 hover:text-slate-200 disabled:opacity-50 disabled:hover:bg-slate-500 disabled:hover:text-slate-100 ';
+      $coloring .= 'dark:bg-slate-700 dark:text-slate-300 hover:dark:bg-slate-600';
       break;
     case 'link':
       $button = 'inline-block align-middle text-center select-none font-normal whitespace-no-wrap py-1 px-3 leading-normal underline underline-offset-2 border hover:rounded';
-      $coloring = 'border-transparent bg-transparent hover:border-slate-100 text-blue-600 hover:bg-blue-200 hover:text-slate-800 disabled:hover:bg-transparent disabled:hover:border-transparent disabled:hover:text-blue-600';
+      $coloring = 'border-transparent bg-transparent hover:border-slate-100 text-blue-600 hover:bg-blue-200 hover:text-slate-800 disabled:hover:bg-transparent disabled:hover:border-transparent disabled:hover:text-blue-600 ';
+      $coloring .= 'dark:text-slate-800 dark:text-blue-400 dark:hover:bg-blue-200';
       break;
     case 'info':
-      $coloring = 'bg-slate-300 text-slate-800 hover:bg-slate-600 hover:text-white disabled:opacity-50 disabled:hover:bg-slate-300 disabled:hover:text-slate-800';
+      $coloring = 'bg-slate-300 text-slate-800 hover:bg-slate-600 hover:text-white disabled:opacity-50 disabled:hover:bg-slate-300 disabled:hover:text-slate-800 ';
+      $coloring .= 'dark:bg-slate-700 dark:text-slate-100 dark:hover:bg-slate-800 dark:hover:text-slate-200';
       break;
     case 'success':
     case 'green':
-      $coloring = 'bg-green-400 text-green-800 hover:bg-green-600 hover:text-white disabled:opacity-50 disabled:hover:bg-green-400 disabled:hover:text-green-800';
+      $coloring = 'bg-green-400 text-green-800 hover:bg-green-600 hover:text-white disabled:opacity-50 disabled:hover:bg-green-400 disabled:hover:text-green-800 ';
+      $coloring .= 'dark:bg-green-800 dark:text-green-100 dark:hover:text-green-200 dark:hover:bg-green-900';
       break;
     case 'warning':
     case 'yellow':
-      $coloring = 'bg-yellow-300 text-yellow-800 hover:bg-yellow-500 hover:text-slate-100 disabled:opacity-50 disabled:hover:bg-yellow-300 disabled:hover:text-yellow-800';
+      $coloring = 'bg-yellow-300 text-yellow-800 hover:bg-yellow-500 hover:text-slate-100 disabled:opacity-50 disabled:hover:bg-yellow-300 disabled:hover:text-yellow-800 ';
+      $coloring .= 'dark:bg-yellow-800 dark:text-yellow-100 dark:hover:text-yellow-200 dark:hover:bg-yellow-900';
       break;
     case 'danger':
     case 'delete':
     case 'error':
     case 'red':
-      $coloring = 'bg-red-300 text-red-800 hover:bg-red-500 hover:text-slate-100 disabled:opacity-50 disabled:hover:bg-red-300 disabled:hover:text-red-800';
+      $coloring = 'bg-red-300 text-red-800 hover:bg-red-500 hover:text-slate-100 disabled:opacity-50 disabled:hover:bg-red-300 disabled:hover:text-red-800 ';
+      $coloring .= 'dark:bg-red-800 dark:text-red-100 dark:hover:bg-red-900 dark:hover:text-red-200';
       break;
     case 'primary':
     case 'blue':
-      $coloring = 'bg-blue-300 text-blue-800 hover:bg-blue-400 hover:text-gray-200 disabled:opacity-50 disabled:hover:bg-blue-300 disabled:hover:text-blue-800';
+      $coloring = 'bg-blue-300 text-blue-800 hover:bg-blue-400 hover:text-gray-200 disabled:opacity-50 disabled:hover:bg-blue-300 disabled:hover:text-blue-800 ';
+      $coloring .= 'dark:bg-blue-800 dark:text-blue-100 dark:hover:bg-blue-900 dark:hover:text-blue-200';
       break;
     case 'ghost':
-      $coloring = 'bg-transparent hover:bg-slate-200 disabled:opacity-50 disabled:hover:bg-transparent';
+      $coloring = 'bg-transparent text-slate-400 hover:bg-slate-200 disabled:opacity-50 disabled:hover:bg-transparent ';
+      $coloring .= 'dark:hover:bg-slate-300 dark:hover:text-slate-700';
       break;
   }
 }

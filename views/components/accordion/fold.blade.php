@@ -14,8 +14,8 @@
     </div>
     <span
         :class="fold === '{{ $slug }}'
-        ? 'text-slate-800'
-        : 'hover:text-slate-800'"
+        ? 'text-slate-800 dark:text-slate-200 hover:dark:text-slate-50'
+        : 'hover:text-slate-800 dark:text-slate-200 hover:dark:text-slate-50'"
     >{{ $title }}</span>
     @isset($righticon)
         @svg($righticon, 'inline w-6 h-6 pl-1')
@@ -26,7 +26,7 @@
 </a>
 {{-- rollup code based on https://hussein-alhammad.com/blog/2023/03/alpine-slide-up-down-animation/ --}}
 <div id="{{ $slug }}"
-    class="h-0 pb-2 border-l-2 border-slate-400 opacity-0 transition-all duration-300 overflow-hidden"
+    class="h-0 pb-2 border-l-2 border-slate-400 dark:text-slate-200 opacity-0 transition-all duration-300 overflow-hidden"
     :class="fold === '{{ $slug }}' && 'opacity-100 pointer-events-none p-2 m-2 ml-8'"
     :style="fold === '{{ $slug }}' && {height: $el.scrollHeight+`px`}"
 >
