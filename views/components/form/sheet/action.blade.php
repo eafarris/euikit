@@ -1,6 +1,6 @@
 @props(['route' => '', 'type' => 'info', 'title' => '', 'icon' => ''])
 @php
-    $button = 'p-2 bg-slate-300 text-slate-500 transition scale-y-110';
+    $button = 'p-2 bg-slate-300 text-slate-500 dark:bg-slate-500 dark:text-slate-700 transition scale-y-110';
     switch($type) {
         case 'success':
         case 'green':

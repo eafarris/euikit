@@ -43,7 +43,8 @@ if ($type == 'search') {
 }
 
 $common_classes = 'w-full rounded shadow-sm sm:text-sm border leading-tight appearance-none placeholder:italic';
-$color_classes = 'border-slate-300 dark:bg-slate-400 dark:text-slate-700 focus:border-sky-300 focus:ring-sky-300 placeholder:text-slate-400 text-slate-500';
+$color_classes = 'border-slate-300 text-slate-500 bg-transparent focus:border-sky-300 focus:ring-sky-300 placeholder:text-slate-400 ';
+$color_classes .= 'dark:border-slate-400 dark:bg-slate-700 dark:text-slate-300 dark:placeholder:text-slate-400 dark:focus:border-sky-600 dark:focus:ring-sky-600';
 $error_classes = 'border-red-500 text-red-500';
 @endphp
 
