@@ -6,8 +6,9 @@
 <a href="#" @click.prevent="tab = '{{ $slug }}'; window.location.hash = tab"
   class="group inline-flex items-center py-4 px-1 text-sm font-medium"
   :class="tab === '{{ $slug }}'
-    ? 'text-slate-600 border-b-2 border-slate-600'
-    : 'text-slate-400 hover:text-slate-500 border-b-2 border-transparent hover:border-slate-400 dark:text-slate-700 dark:hover:text-slate-500 dark:hover:border-slate-700'
+    ? 'text-slate-200 border-b-2 border-slate-200'
+    : 'text-slate-500 hover:text-slate-400 border-b-2 border-transparent hover:border-slate-400
+      dark:text-slate-700 dark:hover:text-slate-500 dark:hover:border-slate-700'
 ">
     @isset($lefticon)
         @svg($lefticon, 'inline w-6 h-6 pr-1')
