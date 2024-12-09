@@ -17,7 +17,7 @@
             break;
         case 'link':
             $coloring = 'bg-transparent text-blue-600 underline underline-offset-2 ';
-            $coloring .= 'dark:text-blue-300';
+            $coloring .= 'dark:text-slate-800';
             break;
         case 'info':
             $coloring = 'bg-slate-300 text-slate-900 ';

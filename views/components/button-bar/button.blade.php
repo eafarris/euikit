@@ -1,6 +1,6 @@
 @props(['type' => 'info', 'title' => '', 'icon' => '', 'route' => ''])
 @php
-    $button = 'p-2 first:rounded-l-md last:rounded-r-md relative inline-flex items-center bg-slate-300 text-slate-500 transition hover:scale-y-110';
+    $button = 'p-2 first:rounded-l-md last:rounded-r-md relative inline-flex items-center bg-slate-300 dark:bg-slate-500 text-slate-500 dark:text-slate-300 transition hover:scale-y-110';
     switch($type) {
         case 'light':
             $hovercoloring = 'hover:bg-slate-200 hover:text-slate-600';

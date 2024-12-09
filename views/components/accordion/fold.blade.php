@@ -3,7 +3,7 @@
     $slug = Str::slug($title);
 @endphp
 <a href="#" @click.prevent="fold = fold === '{{ $slug }}' ? '' : '{{ $slug }}'"
-  class="block pt-4 text-slate-600"
+  class="block pt-4 text-slate-600 dark:text-slate-200"
 
 >
     <div x-show="fold === '{{ $slug }}'" class="inline-block">

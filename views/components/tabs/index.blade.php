@@ -8,7 +8,7 @@
         </select>
     </div>
     <div class="hidden sm:block">
-        <div class="border-b-2 border-slate-300">
+        <div class="border-b-2 border-slate-300 dark:border-slate-500">
             <nav class="-mb-[2px] flex space-x-8">
                 {{ $slot }}
             </nav>

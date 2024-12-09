@@ -18,7 +18,7 @@
         border-slate-300 border-2
         bg-gradient-to-br to-80%
         from-slate-50/60 via-slate-200 to-slate-100/60
-        dark:border-slate-900 dark:from-slate-600 dark:to-slate-700
+        dark:border-slate-900 dark:from-slate-600/70 dark:to-slate-700/60 dark:text-slate-300
         ']) }} >
         <div class="flex flex-col size-fit justify-between w-full">
             @unless(empty($header))

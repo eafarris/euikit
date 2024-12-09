@@ -11,7 +11,7 @@
         text-slate-500 dark:text-slate-200
         hover:bg-slate-200 dark:hover:bg-slate-700 hover:rounded-tl-lg hover:rounded-bl-lg',
 
-        'dark:text-slate-200
+        'dark:text-slate-400
         border-transparent
         hover:bg-slate-200 dark:hover:bg-slate-700
         hover:rounded-tl-lg hover:roundedl-bl-lg' => !$part_of_url,
@@ -19,7 +19,8 @@
         'border-l-2 border-r-0 border-t-2 border-b-2
         border-slate-100
         bg-gradient-to-r from-white to-slate-50 to-90%
-        dark:text-slate-600 dark:bg-slate-800' => $part_of_url,
+        dark:from-slate-700 dark:to-slate-800 dark:to-90%
+        dark:border-slate-800 dark:text-slate-300' => $part_of_url,
     ])
 >
     @if($icon)
