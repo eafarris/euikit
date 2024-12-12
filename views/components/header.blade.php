@@ -9,9 +9,9 @@
         @if($lefticon)
             @svg($lefticon, 'w-8 h-8 mr-4')
         @endif
-        <p class="grow">
-            {{ $slot }}
-        </p>
+            <p class="grow">
+                {{ $slot }}
+            </p>
         @if($righticon)
             @svg($righticon, 'w-8 h-8 ml-4')
         @endif
