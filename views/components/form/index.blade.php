@@ -18,11 +18,18 @@
 {{ $slot }}
 
 @if ($footer)
-<div class="py-3 px-6 border-2 border-slate-300 bg-slate-200 rounded-lg">
-    <div class="flex flex-row items-center justify-between">
-        {{ $footer }}
-    </div>
-</div>
+    @unless(is_string($footer))
+        <x-e::footer
+            {{ $attributes->merge([
+                'lefticon' => $footer->attributes['lefticon'],
+                'righticon' => $footer->attributes['righticon']
+            ]) }}
+        >
+            {{ $footer }}
+        </x-e::footer>
+    @else
+        <x-e::footer>{{ $footer }}</x-e::footer>
+    @endunless
 @endif
 
 </form><!-- EUIKit Form Component -->
