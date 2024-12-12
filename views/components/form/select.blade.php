@@ -1,4 +1,4 @@
-@props(['field', 'label' => '', 'nolabel' => FALSE, 'value' => '', 'any' => FALSE, 'none' => FALSE, 'placeholder' => '', 'multi' => FALSE,
+@props(['field', 'label' => '', 'nolabel' => FALSE, 'value' => '', 'any' => FALSE, 'none' => FALSE, 'noplaceholder' => FALSE, 'placeholder' => '', 'multi' => FALSE,
     'help' => '', 'helptype' => 'ghost',
 ])
 @php
@@ -31,7 +31,9 @@
               ])
             >
                 @unless ($multi)
-                    <option value="">@if ($placeholder) {{ $placeholder }} @else Select {{ $label ?: ucfirst($field) }} @endif
+                    @unless ($noplaceholder)
+                        <option value="">@if ($placeholder) {{ $placeholder }} @else Select {{ $label ?: ucfirst($field) }} @endif
+                    @endunless
                 @endunless
                 @if($any)
                     <option value="any">Any</option>
