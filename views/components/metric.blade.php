@@ -3,16 +3,22 @@
 ])
 @php
 if ($stoplight) {
-    $slot = $value;
-    if ($value > $slgreen) {
-        $type="green";
-    } elseif ($value > $slblue) {
-        $type="blue";
-    } elseif ($value > $slyellow) {
-        $type="yellow";
+    if(is_numeric($slot->toHtml())) { // slot needs to contain _ONLY_ a number
+        $value = $slot->toHtml();
+        if ($value > $slgreen) {
+            $type="green";
+        } elseif ($value > $slblue) {
+            $type="blue";
+        } elseif ($value > $slyellow) {
+            $type="yellow";
+        } else {
+            $type="red";
+        }
     } else {
+        $value = 0;
         $type="red";
     }
+
 }
 switch ($type) {
     case 'light':
@@ -23,9 +29,9 @@ switch ($type) {
         $iconcolor = 'text-slate-500 dark:text-slate-100';
         break;
     case 'dark':
-        $labelcoloring = 'bg-slate-500 border-slate-400 dark:bg-slate-700 dark:border-slate-600';
+        $labelcoloring = 'bg-slate-500 border-slate-400 dark:bg-slate-700 dark:border-slate-500';
         $labeltextcoloring = 'text-slate-200 dark:text-slate-300';
-        $metriccoloring = 'bg-slate-200 border-slate-400 dark:bg-slate-600 dark:border-slate-600';
+        $metriccoloring = 'bg-slate-200 border-slate-400 dark:bg-slate-600 dark:border-slate-500';
         $metrictextcoloring = 'text-slate-600 dark:text-slate-400';
         $iconcolor = 'text-slate-100';
         break;
@@ -49,7 +55,7 @@ switch ($type) {
         $labeltextcoloring = 'text-green-600 dark:text-green-300';
         $metriccoloring = 'bg-green-100 border-green-600 dark:bg-green-300 dark:border-green-100';
         $metrictextcoloring = 'text-green-600 dark:text-green-900';
-        $iconcolor = 'text-green-600 dark:text-green-800';
+        $iconcolor = 'text-green-600 dark:text-green-300';
         break;
     case 'warning':
     case 'yellow':
@@ -103,7 +109,7 @@ switch ($type) {
     @else
         <div class="flex place-content-center pb-4 pt-2 rounded-xl border {{ $metriccoloring}}">
     @endif
-        <p class="mt-1 text-2xl font-semibold tracking-tight {{ $metrictextcoloring }}">
+        <p class="mt-1 px-2 text-2xl font-semibold tracking-tight {{ $metrictextcoloring }}">
             {{ $slot }}
         </p>
     </div>
