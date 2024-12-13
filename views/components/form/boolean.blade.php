@@ -1,10 +1,28 @@
 @props(['field', 'label' => '', 'value' => '', 'type' => 'radio',
+    'choices' => 'yn', 'choicetrue' => '', 'choicefalse' => '',
     'help' => '', 'helptype' => 'ghost',
 ])
 
 @php // "field" is optional if wire:model exists
 if ($attributes->whereStartsWith('wire:model') && !isset($field)) {
     $field = $attributes->whereStartsWith('wire:model')->first();
+}
+
+if ($choices) {
+    switch ($choices) {
+        case 'yn':
+            $choicetrue = 'Yes';
+            $choicefalse = 'No';
+            break;
+        case 'oo':
+           $choicetrue = 'On';
+            $choicefalse = 'Off';
+            break;
+        case 'tf':
+            $choicetrue = 'True';
+            $choicefalse = 'False';
+            break;
+    } // endswitch choices
 }
 @endphp
 
@@ -13,16 +31,16 @@ if ($attributes->whereStartsWith('wire:model') && !isset($field)) {
         <label for="{{ $field }}" class="block text-sm mb-2 font-medium text-slate-500 dark:text-slate-300 bg-transparent">{{ $label == '' ? ucfirst($field) : $label }}</label>
         <div class="flex items-center gap-4">
             <div class="flex">
-                <input class="h-4 w-4 border-slate-300 text-slate-500 focus:ring-2 focus:ring-sky-300 
+                <input class="h-4 w-4 border-slate-300 text-slate-500 focus:ring-2 focus:ring-sky-300
                     dark:border-slate-700 dark:text-slate-700 dark:focus:ring-sky-600 "
                     type="radio" name="{{ $field }}" id="{{ $field }}_yes" value="1" {{ $value ? 'checked' : '' }} {{ $attributes->whereStartsWith('wire') }}>
-                <label for="{{ $field}}_yes" class="text-sm font-medium text-slate-500 dark:text-slate-300 ml-2 block">Yes</label>
+                <label for="{{ $field}}_yes" class="text-sm font-medium text-slate-500 dark:text-slate-300 ml-2 block">{{ $choicetrue }}</label>
             </div>
             <div class="flex">
-                <input class="h-4 w-4 border-slate-300 text-slate-500 focus:ring-2 focus:ring-sky-300 
+                <input class="h-4 w-4 border-slate-300 text-slate-500 focus:ring-2 focus:ring-sky-300
                     dark:border-slate-700 dark:text-slate-700 dark:focus:ring-sky-600 "
                     type="radio" name="{{ $field }}" id="{{ $field }}_no" value="0" {{ $value ? '' : 'checked' }} {{ $attributes->whereStartsWith('wire')}}>
-                <label for="{ $field}}_no" class="text-sm font-medium text-slate-500 dark:text-slate-300 ml-2 block">No</label>
+                <label for="{ $field}}_no" class="text-sm font-medium text-slate-500 dark:text-slate-300 ml-2 block">{{ $choicefalse }}</label>
             </div>
         </div>
     @else
