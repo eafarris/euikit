@@ -44,7 +44,7 @@ $coloring = '';
     case 'red':
       $coloring = 'bg-red-50 border-red-200 border-t-red-400 text-red-700 ';
       $coloring .= 'dark:bg-red-800 dark:border-red-300 dark:border-t-red-100 dark:text-red-100';
-      $iconcolor = 'text-red-500';
+      $iconcolor = 'text-red-500 dark:text-red-100';
       $lefticon = $lefticon == 'none' ? '' : ($lefticon ?: 'heroicon-o-exclamation-circle');
       break;
     case 'primary':

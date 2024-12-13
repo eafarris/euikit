@@ -15,7 +15,7 @@ switch ($type) {
       break;
     case 'link':
       $coloring = 'bg-transparent text-blue-600 border-blue-400 underline underline-offset-2 ';
-      $coloring .= 'dark:text-slate-800 dark:text-blue-400 dark:border-transparent';
+      $coloring .= 'dark:text-slate-400 dark:text-blue-400 dark:border-transparent';
       break;
     case 'info':
       $coloring = 'bg-slate-100 text-slate-700 border-slate-400 ';

@@ -17,7 +17,7 @@ if ($type) {
     case 'link':
       $button = 'inline-block align-middle text-center select-none font-normal whitespace-no-wrap py-1 px-3 leading-normal underline underline-offset-2 border hover:rounded';
       $coloring = 'border-transparent bg-transparent hover:border-slate-100 text-blue-600 hover:bg-blue-200 hover:text-slate-800 disabled:hover:bg-transparent disabled:hover:border-transparent disabled:hover:text-blue-600 ';
-      $coloring .= 'dark:text-slate-800 dark:text-blue-400 dark:hover:bg-blue-200';
+      $coloring .= 'dark:text-slate-400 dark:text-blue-400 dark:hover:bg-blue-200';
       break;
     case 'info':
       $coloring = 'bg-slate-300 text-slate-800 hover:bg-slate-600 hover:text-white disabled:opacity-50 disabled:hover:bg-slate-300 disabled:hover:text-slate-800 ';
@@ -47,7 +47,7 @@ if ($type) {
       break;
     case 'ghost':
       $coloring = 'bg-transparent text-slate-400 hover:bg-slate-200 disabled:opacity-50 disabled:hover:bg-transparent ';
-      $coloring .= 'dark:hover:bg-slate-300 dark:hover:text-slate-700';
+      $coloring .= 'dark:hover:bg-slate-700 dark:hover:text-slate-300';
       break;
   }
 }
