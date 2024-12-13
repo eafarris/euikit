@@ -1,11 +1,11 @@
-@props(['route' => '#', 'icon' => '', 'badge' => '', 'badgeType' => ''])
+@props(['route' => '#', 'lefticon' => '', 'badge' => '', 'badgeType' => ''])
 @php
     // Laravel's URL() function never takes hashes into account
     $part_of_url = \Str::before(url()->current(), '#') == \Str::before($route, '#') ||
         url()->current() === url($route);
 @endphp
 <a href="{{ $route }}"
-    @class(['border-l-2 border-r-0 border-t-2 border-b-2
+    @class(['border-l-2 border-r-1 border-t-2 border-b-2
         rounded-l-lg
         shrink-1 flex items-center p-1 pr-0 pl-2
         text-slate-500 dark:text-slate-200
@@ -21,8 +21,8 @@
         dark:from-slate-700 dark:to-slate-800 dark:to-90% dark:border-slate-800 dark:text-slate-300' => $part_of_url,
     ])
 >
-    @if($icon)
-        @svg($icon, 'w-6 h-6 pr-1 inline')
+    @if($lefticon)
+        @svg($lefticon, 'w-6 h-6 pr-1 inline')
     @else
         <div class="w-6 h-6 pr-1"></div>
     @endif
