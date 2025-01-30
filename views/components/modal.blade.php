@@ -1,6 +1,6 @@
 @props(['name', 'header'])
 <template x-teleport="body">
-<div id="{{ $name }}"
+<div id="{{ $name }}" wire:ignore.self
     x-data="{ show: false, name: '{{ $name }}' }"
     x-show="show"
     x-cloak
@@ -14,7 +14,7 @@
     >
     </div><!-- backdrop -->
     <div {{ $attributes->merge(['class' =>
-        'z-50 fixed inset-0 shadow-2xl p-4 m-auto w-1/2 h-fit rounded-2xl
+        'z-10 fixed inset-0 shadow-2xl p-4 m-auto w-1/2 h-fit rounded-2xl
         border-slate-300 border-2
         bg-gradient-to-br to-80%
         from-slate-50/60 via-slate-200 to-slate-100/60
