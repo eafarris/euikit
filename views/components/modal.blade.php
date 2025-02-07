@@ -9,7 +9,7 @@
         show = ($event.detail === name);
     "
 >
-    <div class="fixed inset-0 backdrop-blur-sm backdrop-brightness-75 m-auto"
+    <div class="fixed inset-0 backdrop-blur-sm-xs backdrop-brightness-75 m-auto"
         @click="show = false"
     >
     </div><!-- backdrop -->

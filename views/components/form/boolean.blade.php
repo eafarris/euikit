@@ -47,7 +47,7 @@ if ($choices) {
         <div class="p-4 block text-sm font-medium text-slate-500 bg-transparent">
         <input type="checkbox" name="{{ $field }}"
             {{ $attributes->whereStartsWith('wire') }}
-            class="h-6 w-6 rounded border-slate-300 text-slate-500 focus:ring-sky-300 mr-2"
+            class="h-6 w-6 rounded-sm border-slate-300 text-slate-500 focus:ring-sky-300 mr-2"
             @if ($value) checked @endif
         /> <span class="text-slate-500 dark:text-slate-300">{{ $label == '' ? ucfirst($field) : $label }}</span>
         </div>

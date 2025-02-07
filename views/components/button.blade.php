@@ -3,7 +3,7 @@
 ])
 
 @php
-$button   = 'flex w-fit place-items-center font-normal text-base whitespace-no-wrap rounded py-1 px-3 no-underline h-12 transition duration-150 hover:scale-105 disabled:hover:scale-100';
+$button   = 'flex w-fit place-items-center font-normal text-base whitespace-no-wrap rounded-sm py-1 px-3 no-underline h-12 transition duration-150 hover:scale-105 disabled:hover:scale-100';
 if ($type) {
   switch ($type) {
     case 'light':

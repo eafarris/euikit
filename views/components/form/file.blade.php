@@ -7,7 +7,7 @@
         x-data="{ files: null }"
     >
         <input type="file" id="{{ $field }}" name="{{ $field }}"
-            class="absolute top-0 left-0 right-0 w-60 h-60 z-50 m-0 p-0 outline-none invisible"
+            class="absolute top-0 left-0 right-0 w-60 h-60 z-50 m-0 p-0 outline-hidden invisible"
             x-on:change="files = $event.target.files; console.log($event.target.files);"
             x-on:dragover="$el.classList.add('active')"
             x-on:dragleave="$el.classList.remove('active')"
