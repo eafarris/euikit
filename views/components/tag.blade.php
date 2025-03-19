@@ -1,6 +1,7 @@
 @props(['type' => 'info',
     'route' => '',
     'lefticon' => '', 'righticon' => '',
+    'color' => '',
 ])
 @php
     $tag = 'inline-flex gap-1 grow-0 shrink items-center justify-items-center text-xs uppercase font-semibold px-2 py-1 rounded-md mx-1';
@@ -52,9 +53,17 @@
     } // endswitch
 @endphp
 @if ($route)
-    <a href="{{ $route }}" {{ $attributes->merge(['class' => $tag . ' ' . $coloring]) }}>
+    <a href="{{ $route }}" {{ $attributes->merge(['class' => $tag . ' ' . $coloring]) }}
+        @if ($color)
+            style="background: {{ $color }}"
+        @endif
+    >
 @else
-<span {{ $attributes->merge(['class' => $tag . ' ' . $coloring]) }}>
+<span {{ $attributes->merge(['class' => $tag . ' ' . $coloring]) }}
+    @if ($color)
+        style="background: {{ $color }}"
+    @endif
+>
 @endif
     @if ($lefticon)
         @svg($lefticon, 'w-3 h-3 mr-1')
