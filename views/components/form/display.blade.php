@@ -8,7 +8,7 @@
         $field = $attributes->whereStartsWith('wire:model')->first();
     }
 
-    $common_classes = 'w-full rounded-sm shadow-xs sm:text-sm border leading-tight appearance-none placeholder:italic';
+    $common_classes = 'p-1 w-full rounded-sm shadow-xs sm:text-sm border leading-tight appearance-none placeholder:italic';
     $color_classes = 'border-slate-300 text-slate-500 focus:border-sky-300 focus:ring-sky-300 placeholder:text-slate-400 ';
     $color_classes .= 'dark:bg-slate-700 dark:text-slate-300 dark:placeholder:text-slate-400';
     $error_classes = 'border-red-500 text-red-500';
@@ -60,7 +60,7 @@
             <input disabled type="text"
                 id="{{ $field }}"
                 name="{{ $field }}"
-                value="{{ $field ? 'Yes' : 'No' }}"
+                value="{{ $value ? 'Yes' : 'No' }}"
                 @class([$common_classes,
                     $error_classes => $errors->has($field),
                     $color_classes => !$errors->has($field),

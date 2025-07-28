@@ -12,17 +12,17 @@ $coloring = '';
     case 'dark':
       $coloring = 'bg-slate-500 border-slate-600 border-t-slate-800 text-slate-200 ';
       $coloring .= 'dark:bg-slate-700 dark:test-slate-300 dark:hover:bg-slate-600';
-      $iconcolor = 'text-slate-100 dark:text-slate-300';
+      $iconcolor = 'text-slate-400 dark:text-slate-300';
       break;
     case 'link':
       $coloring = 'bg-slate-50 border-slate-100 border-t-slate-200 text-blue-600 ';
       $coloring .= 'dark:text-slate-800 dark:text-blue-400 dark:hover:bg-blue-200';
-      $iconcolor = 'text-blue-400';
+      $iconcolor = 'text-blue-400 dark:text-blue-100';
       break;
     case 'info':
       $coloring = 'bg-slate-50 border-slate-200 border-t-slate-400 text-slate-500 ';
       $coloring .= 'dark:bg-slate-800 dark:border-slate-400 dark:border-t-slate-300 dark:text-slate-100';
-      $iconcolor = 'text-slate-100';
+      $iconcolor = 'text-slate-500 dark:text-slate-100';
       break;
     case 'success':
     case 'green':
@@ -51,7 +51,7 @@ $coloring = '';
     case 'blue':
       $coloring = 'bg-blue-50 border-blue-200 border-t-blue-400 text-blue-700 ';
       $coloring .= 'dark:bg-blue-800 dark:border-blue-300 dark:border-t-blue-100 dark:text-blue-100';
-      $iconcolor = 'text-blue-100';
+      $iconcolor = 'text-blue-500 dark:text-blue-100';
       break;
     case 'ghost':
       $coloring = 'bg-transparent text-slate-400 border-none shadow-none ';

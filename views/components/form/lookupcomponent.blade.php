@@ -1,6 +1,6 @@
 @props(['field', 'label' => '', 'nolabel' => FALSE, 'value' => '',
     'any' => FALSE, 'none' => FALSE, 'models', 'optionvalue' => 'id', 'optionfield' => '',
-    'help' => '', 'helptype' => 'ghost',
+    'help' => '', 'helptype' => 'ghost', 'nonevalue' => 0, 'anyvalue' => 'any',
 ])
 
 @php
@@ -26,10 +26,10 @@
             >
             <option disabled value="">Select {{ $label ?: ucfirst($field) }}</option>
             @if($any)
-                <option value="any">Any</option>
+                <option value="{{ $anyvalue }}">Any</option>
             @endif
             @if($none)
-                <option value="none">None</option>
+                <option value="{{ $nonevalue }}">None</option>
             @endif
             @foreach ($models as $model)
                 <option value="{{ $model->$optionvalue }}" {{ $value == $model->$optionvalue ? "selected" : "" }}>{{ $model->$optionfield }}</option>

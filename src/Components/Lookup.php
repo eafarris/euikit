@@ -18,7 +18,9 @@ class Lookup extends Component {
     public $sortby; // field on model for sorting options
     public $sortdirection; // can pass 'desc' for reverse sort
     public $any = FALSE; // Allow for an "any" choice
+    public $anyvalue = 'any'; // What 'any' means to the model
     public $none = FALSE; // Allow for a "none" choice
+    public $nonevalue = 0; // What "none" means to the model
 
 
     /**
@@ -28,7 +30,7 @@ class Lookup extends Component {
      */
     public function __construct($model, $field = '', $value = '', $label = '', $inline = FALSE,
         $filterfield = '', $sortby = '', $sortdirection = 'asc', $optionvalue = 'id',
-        $optionfield = '', $name = '', $any = FALSE, $none = FALSE) {
+        $optionfield = '', $name = '', $any = FALSE, $anyvalue = '', $none = FALSE, $nonevalue='') {
 
         $this->label = $label ?: ucfirst($model);
         $this->inline = $inline;
@@ -42,10 +44,12 @@ class Lookup extends Component {
         $this->optionfield = $optionfield ?: $this->field;
         $this->name = $name ?: $field ?: $model . '_id';
         $this->any = $any;
+        $this->anyvalue = $anyvalue;
         $this->none = $none;
+        $this->nonevalue = $nonevalue;
     }
 
-    public function getModel() { // 
+    public function getModel() { //
         if (Str::contains($this->model, '\\')) { // absolute reference to a model class
             $allmodels = $this->model::all();
         } else {
@@ -74,6 +78,6 @@ class Lookup extends Component {
      */
     public function render() {
         $this->models = $this->getModel();
-        return view('e::components.form.lookup');
+        return view('e::components.form.lookupcomponent');
     }
 }
