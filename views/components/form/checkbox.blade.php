@@ -14,7 +14,7 @@ if ($attributes->whereStartsWith('wire:model') && !isset($field)) {
         >
         {{ $label ?: ucfirst($field)}}
         @isset($help)
-            <x-e::help type="{{ $helptype }}">{{ $help }}</x-e::help>
+            <x-euikit::help type="{{ $helptype }}">{{ $help }}</x-euikit::help>
         @endisset
     </label>
 </div>

@@ -12,6 +12,7 @@
     @isset($head)
         {{ $head }}
     @endisset
+    @livewireStyles()
 </head>
 
 <body class="font-sans subpixel-antialiased"
@@ -111,5 +112,6 @@
         }
     };
 </script>
+@livewireScripts()
 </body>
 </html><!-- EUIKit app layout -->

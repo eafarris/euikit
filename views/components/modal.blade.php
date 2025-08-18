@@ -9,7 +9,7 @@
         show = ($event.detail === name);
     "
 >
-    <div class="fixed inset-0 backdrop-blur-sm-xs backdrop-brightness-75 m-auto"
+    <div class="fixed inset-0 backdrop-blur-xs backdrop-brightness-75 m-auto"
         @click="show = false"
     >
     </div><!-- backdrop -->
@@ -23,16 +23,16 @@
         <div class="flex flex-col size-fit justify-between w-full">
             @unless(empty($header))
                 @unless(is_string($header))
-                <x-e::header
+                <x-euikit::header
                     {{ $attributes->merge([
                         'lefticon' => $header->attributes['lefticon'],
                         'righticon' => $header->attributes['righticon']
                     ]) }}
                 >
                     {{ $header }}
-                </x-e::header>
+                </x-euikit::header>
                 @else
-                    <x-e::header>{{ $header }}</x-e::header>
+                    <x-euikit::header>{{ $header }}</x-euikit::header>
                 @endunless
             @endunless
             <div class="py-8">
@@ -40,16 +40,16 @@
             </div>
             @unless(empty($footer))
                 @unless(is_string($footer))
-                    <x-e::footer
+                    <x-euikit::footer
                         {{ $attributes->merge([
                             'lefticon' => $footer->attributes['lefticon'],
                             'righticon' => $footer->attributes['righticon']
                         ]) }}
                     >
                         {{ $footer }}
-                    </x-e::footer>
+                    </x-euikit::footer>
                 @else
-                    <x-e::footer>{{ $footer }}</x-e::footer>
+                    <x-euikit::footer>{{ $footer }}</x-euikit::footer>
                 @endunless
             @endunless
         </div>

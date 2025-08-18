@@ -30,12 +30,12 @@
             <div class="bottom-0 left-0 flex flex-col space-y-2 items-center justify-center">
                 @svg('heroicon-o-arrow-up-tray', "w-6 h-6")
                 <p class="text-slate-600">Drag your files here or click in this area.</p>
-                <a href="javascript:void(0)">Select a file</a>
+                <x-euikit::button type="info" value="Select a file" />
             </div>
         </template>
 
         @isset($help)
-            <x-e::help>{{ $help }}</x-e::help>
+            <x-euikit::help>{{ $help }}</x-euikit::help>
         @endisset
     </div>
 </div>

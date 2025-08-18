@@ -24,6 +24,6 @@
     </div><!-- .grid-cols-12 -->
 
     @isset($help)
-        <x-e::help>{{ $help }}</x-e::help>
+        <x-euikit::help>{{ $help }}</x-euikit::help>
     @endisset
 </div><!-- EUIKit Ledger Component -->

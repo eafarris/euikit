@@ -13,4 +13,4 @@
             {{ $message }}
         </p>
     @enderror
-</div><!-- EUIKit select input -->
+</div><!-- EUIKit Inline Select input -->

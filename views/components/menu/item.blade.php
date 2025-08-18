@@ -29,7 +29,7 @@
 {{ $slot }}
     @isset($badge)
         @unless($badge == '' || $badge == 0)
-        <x-e::tag type="{{ $badgeType }}">{{ $badge }}</x-e::tag>
+        <x-euikit::tag type="{{ $badgeType }}">{{ $badge }}</x-euikit::tag>
         @endunless
     @endisset
 </a>

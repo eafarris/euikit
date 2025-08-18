@@ -7,7 +7,7 @@
         $field = $attributes->whereStartsWith('wire:model')->first();
     }
 
-    $common_classes = 'block w-1/6 min-w-[200px] rounded-sm shadow-xs sm:text-sm border leading-tight appearance-none';
+    $common_classes = 'block p-2 rounded-sm shadow-xs sm:text-sm border leading-tight appearance-none';
     $color_classes = 'border-slate-300 text-slate-500 bg-transparent focus:border-sky-300 focus:ring-sky-300 placeholder:text-slate-400 ';
     $color_classes .= 'dark:border-slate-400 dark:bg-slate-700 dark:text-slate-300 dark:placeholder:text-slate-400 dark:focus:border-sky-600 dark:focus:ring-sky-600';
     $error_classes = 'border-red-500 text-red-900';
@@ -45,7 +45,7 @@
             </select>
         </div>
         @isset($help)
-            <x-e::help>{{ $help }}</x-e::help>
+            <x-euikit::help>{{ $help }}</x-euikit::help>
         @endisset
     </div>
     @error($field)

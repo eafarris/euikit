@@ -1,4 +1,4 @@
-<?php namespace eafarris\euikit\Livewire;
+<?php namespace eafarris\Livewire;
 use Livewire\Component;
 use Str;
 
@@ -43,7 +43,7 @@ class Lookup extends Component {
     } // endfunction updatedFind
 
     public function render() {
-        return view ('e::components.livewire.lookup');
+        return view ('x-euikit::components.footer');
     } // endfunction render
 
 } // endclass Lookup

@@ -10,16 +10,16 @@
 
 @if($header)
     @unless(is_string($header))
-    <x-e::header
+    <x-euikit::header
         {{ $attributes->merge([
             'lefticon' => $header->attributes['lefticon'],
             'righticon' => $header->attributes['righticon']
         ]) }}
     >
         {{ $header }}
-    </x-e::header>
+    </x-euikit::header>
     @else
-        <x-e::header> {{ $header }} </x-e::header>
+        <x-euikit::header> {{ $header }} </x-euikit::header>
     @endunless
 @endif
 
@@ -29,16 +29,16 @@
 
 @if($footer)
     @unless(is_string($footer))
-        <x-e::footer
+        <x-euikit::footer
             {{ $attributes->merge([
                 'lefticon' => $footer->attributes['lefticon'],
                 'righticon' => $footer->attributes['righticon']
             ]) }}
         >
             {{ $footer }}
-        </x-e::footer>
+        </x-euikit::footer>
     @else
-        <x-e::footer>{{ $footer }}</x-e::footer>
+        <x-euikit::footer>{{ $footer }}</x-euikit::footer>
     @endunless
 @endif
 </section>

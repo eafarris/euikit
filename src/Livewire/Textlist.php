@@ -1,4 +1,4 @@
-<?php namespace eafarris\euikit\Livewire;
+<?php namespace eafarris\Livewire;
 
 use Livewire\Component;
 
@@ -30,6 +30,6 @@ class Textlist extends Component {
     }
 
     public function render() {
-        return view('euikit::components.form.textlist');
+        return view('x-euikit::components.form.textlist');
     } // endfunction render
 }

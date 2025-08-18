@@ -1,4 +1,4 @@
-<?php namespace eafarris\euikit\Components;
+<?php namespace eafarris\euikit\Components\Form;
 
 use Illuminate\Support\Str;
 use Illuminate\View\Component;
@@ -6,7 +6,6 @@ use Illuminate\View\Component;
 class Lookup extends Component {
 
     public $model; // model that populates select
-    public $name; // name for the HTML entities
     public $field; // field for this form
     public $models; // internal
     public $value; // current value
@@ -30,7 +29,7 @@ class Lookup extends Component {
      */
     public function __construct($model, $field = '', $value = '', $label = '', $inline = FALSE,
         $filterfield = '', $sortby = '', $sortdirection = 'asc', $optionvalue = 'id',
-        $optionfield = '', $name = '', $any = FALSE, $anyvalue = '', $none = FALSE, $nonevalue='') {
+        $optionfield = '', $any = FALSE, $anyvalue = '', $none = FALSE, $nonevalue = 0) {
 
         $this->label = $label ?: ucfirst($model);
         $this->inline = $inline;
@@ -42,7 +41,6 @@ class Lookup extends Component {
         $this->sortdirection = $sortdirection;
         $this->optionvalue = $optionvalue ?: $model . '_id';
         $this->optionfield = $optionfield ?: $this->field;
-        $this->name = $name ?: $field ?: $model . '_id';
         $this->any = $any;
         $this->anyvalue = $anyvalue;
         $this->none = $none;
@@ -78,6 +76,6 @@ class Lookup extends Component {
      */
     public function render() {
         $this->models = $this->getModel();
-        return view('e::components.form.lookupcomponent');
+        return view('euikit::components.form.lookupcomponent');
     }
 }

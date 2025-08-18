@@ -19,16 +19,16 @@
 
 @if ($footer)
     @unless(is_string($footer))
-        <x-e::footer
+        <x-euikit::footer
             {{ $attributes->merge([
                 'lefticon' => $footer->attributes['lefticon'],
                 'righticon' => $footer->attributes['righticon']
             ]) }}
         >
             {{ $footer }}
-        </x-e::footer>
+        </x-euikit::footer>
     @else
-        <x-e::footer>{{ $footer }}</x-e::footer>
+        <x-euikit::footer>{{ $footer }}</x-euikit::footer>
     @endunless
 @endif
 

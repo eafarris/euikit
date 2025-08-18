@@ -1,4 +1,4 @@
-<?php namespace eafarris\euikit\Components;
+<?php namespace eafarris\Components;
 
 use Illuminate\View\Component;
 

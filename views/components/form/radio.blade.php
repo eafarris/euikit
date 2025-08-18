@@ -24,7 +24,7 @@
 
         <label for="{{ $value }}" class="block text-sm mb-2 font-medium text-slate-500 bg-transparent">{{ $label ?: ucfirst($field) }}</label>
         @isset($help)
-            <x-e::help>{{ $help }}</x-e::help>
+            <x-euikit::help>{{ $help }}</x-euikit::help>
         @endisset
     </div>
 </div>

@@ -21,7 +21,7 @@
         @svg($righticon, 'inline w-6 h-6 pl-1')
     @endisset
     @isset($badge)
-        <x-e::tag type="{{ $badge_type }}">{{ $badge }}</x-e::tag>
+        <x-euikit::tag type="{{ $badge_type }}">{{ $badge }}</x-euikit::tag>
     @endisset
 </a>
 {{-- rollup code based on https://hussein-alhammad.com/blog/2023/03/alpine-slide-up-down-animation/ --}}

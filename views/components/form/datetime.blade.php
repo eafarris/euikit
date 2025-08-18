@@ -40,11 +40,11 @@ if (!empty($value)) {
             @if ($max) max="{{ $max }}" @endif
         />
         @isset($help)
-            <x-e::help type="{{ $helptype }}">{{ $help }}</x-e::help>
+            <x-euikit::help type="{{ $helptype }}">{{ $help }}</x-euikit::help>
         @endisset
     </div><!-- .control -->
 
     @error($field)
         <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
     @enderror
-</div><!-- InsideUIKit Date input -->
+</div><!-- EUIKit Datetime input -->

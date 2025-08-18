@@ -4,7 +4,7 @@
 ])
 
 @php
-    $common_classes = 'block rounded-sm shadow-xs sm:text-sm border leading-tight appearance-none';
+    $common_classes = 'block min-h-8 w-full pl-2 rounded-sm shadow-xs sm:text-sm border leading-tight appearance-none';
     $color_classes = 'bg-white text-slate-500 dark:text-slate-700 dark:bg-slate-400 border-slate-200 dark:border-slate-700 focus:ring-sky-300 focus:border-sky-300 focus:outline-hidden';
     $error_classes = 'border-red-500 text-red-500;'
 @endphp
@@ -37,7 +37,7 @@
             </select>
         </div>
         @isset($help)
-            <x-e::help>{{ $help }}</x-e::help>
+            <x-euikit::help>{{ $help }}</x-euikit::help>
         @endisset
     </div>
 </div><!-- EUIKit Form Lookup component -->

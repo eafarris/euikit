@@ -1,4 +1,4 @@
-<?php namespace eafarris\euikit\Livewire;
+<?php namespace eafarris\Livewire;
 use Illuminate\Support\Collection;
 use Livewire\Component;
 
@@ -18,7 +18,7 @@ class Ledger extends Component {
         $collection = collect($this->array);
         $colspan = floor(12 / $collection->count());
         $lastcol = 12 - ($colspan * ($collection->count() - 1));
-        return view('euikit::components.form.ledger', [
+        return view('x-euikit::components.form.ledger', [
             'array' => $this->array,
             'colspan' => $colspan,
             'lastcol' => $lastcol

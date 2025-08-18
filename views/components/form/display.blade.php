@@ -94,6 +94,6 @@
     </div>
 
     @isset($help)
-        <x-e::help type="{{ $helptype }}">{{ $help }}</x-e::help>
+        <x-euikit::help type="{{ $helptype }}">{{ $help }}</x-euikit::help>
     @endisset
 </div><!-- EUIKit Display Field component-->

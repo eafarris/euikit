@@ -83,11 +83,11 @@ if ($type) {
       @csrf
       @method('DELETE')
 
-      <x-e::button type="danger" value="Yes"
+      <x-euikit::button type="danger" value="Yes"
         x-on:click.prevent="$el.form.submit"
         x-on:deleting.window="$el.disabled = true"
       />
-      <x-e::button type="dark" value="No"
+      <x-euikit::button type="dark" value="No"
         x-on:click.prevent="deleting = false; setTimeout(() => { initial = true }, 150)"
         x-on:deleting.window="$el.disabled = true"
       />

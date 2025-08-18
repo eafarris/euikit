@@ -53,6 +53,6 @@
         </button>
     </div><!-- field -->
     @isset($help)
-        <x-e::help type="{{ $helptype }}">{{ $help }}</x-e::help>
+        <x-euikit::help type="{{ $helptype }}">{{ $help }}</x-euikit::help>
     @endisset
 </div><!-- EUIKit Textlist component -->

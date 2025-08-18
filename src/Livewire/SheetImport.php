@@ -1,4 +1,4 @@
-<?php namespace eafarris\euikit\Livewire;
+<?php namespace eafarris\Livewire;
 
 use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
@@ -26,7 +26,7 @@ class SheetImport extends Component {
     }
 
     public function render() {
-        return view('e::components.livewire.sheet-import');    
+        return view('e::components.livewire.sheet-import');
     }
 
     public function import() {

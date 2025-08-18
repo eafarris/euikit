@@ -1,7 +1,7 @@
 @props(['type' => 'ghost'])
 
 <aside x-show="euikit_help_show">
-    <x-e::message type="{{ $type }}">
+    <x-euikit::message type="{{ $type }}">
         <span class="italic">{{ $slot }}</span>
-    </x-e::message>
+    </x-euikit::message>
 </aside>

@@ -1,8 +1,8 @@
-# Getting started with EUIKit
+# Getting started with x-euikit::
 
 ## Base App Layout
 
-Traditionally, you'll start with a layout file which all your pages will inherit. EUIKit includes an "app" layout that you can use as a base for your layout, which includes a header, footer, and left/right sides.
+Traditionally, you'll start with a layout file which all your pages will inherit. x-euikit:: includes an "app" layout that you can use as a base for your layout, which includes a header, footer, and left/right sides.
 
 1. Create a "components" directory under "resources/views".
 2. Create an "app.blade.php" file under that directory. In its simplest form, it should contain:
@@ -17,7 +17,7 @@ The "layouts.app" component includes a "header" slot that is appropriate for the
 <x-euikit::layouts.app>
 <x-slot:header>
     <div class="flex items-center justify-between px-4 py-4">
-        <p>EUIKit Test Application</p>
+        <p>x-euikit:: Test Application</p>
     </div>
 </x-slot:header>
 
@@ -45,4 +45,4 @@ With this layout, your app's individual pages become quite simple. Take, for exa
 </div>
 </x-app>
 
-Your welcome.blade.php is based on your components/app.blade.php, which is in turn based on EUIKit's layouts.app component.
+Your welcome.blade.php is based on your components/app.blade.php, which is in turn based on x-euikit::'s layouts.app component.

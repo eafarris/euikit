@@ -17,7 +17,7 @@
         @svg($righticon, 'inline w-6 h-6 pl-1')
     @endisset
     @isset($badge)
-        <x-e::tag type="{{ $badgeType }}">{{ $badge }}</x-e::tag>
+        <x-euikit::tag type="{{ $badgeType }}">{{ $badge }}</x-euikit::tag>
     @endisset
 </a>
 

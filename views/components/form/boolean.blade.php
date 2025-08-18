@@ -53,6 +53,6 @@ if ($choices) {
         </div>
     @endif
     @isset($help)
-        <x-e::help type="{{ $helptype }}">{{ $help }}</x-e::help>
+        <x-euikit::help type="{{ $helptype }}">{{ $help }}</x-euikit::help>
     @endisset
 </div><!-- EUIKit Boolean field -->
