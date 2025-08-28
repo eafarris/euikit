@@ -1,3 +1,10 @@
+/*
+ * EUIKit Extended Palette
+ *
+ * Based on the 12-bit Rainbow Palette by Kate Morley
+ * https://iamkate.com/data/12-bit-rainbow/
+ */
+
 @theme {
     --color-plum-50:  #ede8ec;
     --color-plum-100: #dfd2dd;
@@ -132,15 +139,15 @@
    --color-sapphire-900: #0f2033;
    --color-sapphire-950: #09131f;
 
-   --color-indigo-50:  #f2f1fd;
-   --color-indigo-100: #d9cfe2;
-   --color-indigo-200: #bfa9d6;
-   --color-indigo-300: #9e6ecf;
-   --color-indigo-400: #8547c2;
-   --color-indigo-500: #7339ac;
-   --color-indigo-600: #663399;
-   --color-indigo-700: #572b82;
-   --color-indigo-800: #47246b;
-   --color-indigo-900: #381c54;
-   --color-indigo-950: #29123f;
+   --color-amethyst-50:  #f2f1fd;
+   --color-amethyst-100: #d9cfe2;
+   --color-amethyst-200: #bfa9d6;
+   --color-amethyst-300: #9e6ecf;
+   --color-amethyst-400: #8547c2;
+   --color-amethyst-500: #7339ac;
+   --color-amethyst-600: #663399;
+   --color-amethyst-700: #572b82;
+   --color-amethyst-800: #47246b;
+   --color-amethyst-900: #381c54;
+   --color-amethyst-950: #29123f;
 }
