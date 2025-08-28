@@ -36,7 +36,7 @@
     </div>
     {{ $left }}
 </div><!-- left -->
-<div class="bg-gradient-to-br from-slate-50 via-slate-100 from-20% to-white dark:from-slate-800 dark:to-slate-700 min-w-fit"
+<div class="bg-gradient-to-br from-slate-50 via-slate-100 from-20% to-white dark:from-slate-800 dark:to-slate-700 min-w-fit "
     :class="isOpen() ? 'col-span-5' : 'col-span-6'"
 >
     <div x-show="!isOpen()" class="relative">
@@ -56,6 +56,9 @@
 {{ $footer }}
 </footer>
 @endisset
+
+{{-- Necessary for Alpine-only pages  --}}
+@livewireScripts
 
 {{-- Modal component adapted from https://laracasts.com/series/modals-with-the-tall-stack --}}
 <script type="text/javascript">
