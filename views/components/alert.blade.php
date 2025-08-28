@@ -84,7 +84,7 @@ $coloring = '';
     case 'sunflower':
       $coloring = 'bg-sunflower-50 border-sunflower-200 border-t-sunflower-400 text-sunflower-700 ';
       $coloring .= 'dark:bg-sunflower-800 dark:border-sunflower-300 dark:border-t-sunflower-100 dark:text-sunflower-100';
-      $iconcolor = 'text-sunflower-500 dark:text-sunflower-100';
+      $iconcolor = 'text-sunflower-600 dark:text-sunflower-100';
       break;
     case 'lime':
       $coloring = 'bg-lime-50 border-lime-200 border-t-lime-400 text-lime-700 ';
