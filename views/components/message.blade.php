@@ -47,6 +47,56 @@ switch ($type) {
       $coloring = 'bg-transparent text-slate-400 border-slate-200 ';
       $coloring .= 'dark:text-slate-300 dark:border-slate-700';
       break;
+// EXTENDED PALETTE
+    case "plum":
+      $coloring = 'bg-plum-100 text-plum-700 border-plum-400 ';
+      $coloring .= 'dark:text-plum-300 dark:border-plum-700';
+      break;
+    case "mulberry":
+      $coloring = 'bg-mulberry-100 text-mulberry-700 border-mulberry-400 ';
+      $coloring .= 'dark:text-mulberry-300 dark:border-mulberry-700';
+      break;
+    case "coral":
+      $coloring = 'bg-coral-100 text-coral-700 border-coral-400 ';
+      $coloring .= 'dark:text-coral-300 dark:border-coral-700';
+      break;
+    case "tangerine":
+      $coloring = 'bg-tangerine-100 text-tangerine-700 border-tangerine-400 ';
+      $coloring .= 'dark:text-tangerine-300 dark:border-tangerine-700';
+      break;
+    case "sunflower":
+      $coloring = 'bg-sunflower-100 text-sunflower-700 border-sunflower-500 ';
+      $coloring .= 'dark:text-sunflower-300 dark:border-sunflower-700';
+      break;
+    case "grass":
+      $coloring = 'bg-grass-100 text-grass-700 border-grass-400 ';
+      $coloring .= 'dark:text-grass-300 dark:border-grass-700';
+      break;
+    case "jade":
+      $coloring = 'bg-jade-100 text-jade-700 border-jade-400 ';
+      $coloring .= 'dark:text-jade-300 dark:border-jade-700';
+      break;
+    case "turquoise":
+      $coloring = 'bg-turquoise-100 text-turquoise-700 border-turquoise-400 ';
+      $coloring .= 'dark:text-turquoise-300 dark:border-turquoise-700';
+      break;
+    case "electric":
+      $coloring = 'bg-electric-100 text-electric-700 border-electric-400 ';
+      $coloring .= 'dark:text-electric-300 dark:border-electric-700';
+      break;
+    case "cerulean":
+      $coloring = 'bg-cerulean-100 text-cerulean-700 border-cerulean-400 ';
+      $coloring .= 'dark:text-cerulean-300 dark:border-cerulean-700';
+      break;
+    case "sapphire":
+      $coloring = 'bg-sapphire-100 text-sapphire-700 border-sapphire-400 ';
+      $coloring .= 'dark:text-sapphire-300 dark:border-sapphire-700';
+      break;
+    case "amethyst":
+      $coloring = 'bg-amethyst-100 text-amethyst-700 border-amethyst-400 ';
+      $coloring .= 'dark:text-amethyst-300 dark:border-amethyst-700';
+      break;
+
     default:
         $lefticon = $lefticon == 'none' ? '' : $lefticon;
         break;

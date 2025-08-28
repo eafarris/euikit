@@ -80,6 +80,58 @@ if (strlen($hexColor) === 3) { // shortcut #xxx notation, expand
             $coloring = 'bg-transparent text-slate-400 ';
             $coloring .= 'dark:text-slate-200';
             break;
+
+// EXTENDED PALETTE
+
+        case 'plum':
+            $coloring = 'bg-plum-300 text-plum-900 ';
+            $coloring .= 'dark:text-plum-200';
+            break;
+        case 'mulberry':
+            $coloring = 'bg-mulberry-100 text-mulberry-700 ';
+            $coloring .= 'dark:text-mulberry-200';
+            break;
+        case 'coral':
+            $coloring = 'bg-coral-200 text-coral-800 ';
+            $coloring .= 'dark:text-coral-200 ';
+            break;
+        case 'tangerine':
+            $coloring = 'bg-tangerine-200 text-tangerine-700 ';
+            $coloring .= 'dark:text-tangerine-200 ';
+            break;
+        case 'sunflower':
+            $coloring = 'bg-sunflower-200 text-sunflower-700 ';
+            $coloring .= 'dark:text-sunflower-200 ';
+            break;
+        case 'grass':
+            $coloring = 'bg-grass-300 text-grass-900 ';
+            $coloring .= 'dark:text-grass-200 ';
+            break;
+        case 'jade':
+            $coloring = 'bg-jade-300 text-jade-900 ';
+            $coloring .= 'dark:text-jade-200 ';
+            break;
+        case 'turquoise':
+            $coloring = 'bg-turquoise-200 text-turquoise-900 ';
+            $coloring .= 'dark:text-turquoise-200 ';
+            break;
+        case 'electric':
+            $coloring = 'bg-electric-300 text-electric-900 ';
+            $coloring .= 'dark:text-electric-200 ';
+            break;
+        case 'cerulean':
+            $coloring = 'bg-cerulean-300 text-cerulean-900 ';
+            $coloring .= 'dark:text-cerulean-200 ';
+            break;
+        case 'sapphire':
+            $coloring = 'bg-sapphire-200 text-sapphire-900 ';
+            $coloring .= 'dark:text-sapphire-200 ';
+            break;
+        case 'amethyst':
+            $coloring = 'bg-amethyst-200 text-amethyst-900 ';
+            $coloring .= 'dark:text-amethyst-200 ';
+            break;
+
     } // endswitch
 @endphp
 @if ($route)

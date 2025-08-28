@@ -49,6 +49,55 @@ if ($type) {
       $coloring = 'bg-transparent text-slate-400 hover:bg-slate-200 disabled:opacity-50 disabled:hover:bg-transparent ';
       $coloring .= 'dark:hover:bg-slate-700 dark:hover:text-slate-300';
       break;
+// EXTENDED PALETTE
+    case 'plum':
+      $coloring = 'bg-plum-300 text-plum-700 hover:bg-plum-200 disabled:opacity-50 disabled:hover:bg-transparent ';
+      $coloring .= 'dark:hover:bg-plum-700 dark:hover:text-plum-300';
+      break;
+    case 'mulberry':
+      $coloring = 'bg-mulberry-200 text-mulberry-700 hover:bg-mulberry-100 disabled:opacity-50 disabled:hover:bg-transparent ';
+      $coloring .= 'dark:hover:bg-mulberry-700 dark:hover:text-mulberry-300';
+      break;
+    case 'coral':
+      $coloring = 'bg-coral-300 text-coral-700 hover:bg-coral-200 disabled:opacity-50 disabled:hover:bg-transparent ';
+      $coloring .= 'dark:hover:bg-coral-700 dark:hover:text-coral-300';
+      break;
+    case 'tangerine':
+      $coloring = 'bg-tangerine-200 text-tangerine-700 hover:bg-tangerine-100 disabled:opacity-50 disabled:hover:bg-transparent ';
+      $coloring .= 'dark:hover:bg-tangerine-700 dark:hover:text-tangerine-300';
+      break;
+    case 'sunflower':
+      $coloring = 'bg-sunflower-200 text-sunflower-700 hover:bg-sunflower-100 disabled:opacity-50 disabled:hover:bg-transparent ';
+      $coloring .= 'dark:hover:bg-sunflower-700 dark:hover:text-sunflower-300';
+      break;
+    case 'grass':
+      $coloring = 'bg-grass-300 text-grass-700 hover:bg-grass-200 disabled:opacity-50 disabled:hover:bg-transparent ';
+      $coloring .= 'dark:hover:bg-grass-700 dark:hover:text-grass-300';
+      break;
+    case 'jade':
+      $coloring = 'bg-jade-300 text-jade-800 hover:bg-jade-200 disabled:opacity-50 disabled:hover:bg-transparent ';
+      $coloring .= 'dark:hover:bg-jade-700 dark:hover:text-jade-300';
+      break;
+    case 'turquoise':
+      $coloring = 'bg-turquoise-300 text-turquoise-700 hover:bg-turquoise-200 disabled:opacity-50 disabled:hover:bg-transparent ';
+      $coloring .= 'dark:hover:bg-turquoise-700 dark:hover:text-turquoise-300';
+      break;
+    case 'electric':
+      $coloring = 'bg-electric-400 text-electric-700 hover:bg-electric-200 disabled:opacity-50 disabled:hover:bg-transparent ';
+      $coloring .= 'dark:hover:bg-electric-700 dark:hover:text-electric-300';
+      break;
+    case 'cerulean':
+      $coloring = 'bg-cerulean-300 text-cerulean-700 hover:bg-cerulean-200 disabled:opacity-50 disabled:hover:bg-transparent ';
+      $coloring .= 'dark:hover:bg-cerulean-700 dark:hover:text-cerulean-300';
+      break;
+    case 'sapphire':
+      $coloring = 'bg-sapphire-200 text-sapphire-600 hover:bg-sapphire-100 disabled:opacity-50 disabled:hover:bg-transparent ';
+      $coloring .= 'dark:hover:bg-sapphire-700 dark:hover:text-sapphire-300';
+      break;
+    case 'amethyst':
+      $coloring = 'bg-amethyst-200 text-amethyst-600 hover:bg-amethyst-100 disabled:opacity-50 disabled:hover:bg-transparent ';
+      $coloring .= 'dark:hover:bg-amethyst-700 dark:hover:text-amethyst-300';
+      break;
   }
 }
 @endphp
@@ -92,7 +141,6 @@ if ($type) {
         x-on:deleting.window="$el.disabled = true"
       />
 
-  </form>
 </div>
 </div> {{-- end of delete button --}}
 @else
