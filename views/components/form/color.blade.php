@@ -7,7 +7,7 @@
         $field = $attributes->whereStartsWith('wire:model')->first();
     }
 
-    $common_classes = 'block w-1/6 min-w-[200px] rounded-sm shadow-xs sm:text-sm border leading-tight appearance-none placeholder:italic';
+    $common_classes = 'block w-1/6 min-w-[200px] rounded-xs shadow-2xs sm:text-sm border leading-tight appearance-none placeholder:italic';
 @endphp
 
 <div {{ $attributes->whereDoesntStartWith('wire')->merge(['class' => 'field']) }} id="{{ $field }}">
