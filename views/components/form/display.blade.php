@@ -8,7 +8,7 @@
         $field = $attributes->whereStartsWith('wire:model')->first();
     }
 
-    $common_classes = 'p-1 w-full rounded-sm shadow-xs sm:text-sm border leading-tight appearance-none placeholder:italic';
+    $common_classes = 'w-full min-h-8 rounded-xs shadow-2xs sm:text-sm border leading-tight appearance-none placeholder:italic pl-2';
     $color_classes = 'border-slate-300 text-slate-500 focus:border-sky-300 focus:ring-sky-300 placeholder:text-slate-400 ';
     $color_classes .= 'dark:bg-slate-700 dark:text-slate-300 dark:placeholder:text-slate-400';
     $error_classes = 'border-red-500 text-red-500';
@@ -16,11 +16,11 @@
 
 <div {{ $attributes->whereDoesntStartWith('wire')->merge(['class' => 'field']) }} id="{{ $field }}">
     @unless($nolabel)
-        <label for="{{ $field }}" class="block text-sm font-medium text-slate-500 dark:text-slate-300 bg-transparent">
+        <label for="{{ $field }}" class="block mb-2 text-sm font-medium text-slate-400 dark:text-slate-300 bg-transparent">
             {{ $label ?: ucfirst($field) }}
         </label>
     @endunless
-    <div class="relative block w-1/6 min-w-fit">
+    <div class="relative block min-w-fit">
         @if($lefticon)
             <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
                 @svg($lefticon, 'w-5 h-5 text-slate-400')
