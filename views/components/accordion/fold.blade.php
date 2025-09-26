@@ -14,8 +14,8 @@
     </div>
     <span
         :class="fold === '{{ $slug }}'
-        ? 'text-slate-800 dark:text-slate-200 hover:dark:text-slate-50'
-        : 'hover:text-slate-800 dark:text-slate-200 hover:dark:text-slate-50'"
+        ? 'text-slate-800 dark:text-slate-200 dark:hover:text-slate-50'
+        : 'hover:text-slate-800 dark:text-slate-200 dark:hover:text-slate-50'"
     >{{ $title }}</span>
     @isset($righticon)
         @svg($righticon, 'inline w-6 h-6 pl-1')
