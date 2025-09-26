@@ -2,7 +2,7 @@
 <section {{ $attributes->merge(['class' =>
     'min-w-fit m-12 p-6 rounded-lg shadow-2xl
     border-2 border-slate-300 dark:border-slate-900
-    bg-gradient-to-br via-10% to-80%
+    bg-linear-to-br via-10% to-80%
     from-slate-100 via-slate-200 to-slate-100
     dark:from-slate-600 dark:to-slate-700'
 ]) }}>
