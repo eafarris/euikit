@@ -1,5 +1,5 @@
 @props(['field', 'type' => '', 'label' => '', 'value' => '', 'placeholder' => '',
-    'lefticon' => '', 'righticon' => '',
+    'lefticon' => '', 'righticon' => '', 'inputclasses' => '',
     'required' => FALSE, 'nolabel' => FALSE, 'noplaceholder' => FALSE,
     'help' => '', 'helptype' => 'ghost',
 ])
@@ -42,7 +42,7 @@ if ($type == 'search') {
     }
 }
 
-$common_classes = 'w-full min-h-8 rounded-sm shadow-xs sm:text-sm border leading-tight appearance-none placeholder:italic pl-2';
+$common_classes = 'w-full min-h-8 rounded-xs shadow-2xs sm:text-sm border leading-tight appearance-none placeholder:italic pl-2';
 $color_classes = 'border-slate-300 text-slate-600 bg-transparent focus:border-sky-300 focus:ring-sky-300 placeholder:text-slate-300 ';
 $color_classes .= 'dark:border-slate-400 dark:bg-slate-700 dark:text-slate-300 dark:placeholder:text-slate-400 dark:focus:border-sky-600 dark:focus:ring-sky-600';
 $error_classes = 'border-red-500 text-red-500';
@@ -67,7 +67,7 @@ $error_classes = 'border-red-500 text-red-500';
             @unless ($noplaceholder)
             placeholder="{{ $placeholder ?: $label ?: ucfirst($field) }}"
             @endunless
-            @class([$common_classes,
+            @class([$common_classes, $inputclasses,
                 $color_classes => ! $errors->has($field),
                 $error_classes => $errors->has($field),
                 "pl-10" => $lefticon,
