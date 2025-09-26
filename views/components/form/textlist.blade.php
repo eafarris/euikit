@@ -2,7 +2,7 @@
     'help' => '', 'helptype' => 'ghost',
 ])
 @php
-    $common_classes = 'rounded shadow-xs sm:text-sm border leading-tight appearance-none placeholder:italic';
+    $common_classes = 'rounded-sm shadow-2xs sm:text-sm border leading-tight appearance-none placeholder:italic';
     $color_classes = 'border-slate-300 dark:bg-slate-400 dark:text-slate-700 focus:border-sky-300 focus:ring-sky-300 placeholder:text-slate-400';
     $error_classes = 'border-red-500 text-red-500';
 @endphp
@@ -16,7 +16,7 @@
     @foreach ($items as $index => $item)
     <div class="relative">
         <input type="text" disabled value="{{ $item }}"
-            class="rounded-md shadow-xs sm:text-sm border-slate-300 "
+            class="rounded-md shadow-2xs sm:text-sm border-slate-300 "
         />
         <button wire:click.prevent="remove({{ $index }})">
             @svg('heroicon-o-minus', 'w-6 h-6 text-slate-400')
