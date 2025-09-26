@@ -3,7 +3,7 @@
             <select
                 @if ($multi) multiple @endif
               name="{{ $field }}"
-              {{ $attributes->merge(['class' => 'appearance-none block text-slate-700 border border-slate-200 rounded-sm leading-tight focus:outline-hidden focus:bg-white focus:border-slate-500']) }}
+              {{ $attributes->merge(['class' => 'appearance-none block text-slate-700 border border-slate-200 rounded-xs leading-tight focus:outline-hidden focus:bg-white focus:border-slate-500']) }}
             @unless ($multi)
             @endunless
                 {{ $slot }}
