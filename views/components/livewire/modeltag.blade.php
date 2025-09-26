@@ -1,6 +1,6 @@
 <div>
     <div class="control mt-1">
-        <div class="w-full appearance-none block text-slate-500 dark:text-slate-700 dark:bg-slate-400 border border-slate-200 rounded-sm leading-tight focus:outline-hidden focus:bg-white focus:border-slate-500">
+        <div class="w-full appearance-none block text-slate-500 dark:text-slate-700 dark:bg-slate-400 border border-slate-200 rounded-xs leading-tight focus:outline-hidden focus:bg-white focus:border-slate-500">
         <form>
             <label for="find">{{ $label }}</label>
             <input type="text" name="find" wire:model="find"
