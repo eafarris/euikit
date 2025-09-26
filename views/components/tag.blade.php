@@ -5,32 +5,38 @@
 ])
 @php
 if ($color) {
-// If an arbitrary color was specified, lighten or darken the text color
-// First, a sanity check on what was passed in
-$hexColor = ltrim($color, '#');
-
-if (strlen($hexColor) === 3) { // shortcut #xxx notation, expand
-    $hexColor = str_repeat(substr($hexColor, 0, 1), 2)
-        . str_repeat(substr($hexColor, 1, 1), 2)
-        . str_repeat(substr($hexColor, 2, 1), 2);
-    } // endif shortcut color notation
-    if (strlen($hexColor) !== 6 | ! ctype_xdigit($hexColor)) { // invalid color code
-        throw new \InvalidArgumentException('Received ' . $hexColor . ' instead of a 6-digit hexadecimal color code.');
+    if ($color == 'random') {
+        $type = collect(['red', 'orange', 'amber', 'yellow', 'lime', 'green', 'emerald', 'teal', 'cyan', 'sky', 'blue', 'indigo', 'violet', 'purple', 'fuchsia', 'pink', 'rose', 'slate', 'gray', 'zinc', 'neutral', 'stone'])->random();
+        $color = '';
     }
-    // Here comes the math
-    // Extract RGB components
-    $red = hexdec(substr($hexColor, 0, 2));
-    $green = hexdec(substr($hexColor, 2, 2));
-    $blue = hexdec(substr($hexColor, 4, 2));
-    // Normalize to values 0..1
-    $nr = $red / 255;
-    $ng = $green / 255;
-    $nb  = $blue / 255;
-    // Calculate Luminance
-    $lum = 0.2126 * $nr + 0.7152 * $ng + 0.0722 * $nb;
+    else { // arbitrary hex color specified
+        // If an arbitrary color was specified, lighten or darken the text color
+        // First, a sanity check on what was passed in
+        $hexColor = ltrim($color, '#');
 
-    $shading = $lum > 0.5 ? 'rgba(0,0,0,0.6);' : 'rgba(255,255,255,0.6)';
-} // endif calculating color
+        if (strlen($hexColor) === 3) { // shortcut #xxx notation, expand
+            $hexColor = str_repeat(substr($hexColor, 0, 1), 2)
+                . str_repeat(substr($hexColor, 1, 1), 2)
+                . str_repeat(substr($hexColor, 2, 1), 2);
+        } // endif shortcut color notation
+        if (strlen($hexColor) !== 6 | ! ctype_xdigit($hexColor)) { // invalid color code
+            throw new \InvalidArgumentException('Received ' . $hexColor . ' instead of a 6-digit hexadecimal color code.');
+        }
+        // Here comes the math
+        // Extract RGB components
+        $red = hexdec(substr($hexColor, 0, 2));
+        $green = hexdec(substr($hexColor, 2, 2));
+        $blue = hexdec(substr($hexColor, 4, 2));
+        // Normalize to values 0..1
+        $nr = $red / 255;
+        $ng = $green / 255;
+        $nb  = $blue / 255;
+        // Calculate Luminance
+        $lum = 0.2126 * $nr + 0.7152 * $ng + 0.0722 * $nb;
+
+        $shading = $lum > 0.5 ? 'rgba(0,0,0,0.6);' : 'rgba(255,255,255,0.6)';
+    } // endifelse arbitrary color
+} // endif color specified
 @endphp
 
 @php
