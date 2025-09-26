@@ -1,7 +1,7 @@
 @props(['type' => 'info', 'lefticon' => '', 'righticon' => ''])
 
 @php
-$alert = 'border border-t-4 rounded-md shadow p-4 flex gap-4 items-center justify-items-center';
+$alert = 'border border-t-4 rounded-md shadow-sm p-4 flex gap-4 items-center justify-items-center';
 $coloring = '';
   switch ($type) {
     case 'light':
