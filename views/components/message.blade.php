@@ -238,7 +238,7 @@ switch ($type) {
 <a @class([
     'inline-flex' => $inline,
     'flex' => !$inline,
-    'gap-1 grow-0 shrink w-fit items-center px-1 py-1 text-sm rounded',
+    'gap-1 grow-0 shrink w-fit items-center px-1 py-1 text-sm rounded-sm',
     'border-rounded-xs border-2' => $border,
     $coloring,
 ])
@@ -248,7 +248,7 @@ href="{{ $route }}"
 <span {{ $attributes->class([
     'inline-flex' => $inline,
     'flex' => !$inline,
-    'gap-1 grow-0 shrink w-fit items-center px-1 py-1 text-sm rounded',
+    'gap-1 grow-0 shrink w-fit items-center px-1 py-1 text-sm rounded-sm',
     'border-rounded-xs border-2' => $border,
     $coloring,
 ]) }} >
