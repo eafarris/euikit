@@ -7,7 +7,7 @@
         $field = $attributes->whereStartsWith('wire:model')->first();
     }
 
-    $common_classes = 'block p-2 rounded-sm shadow-xs sm:text-sm border leading-tight appearance-none';
+    $common_classes = 'block p-2 pr-8 w-full rounded-xs shadow-2xs sm:text-sm border leading-tight appearance-none';
     $color_classes = 'border-slate-300 text-slate-500 bg-transparent focus:border-sky-300 focus:ring-sky-300 placeholder:text-slate-400 ';
     $color_classes .= 'dark:border-slate-400 dark:bg-slate-700 dark:text-slate-300 dark:placeholder:text-slate-400 dark:focus:border-sky-600 dark:focus:ring-sky-600';
     $error_classes = 'border-red-500 text-red-900';
@@ -21,25 +21,28 @@
     @endunless
     <div class="relative mt-1">
         <div class="select">
+            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center">
+                @svg('heroicon-o-chevron-down', 'w-5 h-5 text-slate-400')
+            </div>
             <select
-                {{ $attributes->whereStartsWith('wire') }}
-                @if ($multi) multiple @endif
-              name="{{ $field }}"
-              @class([$common_classes,
+            {{ $attributes->whereStartsWith('wire') }}
+            @if ($multi) multiple @endif
+            name="{{ $field }}"
+            @class([$common_classes,
                 $color_classes => ! $errors->has($field),
                 $error_classes => $errors->has($field),
-              ])
+                ])
             >
-                @unless ($multi)
-                    @unless ($noplaceholder)
-                        <option value="">@if ($placeholder) {{ $placeholder }} @else Select {{ $label ?: ucfirst($field) }} @endif
-                    @endunless
+            @unless ($multi)
+            @unless ($noplaceholder)
+            <option disabled value="">@if ($placeholder) {{ $placeholder }} @else Select {{ $label ?: ucfirst($field) }} @endif
+                @endunless
                 @endunless
                 @if($any)
-                    <option value="any">Any</option>
+                <option value="any">Any</option>
                 @endif
                 @if($none)
-                    <option value="none">None</option>
+                <option value="none">None</option>
                 @endif
                 {{ $slot }}
             </select>
