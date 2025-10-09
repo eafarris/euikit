@@ -1,6 +1,13 @@
  @props(['field', 'label' => '', 'nolabel' => FALSE, 'value' => '', 'any' => FALSE, 'none' => FALSE, 'noplaceholder' => FALSE, 'placeholder' => '', 'multi' => FALSE,
     'help' => '', 'helptype' => 'ghost',
 ])
+
+@php
+    if ($multi) {
+        $field = $field . '[]';
+    }
+@endphp
+
 <x-euikit::form.select {{ $attributes->whereDoesntStartWith('wire')->merge(['class' => 'lookup']) }}
     field="{{ $field }}" label="{{ $label }}" nolabel="{{ $nolabel }}" value="{{ $value }}"
     any="{{ $any }}" none="{{ $none }}" anyvalue="{{ $anyvalue }}" nonevalue="{{ $nonevalue }}"
