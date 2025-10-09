@@ -231,19 +231,20 @@ if ($type) {
     >
     <p class="dark:text-white">Are you sure?</p>
     <form x-on:submit="$dispatch('deleting')" method="POST"
+        action="{{ $route }}"
       class="flex space-x-3"
     >
       @csrf
       @method('DELETE')
 
       <x-euikit::button type="danger" value="Yes"
-        x-on:click.prevent="$el.form.submit"
         x-on:deleting.window="$el.disabled = true"
       />
       <x-euikit::button type="dark" value="No"
         x-on:click.prevent="deleting = false; setTimeout(() => { initial = true }, 150)"
         x-on:deleting.window="$el.disabled = true"
       />
+    </form>
 </div>
 </div> {{-- end of delete button --}}
 @else
