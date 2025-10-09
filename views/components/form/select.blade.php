@@ -1,4 +1,5 @@
-@props(['field', 'label' => '', 'nolabel' => FALSE, 'value' => '', 'any' => FALSE, 'none' => FALSE, 'noplaceholder' => FALSE, 'placeholder' => '', 'multi' => FALSE,
+@props(['field', 'label' => '', 'nolabel' => FALSE, 'value' => '', 'noplaceholder' => FALSE, 'placeholder' => '', 'multi' => FALSE,
+    'any' => FALSE, 'anyvalue' => 0, 'none' => FALSE, 'nonevalue' => 0,
     'help' => '', 'helptype' => 'ghost',
 ])
 @php
@@ -39,10 +40,10 @@
                 @endunless
                 @endunless
                 @if($any)
-                <option value="any">Any</option>
+                <option value="{{ $anyvalue }}">Any</option>
                 @endif
                 @if($none)
-                <option value="none">None</option>
+                <option value="{{ $nonevalue }}">None</option>
                 @endif
                 {{ $slot }}
             </select>

@@ -14,12 +14,6 @@
     noplaceholder="{{ $noplaceholder }}" multi="{{ $multi }}"
     help="{{ $help }}" helptype="{{ $helptype }}"
 >
-    @if ($any)
-        <option value="{{ $anyvalue }}">Any</option>
-    @endif
-    @if ($none)
-        <option value="{{ $nonevalue }}">None</option>
-    @endif
     @foreach ($models as $model)
         <option value="{{ $model->$optionvalue }}" {{ $value == $model->$optionvalue ? "selected" : ''}}>{{ $model->$optionfield }}</option>
     @endforeach
