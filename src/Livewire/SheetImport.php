@@ -1,4 +1,4 @@
-<?php namespace eafarris\Livewire;
+<?php namespace eafarris\euikit\Livewire;
 
 use Illuminate\Support\Arr;
 use Illuminate\Support\Str;

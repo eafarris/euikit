@@ -1,4 +1,4 @@
-<?php namespace eafarris\Livewire;
+<?php namespace eafarris\euikit\Livewire;
 
 use Livewire\Component;
 
