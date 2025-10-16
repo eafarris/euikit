@@ -13,7 +13,6 @@ class euikitServiceProvider extends ServiceProvider {
         Blade::component('euikit-form-lookup', \eafarris\euikit\Components\Form\Lookup::class);
 
         // Livewire components
-        Livewire::component('euikit-lookup', \eafarris\euikit\Livewire\Lookup::class);
         Livewire::component('euikit-textlist', \eafarris\euikit\Livewire\Textlist::class);
         Livewire::component('euikit-modeltag', \eafarris\euikit\Livewire\ModelTag::class);
         Livewire::component('euikit-sheetimport', \eafarris\euikit\Livewire\SheetImport::class);
