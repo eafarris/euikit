@@ -1,15 +1,15 @@
 ## Installation
 
-1. Bring in x-euikit:: via composer: `composer require eafarris/x-euikit::`
+1. Bring in EUIKit via composer: `composer require eafarris/euikit`
 2. From the top of your Laravel project, run `composer install`.
 
 ### Livewire
 
-x-euikit:: depends on Laravel Livewire. It will be automatically installed as a dependency.
+EUIKit depends on Laravel Livewire. It will be automatically installed as a dependency.
 
 ### Tailwind and AlpineJS
 
-x-euikit:: depends on TailwindCSS and TailwindCSS Forms. To install them:
+EUIKit depends on TailwindCSS and TailwindCSS Forms. To install them:
 
 1. Add the following lines to the "devDependencies" section of your project's package.json:
 

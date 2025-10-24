@@ -14,11 +14,14 @@ All blade components are contained in the `views/components` hierarchy. Some
 components have their own directory structure under this top level, for those
 components that require sub-components for styling, like forms and tables.
 
-Some Blade components are not just templates, but have methods and internal variables. The classes for these components are in the `src/Components` directory.
+Some Blade components are not just templates, but have methods and internal
+variables. The classes for these components are in the `src/Components`
+directory.
 
 ## Livewire components
 
-EUIKit's Livewire components have their source code within `src/livewire`, and their Blade components in `views/livewire`.
+EUIKit's Livewire components have their source code within `src/livewire`, and
+their Blade components in `views/livewire`.
 
 ## Icons
 

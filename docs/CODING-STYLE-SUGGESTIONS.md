@@ -189,7 +189,7 @@ content
     title
 </x-slot:header>
 
-(content>
+(content)
 
 <x-slot:footer lefticon righticon
     footer

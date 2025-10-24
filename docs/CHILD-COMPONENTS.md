@@ -21,8 +21,9 @@ You could instead create your own component:
 <x-edit-button route="{{ route('thing.edit') }}" />
 ```
 
-In addition to enforcing standardization, this allows for the changing of all
-edit buttons by changing just your child "edit-button" component.
+In addition to enforcing standardization and enhancing readibility, this allows
+for the changing of all edit buttons by changing just your child "edit-button"
+component.
 
 ## HOWTO
 
