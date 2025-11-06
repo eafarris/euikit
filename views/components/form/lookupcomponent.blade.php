@@ -1,4 +1,6 @@
- @props(['field', 'label' => '', 'nolabel' => FALSE, 'value' => '', 'any' => FALSE, 'none' => FALSE, 'noplaceholder' => FALSE, 'placeholder' => '', 'multi' => FALSE,
+ @props(['field', 'label' => '', 'nolabel' => FALSE, 'value' => '', 'any' => FALSE, 'anyvalue' => 'all',
+    'none' => FALSE, 'nonevalue' => 0,
+    'noplaceholder' => FALSE, 'placeholder' => '', 'multi' => FALSE,
     'help' => '', 'helptype' => 'ghost',
 ])
 
@@ -8,7 +10,7 @@
     }
 @endphp
 
-<x-euikit::form.select {{ $attributes->whereDoesntStartWith('wire')->merge(['class' => 'lookup']) }}
+<x-euikit::form.select {{ $attributes }}
     field="{{ $field }}" label="{{ $label }}" nolabel="{{ $nolabel }}" value="{{ $value }}"
     any="{{ $any }}" none="{{ $none }}" anyvalue="{{ $anyvalue }}" nonevalue="{{ $nonevalue }}"
     noplaceholder="{{ $noplaceholder }}" multi="{{ $multi }}"
