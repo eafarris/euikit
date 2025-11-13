@@ -15,7 +15,9 @@
     @livewireStyles()
 </head>
 
-<body class="font-sans subpixel-antialiased"
+<body class="font-sans subpixel-antialiased
+    {{ $bodyclasses }}
+    "
     x-data="euikit"
     @resize.window="handleResize()"
 >
