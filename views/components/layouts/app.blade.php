@@ -30,7 +30,9 @@
 >
 
 @isset($header)
-<header class="h-16 flex flex-row items-center justify-between text-3xl text-slate-500 px-4 bg-linear-to-r from-slate-100/80 from-50% to-slate-50/80 border-b-2 border-slate-200 dark:from-slate-700 dark:border-slate-900 dark:to-slate-600 dark:text-slate-200">
+<header class="flex flex-row items-center justify-between text-3xl h-16 px-4 bg-linear-to-r border-b-2
+     text-slate-500 from-slate-100/80 from-50% to-slate-50/80 border-slate-200
+     dark:text-slate-200 dark:from-slate-700/80 dark:to-slate-600/80 dark:border-slate-900"
     {{ $header }}
 </header>
 @endisset
@@ -38,7 +40,7 @@
 <main class="container grid grid-cols-1 auto-rows-fr sm:grid-cols-6 grow min-h-screen min-w-full"
 >
 @isset($left)
-<div class="col-span-1 bg-slate-100/80 dark:bg-slate-600"
+<div class="col-span-1 bg-slate-100/80 dark:bg-slate-600/80"
     x-show="isOpen()"
 >
     <div @click.away="handleAway()" class="relative">
@@ -46,13 +48,15 @@
     </div>
     {{ $left }}
 </div><!-- left -->
-<div class="bg-linear-to-br from-slate-50/70 via-slate-100/70 from-20% to-white/10 dark:from-slate-800 dark:to-slate-700 min-w-fit "
+
+<div class="bg-linear-to-br min-w-fit
+    from-slate-50/70 via-slate-100/70 from-20% to-white/10
+    dark:from-slate-600/80 dark:via-slate-900/70 dark:to-slate-700"
     :class="isOpen() ? 'col-span-5' : 'col-span-6'"
 >
     <div x-show="!isOpen()" class="relative">
         <a x-show="!isOpen()" @click.prevent="handleOpen()" href="#" class="absolute inset-0 text-slate-400" title="Show sidebar">@svg('heroicon-o-chevron-right', 'w-6 h-6')</a>
-    </div>
-    {{ $slot }}
+    </div> {{ $slot }}
 </div><!-- right -->
 @else
 <div class="mx-auto col-span-6">
@@ -62,7 +66,8 @@
 </main>
 
 @isset($footer)
-<footer class="h-16 bg-slate-100/80 border-t-2 border-slate-300
+<footer class="h-16 border-t-2
+     bg-slate-100/80 border-slate-300
     dark:bg-slate-700/80 dark:border-slate-900">
 {{ $footer }}
 </footer>

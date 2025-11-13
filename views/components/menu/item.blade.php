@@ -15,9 +15,10 @@ if ($icon) { // if only one icon was passed (eg., from Menusystem), it's the lef
         hover:bg-slate-200 dark:hover:bg-slate-700
         hover:rounded-tl-lg hover:rounded-bl-lg',
 
-        'dark:text-slate-400
+        'dark:text-slate-900
         border-transparent
         hover:bg-slate-200/80 dark:hover:bg-slate-700/80
+        dark:hover:text-slate-400
         hover:rounded-tl-lg hover:roundedl-bl-lg' => !$part_of_url,
 
         'border-l-2 border-r-0 border-t-2 border-b-2 border-slate-100

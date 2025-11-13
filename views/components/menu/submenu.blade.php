@@ -1,5 +1,6 @@
 <div class="flex flex-col mt-4">
-    <div {{ $attributes->merge(['class' => 'uppercase tracking-wide font-bold text-slate-400 dark:text-slate-500 sm:text-sm']) }}>
+    <div {{ $attributes->merge(['class' => 'uppercase tracking-wide font-bold
+        text-slate-400 dark:text-slate-700 sm:text-sm']) }}>
         @isset($title)
             {{ $title }}
         @else
