@@ -17,11 +17,13 @@ if ($icon) { // if only one icon was passed (eg., from Menusystem), it's the lef
 
         'dark:text-slate-400
         border-transparent
-        hover:bg-slate-200 dark:hover:bg-slate-700
+        hover:bg-slate-200/80 dark:hover:bg-slate-700/80
         hover:rounded-tl-lg hover:roundedl-bl-lg' => !$part_of_url,
 
-        'border-l-2 border-r-0 border-t-2 border-b-2 border-slate-100 bg-linear-to-r from-white to-slate-50 to-90%
-        dark:from-slate-700 dark:to-slate-800 dark:to-90% dark:border-slate-800 dark:text-slate-300' => $part_of_url,
+        'border-l-2 border-r-0 border-t-2 border-b-2 border-slate-100
+        bg-linear-to-r from-white/80 to-slate-50/80 to-90%
+        dark:from-slate-700/80 dark:to-slate-800/80 dark:to-90%
+        dark:border-slate-800 dark:text-slate-300' => $part_of_url,
     ])
 >
     @if($lefticon)
