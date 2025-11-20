@@ -16,8 +16,11 @@
 </head>
 
 <body class="font-sans subpixel-antialiased
-    {{ $bodyclasses }}
+    @isset($bodyclasses)
+        {{ $bodyclasses }}
+    @endisset
     "
+
     x-data="euikit"
     @resize.window="handleResize()"
 >
