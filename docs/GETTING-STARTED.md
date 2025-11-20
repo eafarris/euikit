@@ -10,16 +10,17 @@ your layout, which includes a header, footer, and left/right sides.
 2. Create an "app.blade.php" file under that directory. In its simplest form,
    it should contain:
 
-```
+```language:php
 <x-euikit::layouts.app>
 </x-euikit::layouts.app>
 ```
+
 The "layouts.app" component includes a "header" slot that is appropriate for
 the application name, and a "left" slot that is appropriate for a sidebar menu.
 The right-hand portion of the layout is for the focus of the current page, and
 is the 'default' slot. Here is a more fleshed out app.blade.php:
 
-```
+```language:php
 <x-euikit::layouts.app>
 <x-slot:header>
     <div class="flex items-center justify-between px-4 py-4">
@@ -43,7 +44,7 @@ is the 'default' slot. Here is a more fleshed out app.blade.php:
 With this layout, your app's individual pages become quite simple. Take, for
 example, a welcome page based on your new app.blade.php:
 
-```
+```language:php
 <x-app>
 <div class="p-8">
     <h1>Welcome!</h1>
@@ -55,4 +56,3 @@ example, a welcome page based on your new app.blade.php:
 
 Your welcome.blade.php is based on your components/app.blade.php, which is in
 turn based on EUIKit's layouts.app component.
-
