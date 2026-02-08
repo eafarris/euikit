@@ -7,9 +7,11 @@ if ($attributes->whereStartsWith('wire:model') && !isset($field)) {
     $field = $attributes->whereStartsWith('wire:model')->first();
 }
 
-$common_classes = 'block w-full min-h-8 rounded-xs shadow-2xs sm:text-sm border leading-tight appearance-none placeholder:italic';
-$color_classes = 'border-slate-300 text-slate-500 bg-transparent focus:border-sky-300 focus:ring-sky-300 placeholder:text-slate-400 ';
-$color_classes .= 'dark:border-400 dark:bg-slate-700 dark:text-slate-300 dark:placeholder:text-slate-400 dark:focus:border-sky-600 dark:focus:ring-sky-600';
+$common_classes = 'block w-full min-h-8 rounded-xs shadow-2xs px-1 sm:text-sm border leading-tight appearance-none placeholder:italic';
+$color_classes = 'border-slate-300 text-slate-500 bg-transparent placeholder:text-slate-400 ';
+$color_classes .= 'focus:outline-2 focus:outline-slate-400 ';
+$color_classes .= 'dark:border-slate-400 dark:text-slate-300 dark:bg-slate-700 dark:placeholder:text-slate-400 ';
+$color_classes .= 'dark:focus:outline-slate-400';
 $error_classes = 'border-red-500 text-red-500';
 
 if (!empty($value)) {
