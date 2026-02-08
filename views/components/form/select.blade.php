@@ -12,6 +12,10 @@
     $color_classes = 'border-slate-300 text-slate-600 bg-transparent focus:border-sky-300 focus:ring-sky-300 placeholder:text-slate-400 ';
     $color_classes .= 'dark:border-slate-400 dark:bg-slate-700 dark:text-slate-300 dark:placeholder:text-slate-400 dark:focus:border-sky-600 dark:focus:ring-sky-600';
     $error_classes = 'border-red-500 text-red-900';
+
+    if ($multi) {
+        $field .= '[]';
+    }
 @endphp
 
 <div {{ $attributes->whereDoesntStartWith('wire')->merge(['class' => 'field']) }}>
