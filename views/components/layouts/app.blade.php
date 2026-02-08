@@ -46,13 +46,13 @@
 <div class="col-span-1 bg-slate-100/80 dark:bg-slate-600/80"
     x-show="isOpen()"
 >
-    <div @click.away="handleAway()" class="relative">
+    <div @click.away="handleAway()" class="relative pb-8">
         <a @click.prevent="handleClose()" href="#" class="absolute inset-0 text-slate-500" title="Hide sidebar">@svg('heroicon-o-chevron-left', 'w-6 h-6')</a>
     </div>
     {{ $left }}
 </div><!-- left -->
 
-<div class="bg-linear-to-br min-w-fit
+<div class="bg-linear-to-br min-w-full
     from-slate-50/70 via-slate-100/70 from-20% to-white/10
     dark:from-slate-600/80 dark:via-slate-900/70 dark:to-slate-700"
     :class="isOpen() ? 'col-span-5' : 'col-span-6'"
