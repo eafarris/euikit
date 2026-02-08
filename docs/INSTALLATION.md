@@ -1,54 +1,37 @@
-## Installation
+# Installation
 
 1. Bring in EUIKit via composer: `composer require eafarris/euikit`
-2. From the top of your Laravel project, run `composer install`.
 
-### Livewire
+## Livewire and AlpineJS
 
-EUIKit depends on Laravel Livewire. It will be automatically installed as a dependency.
+EUIKit depends on Laravel Livewire. It will be automatically installed as a dependency. As it depends on AlpineJS, it will also be brought in as a dependency.
 
-### Tailwind and AlpineJS
+## TailwindCSS
 
-EUIKit depends on TailwindCSS and TailwindCSS Forms. To install them:
+EUIKit depends on TailwindCSS and the TailwindCSS Forms plugin. Tailwind itself is probably already brought in, as it's common in Laravel installations. However, if not:
 
 1. Add the following lines to the "devDependencies" section of your project's package.json:
 
-```
-"tailwindcss": "~3",
+```json
+"tailwindcss": "~4",
 "autoprefixer": "^10.4.14",
-"@tailwindcss/forms": "^0.5.4"
+"@tailwindcss/forms": "^0.5.11",
+"@tailwindcss/postcss": "^4"
 ```
 
 And run `npm install` to bring in these dependencies.
 
-You'll also need "tailwind.config.js" and "postcss.config.cjs" files in the root of your project. Their simplest forms:
+You'll also need to modify your app.css:
 
-`tailwind.config.js`:
+```css
+@import 'tailwindcss';
 
+@source '../views';
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+
+/* ADD THESE LINES */
+@source '../../vendor/eafarris/euikit/views';
+@plugin '@tailwindcss/forms';
+/* TO USE THE OPTIONAL EXTENDED COLOR PALETTE */
+@import "../../vendor/eafarris/euikit/tailwind-extended-color-palette.css";
 ```
-const defaultTheme = require('tailwindcss/defaultTheme');
-
-/** @type {import('tailwindcss').Config} */
-module.exports = {
-    content: [
-        './vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php',
-        './storage/framework/views/*.php',
-        './resources/views/**/*.blade.php',
-    ],
-
-    plugins: [require('@tailwindcss/forms')],
-};
-```
-
-and `postcss.config.cjs`:
-
-```
-module.exports = {
-    plugins: {
-        tailwindcss: {},
-        autoprefixer: {},
-    },
-};
-```
-
-Of course these files may be further manipulated based on the needs of your project.
