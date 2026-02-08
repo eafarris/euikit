@@ -30,6 +30,6 @@ class Textlist extends Component {
     }
 
     public function render() {
-        return view('x-euikit::components.form.textlist');
+        return view('euikit::components.form.textlist');
     } // endfunction render
 }
