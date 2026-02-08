@@ -1,19 +1,21 @@
-<div x-data="{
+<div {{ $attributes->whereDoesntStartWith('wire')->merge(['class' => 'field'])   }}
+x-data="{
     selected: [],
     handleMembershipChange(selected) { this.selected=selected; },
 }"
-@membership-selected.window="handleMembershipChange($event.detail.selected)"
+@membershipchanged="console.log('hit');handleMembershipChange($event.detail.selected)"
 >
 
 <livewire:euikit-membership candidates="{{ $candidates ?? '' }}"
     filter="{{ $filter ?? false }}"
-    filterfields="{{ $filterfields ?? '' }}"
+    filterfield="{{ $filterfield ?? '' }}"
     sortfield="{{ $sortfield ?? '' }}"
-    listfield="{{ $listfield ?? '' }}"
+    listfield="{{ $listfield ?? 'identifier' }}"
     listid="{{ $listid ?? 'id' }}"
-    entity="{{ $entity ?? 'Item' }}"
+    entity="{{ $entity ?? '' }}"
+    selected="{{ $selected ?? '' }}"
 />
 
-<input type="hidden" x-model="selected" />
+<input type="hidden" x-model="selected" name="{{ $field }}" />
 
 </div>

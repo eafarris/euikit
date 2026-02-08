@@ -10,8 +10,8 @@ class Membership extends Component {
     public $entity; // outward-facing name of the model
     public $listfield; // column from the model to hydrate the list
     public $listid; // column from the model for id
-    public $filter = FALSE; // allow filtering
-    public $filterfields; // Array for searching for $filtervalue
+    public $filter; // allow filtering
+    public $filterfield; // Field or array for searching for $filtervalue
     public $sortfield; // field to sort by
     public $items; // whole collection of models
     public $selected; // Selected IDs
@@ -20,20 +20,19 @@ class Membership extends Component {
     public $candidatemodels;
     public $filtervalue;
 
-    public function mount($candidates, $entity = '', $listfield = 'identifier', $listid = 'id',
-        $filter = FALSE, $filterfields = [],
-        $sortfield = '') {
+    public function mount($candidates, $entity, $listfield = 'identifier', $listid = 'id',
+        $filter = FALSE, $filterfield = [], $sortfield = '', $selected = []) {
 
         $this->candidates = $candidates;
-        $this->entity = $entity;
+        $this->entity = $entity ?? $candidates->entity;
         $this->listfield = $listfield;
         $this->listid = $listid;
         $this->filter = $filter;
-        $this->filterfields = explode(',', $filterfields);
+        $this->filterfield = $filterfield ? explode(',', $filterfield) : [];
         $this->sortfield = $sortfield;
-
-        $this->selected = [];
+        $this->selected = $selected ? explode(',', $selected) : [];
     } // endfunction mount
+
 
     public function getCandidates() : Collection {
          if (Str::contains($this->candidates, '\\')) { // absolute reference to a model class
@@ -42,8 +41,8 @@ class Membership extends Component {
              $class = '\App\Models\\' . $this->candidates;
              $builder = $class::query();
          } // endif absolute reference to model class
-        if (!empty($this->filterfields)) {
-            foreach ($this->filterfields as $field) {
+        if (!empty($this->filterfield)) {
+            foreach ($this->filterfield as $field) {
                 $builder->orwhere($field, 'LIKE', '%'. $this->filtervalue .'%');
             } // endforeach looping through filterfields
         } // endif filterfield
@@ -60,7 +59,7 @@ class Membership extends Component {
         if (!in_array($id, $this->selected)) {
             $this->selected[] = $id;
         }
-        $this->dispatch('membership-selected', selected: $this->selected);
+        $this->dispatch('membershipchanged', selected: $this->selected);
     } // endfunction attach
 
     public function detach($id) {
@@ -73,7 +72,7 @@ class Membership extends Component {
             unset($this->selected[$key]);
             $this->selected = array_values($this->selected); // Re-index array
         }
-        $this->dispatch('membership-selected', selected: $this->selected);
+        $this->dispatch('membershipchanged', selected: $this->selected);
     } // endfunction detach
 
     public function render()  {
