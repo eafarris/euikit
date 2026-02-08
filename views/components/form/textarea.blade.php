@@ -1,5 +1,5 @@
 @props(['field', 'label' => '', 'value' => '', 'required' => FALSE, 'nolabel' => FALSE,
-    'help' => '', 'helptype' => 'ghost',
+    'labelhtml' => '', 'cols' => 60, 'rows' => 10, 'help' => '', 'helptype' => 'ghost',
 ])
 
 @php
@@ -17,7 +17,11 @@
 <div {{ $attributes->whereDoesntStartWith('wire')->merge(['class' => 'field']) }} id="{{ $field }}">
 @unless ($nolabel)
     <label for="{{ $field }}" class="block text-sm font-medium text-slate-500 dark:text-slate-300 bg-transparent">
+        @if ($labelhtml)
+          {!! $labelhtml !!}
+        @else
         {{ $label ?: ucfirst($field) }}
+        @endif
     </label>
 @endunless
     <div class="mt-1">
@@ -26,7 +30,7 @@
         $color_classes => ! $errors->has($field),
         $error_classes => $errors->has($field),
     ])
-    cols="40" rows="10" name="{{ $field }}" id="{{ $field }}"
+    cols="{{ $cols }}" rows="{{ $rows }}" name="{{ $field }}" id="{{ $field }}"
     {{ $attributes->whereStartsWith('wire') }}
 >{{ $value ?? old($field) }}
 </textarea>
