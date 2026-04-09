@@ -33,11 +33,11 @@ $radio_classes .= 'border-slate-400 bg-transparent ';
 $radio_classes .= 'hover:border-slate-500 hover:bg-slate-100 ';
 $radio_classes .= 'dark:border-slate-700 dark:text-slate-700';
 $checked_classes = 'col-start-1 row-start-1 flex items-center rounded-full hidden peer-checked:block text-slate-400';
-$error_classes = 'border-red-500 text-red-500'
+$error_classes = 'border-red-500 text-red-500 ';
 
 @endphp
 
-<div {{ $attributes->merge(['class' => 'field', 'p-4', 'flex items-center gap-4']) }} {{ $attributes->whereDoesntStartWith('wire') }}>
+<div {{ $attributes->whereDoesntStartWith('wire')->merge(['class' => 'field']) }}>
     @if ($type == 'radio')
         <label for="{{ $field }}" class="block text-sm mb-2 font-medium {{ $label_colors }}">{{ $label == '' ? ucfirst($field) : $label }}</label>
         <div class="flex items-center gap-4">
@@ -59,16 +59,11 @@ $error_classes = 'border-red-500 text-red-500'
             </div>
         </div>
     @else
-        <label class="p-4 flex items-center text-sm font-medium {{ $label_colors }}">
-            <input type="checkbox" name="{{ $field }}"
-                {{ $attributes->whereStartsWith('wire') }}
-                class="h-6 w-6 rounded-xs border-slate-300 text-slate-500 focus:ring-sky-300 mr-2"
-                @if ($value) checked @endif
-                @unless ($attributes->whereStartsWith('wire'))
-                @endunless
-            />
-            {{ $label }}
-        </label>
+        <x-euikit::form.checkbox
+            {{ $attributes->whereStartsWith('wire') }}
+            label="{{ $label }}"
+            value="{{ $value }}"
+        />
     @endif
     @isset($help)
         <x-euikit::help type="{{ $helptype }}">{{ $help }}</x-euikit::help>
