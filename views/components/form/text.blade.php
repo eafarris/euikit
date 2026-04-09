@@ -42,6 +42,8 @@ if ($type == 'search') {
     }
 }
 
+$isPassword = $type === 'password';
+
 $common_classes = 'w-full min-h-8 rounded-xs shadow-2xs sm:text-sm border leading-tight appearance-none placeholder:italic pl-2';
 $color_classes = 'border-slate-300 text-slate-600 bg-transparent focus:border-sky-300 focus:ring-sky-300 placeholder:text-slate-300 ';
 $color_classes .= 'dark:border-slate-400 dark:bg-slate-700 dark:text-slate-300 dark:placeholder:text-slate-400 dark:focus:border-sky-600 dark:focus:ring-sky-600';
@@ -54,13 +56,13 @@ $error_classes = 'border-red-500 text-red-500';
         {{ $label ?: ucfirst($field) }}
     </label>
 @endunless
-    <div class="relative block">
+    <div class="relative block" @if ($isPassword) x-data="{ showPassword: false }" @endif>
         @if ($lefticon)
             <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
                 @svg($lefticon, 'w-5 h-5 text-slate-400')
             </div>
         @endif
-        <input type="{{ $type }}"
+        <input @if ($isPassword) :type="showPassword ? 'text' : 'password'" @else type="{{ $type }}" @endif
             id="{{ $field }}"
             name="{{ $field }}"
             value="{{ @old($field, $value) }}"
@@ -71,13 +73,25 @@ $error_classes = 'border-red-500 text-red-500';
                 $color_classes => ! $errors->has($field),
                 $error_classes => $errors->has($field),
                 "pl-10" => $lefticon,
-                "pr-10" => $righticon,
+                "pr-10" => $righticon || $isPassword,
             ])
             @if ($required) required @endif
             {{ $attributes->whereStartsWith('wire') }}
             {{ $attributes->merge(['list' => '']) }}
         />
-        @if ($righticon)
+        @if ($isPassword)
+            <button type="button"
+                x-on:click="showPassword = !showPassword"
+                class="absolute inset-y-0 right-0 flex items-center pr-3 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200"
+            >
+                <template x-if="showPassword">
+                    @svg('phosphor-eye-slash', 'w-5 h-5')
+                </template>
+                <template x-if="!showPassword">
+                    @svg('phosphor-eye', 'w-5 h-5')
+                </template>
+            </button>
+        @elseif ($righticon)
             <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3">
                 @svg($righticon, 'w-5 h-5 text-slate-400')
             </div>
