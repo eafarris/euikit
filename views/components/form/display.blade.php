@@ -8,8 +8,8 @@
         $field = $attributes->whereStartsWith('wire:model')->first();
     }
 
-    $common_classes = 'w-full min-h-8 rounded-xs shadow-2xs sm:text-sm border leading-tight appearance-none placeholder:italic pl-2';
-    $color_classes = 'border-slate-300 text-slate-500 focus:border-sky-300 focus:ring-sky-300 placeholder:text-slate-400 ';
+    $common_classes = 'w-full min-h-8 rounded-xs sm:text-sm border leading-tight appearance-none placeholder:italic pl-2';
+    $color_classes = 'border-slate-100 text-slate-500 focus:border-sky-300 focus:ring-sky-300 placeholder:text-slate-400 ';
     $color_classes .= 'dark:bg-slate-700 dark:text-slate-300 dark:placeholder:text-slate-400';
     $error_classes = 'border-red-500 text-red-500';
 @endphp
