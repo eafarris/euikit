@@ -12,9 +12,15 @@
     if (!$nomarkdown) {
       $labelhtml .= 'Notes <span class="italic">(<a href="https://www.markdownguide.org/cheat-sheet/" class="underline-offset-2 underline">Markdown</a> supported)</span>';
     }
+
+    // "field" is optional if wire:model exists
+    if ($attributes->whereStartsWith('wire:model') && !isset($field)) {
+        $field = $attributes->whereStartsWith('wire:model')->first();
+    }
+
 @endphp
 
-<x-euikit::form.textarea
+<x-euikit::form.textarea {{ $attributes}}
   labelhtml="{!! $labelhtml !!}"
   field="notes" cols="{{ $cols }}" rows="{{ $rows }}"
 >
