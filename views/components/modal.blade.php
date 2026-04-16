@@ -14,8 +14,8 @@
     >
     </div><!-- backdrop -->
     <div {{ $attributes->merge(['class' =>
-        'z-10 fixed inset-0 shadow-2xl p-4 m-auto w-1/2 h-fit rounded-2xl
-        border-slate-300 border-2
+        'z-10 fixed inset-0 shadow-2xl p-4 m-auto w-fit h-fit max-w-3/4
+        rounded-2xl border-slate-300 border-2
         bg-linear-to-br to-80%
         from-slate-50/60 via-slate-200 to-slate-100/60
         dark:border-slate-900 dark:from-slate-600/70 dark:to-slate-700/60 dark:text-slate-300
