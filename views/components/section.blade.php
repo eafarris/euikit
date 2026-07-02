@@ -1,6 +1,6 @@
 @props(['header' => '', 'footer' => '', ])
 <section {{ $attributes->merge(['class' =>
-    'min-w-fit m-12 p-6 rounded-lg shadow-2xl border-2
+    'min-w-fit m-12 p-4 rounded-2xl shadow-2xl border-2
     bg-linear-to-br via-10% to-80%
     border-slate-300 dark:border-slate-800
     from-slate-100/80 via-slate-200/80 to-slate-100/80
