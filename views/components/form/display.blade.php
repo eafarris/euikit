@@ -96,4 +96,8 @@
     @isset($help)
         <x-euikit::help type="{{ $helptype }}">{{ $help }}</x-euikit::help>
     @endisset
+
+    @error($field)
+        <x-euikit::message type="error">{{  $message }}</x-euikit::message>
+    @enderror
 </div><!-- EUIKit Display Field component-->
