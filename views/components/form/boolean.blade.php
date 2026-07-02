@@ -65,11 +65,5 @@ $error_classes = 'border-red-500 text-red-500 ';
             value="{{ $value }}"
         />
     @endif
-    @isset($help)
-        <x-euikit::help type="{{ $helptype }}">{{ $help }}</x-euikit::help>
-    @endisset
-    @error($field)
-        <x-euikit::message type="error">{{ $message }}</x-euikit::message>
-    @enderror
 
 </div><!-- EUIKit Boolean field -->
