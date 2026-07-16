@@ -1,5 +1,6 @@
 <?php namespace eafarris\euikit\Livewire;
 
+use Illuminate\Database\Eloquent\Builder;
 use Livewire\Component;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
@@ -17,6 +18,7 @@ class Membership extends Component {
     public $selected; // Selected IDs
 
     // INTERNAL
+    public $allcandidates;
     public $candidatemodels;
     public $filtervalue;
 
@@ -31,16 +33,24 @@ class Membership extends Component {
         $this->filterfield = $filterfield ? explode(',', $filterfield) : [];
         $this->sortfield = $sortfield;
         $this->selected = $selected ? explode(',', $selected) : [];
+        $this->allcandidates = $this->allCandidates();
     } // endfunction mount
 
+    private function makeBuilder() : Builder {
+        if (Str::contains($this->candidates, '\\')) { // absolute reference to a model class
+            return $this->candidates::query();
+        } else { // expect to find model in App\Models namespace
+            $class = '\App\Models\\' . $this->candidates;
+            return $class::query();
+        } // endif absolute reference to model class
+    }
+
+    public function allCandidates() : Collection {
+        return $this->makeBuilder()->get();
+    }
 
     public function getCandidates() : Collection {
-         if (Str::contains($this->candidates, '\\')) { // absolute reference to a model class
-             $builder = $this->candidates::query();
-         } else { // expect to find model in App\Models namespace
-             $class = '\App\Models\\' . $this->candidates;
-             $builder = $class::query();
-         } // endif absolute reference to model class
+        $builder = $this->makeBuilder();
         if (!empty($this->filterfield)) {
             foreach ($this->filterfield as $field) {
                 $builder->orwhere($field, 'LIKE', '%'. $this->filtervalue .'%');

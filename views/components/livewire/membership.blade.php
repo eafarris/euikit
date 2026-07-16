@@ -33,7 +33,7 @@
              <x-euikit::table.row wire:key="{{ $associate }}">
                  <x-euikit::table.cell wire:click="detach('{{ $associate }}')">
                      {{
-                         $candidatemodels->first(function($candidate) use ($associate, $listid) {
+                         $allcandidates->first(function($candidate) use ($associate, $listid) {
                              return $candidate->{$listid} == $associate;
                          })?->{$listfield} ?? 'Unknown'
                      }}
